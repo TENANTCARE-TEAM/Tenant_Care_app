@@ -5,8 +5,7 @@ function App() {
 
   return (
     <>
-     <h1>TENANT CARE TEAM</h1>
-       <Home/>
+    <Home/>
     </>
   )
 }
