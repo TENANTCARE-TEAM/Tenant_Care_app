@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import {Link, useLocation} from 'react-router-dom'
 
 function Header() {
@@ -11,13 +11,13 @@ function Header() {
       <h1 className='text-xl font-bold text-slate-900 cursor-pointer'>TENANT<span className='text-[#00befe]'>CARE</span></h1>
       <ul className='flex items-center'>
         <Link to='/'>
-        <li className={'text-[#353535] font-[600] p-3 '  }>HOME</li>
+        <li className={`font-[600] p-3 ${location.pathname == '/' ? 'text-[#00befe]' : 'text-[#353535]'}`}>HOME</li>
         </Link>
         <Link to='/about'>
-        <li className='text-[#353535] font-[600] p-3'>ABOUT</li>
+        <li className={`font-[600] p-3 ${location.pathname == '/about' ? 'text-[#00befe]' : 'text-[#353535]'}`}>ABOUT</li>
         </Link>
         <Link to='/signIn'>
-        <li className='text-[#353535] font-[600] p-3'>SIGN IN</li>
+        <li className={`font-[600] p-3 ${location.pathname == '/signIn' ? 'text-[#00befe]' : 'text-[#353535]'}`}>SIGN IN</li>
         </Link>
         <Link to='/getStarted'>
         <li 
