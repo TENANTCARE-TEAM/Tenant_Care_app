@@ -14,7 +14,7 @@ function Navs() {
                 />
                 <FaSearch className='text-[#acacac] mr-2 cursor-pointer '/>
             </div>
-            <div className="flex items-center justify-center text-xl text-[#222] opacity-80 gap-3">
+            <div className="ml-10 flex items-center justify-center text-xl text-[#FF6746] opacity-80 gap-3">
               <FiLogOut/>
               <span>Logout</span>
             </div>

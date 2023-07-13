@@ -5,7 +5,7 @@ import { FaUsers, FaUser } from 'react-icons/fa'
 function Cards() {
     return (
         <div className='py-6 flex items-center gap-6'>
-            <div className='w-[490px] h-[160px] p-6 bg-[#FF6746] rounded-lg flex items-center justify-between shadow-md'>
+            <div className='w-[550px] h-[160px] p-6 bg-[#FF6746] rounded-lg flex items-center justify-between shadow-md'>
                 <div>
                     <div className='flex gap-2 items-center'>
                       <MdOutlineHomeWork className='text-7xl text-white'/>
@@ -17,7 +17,7 @@ function Cards() {
                 </div>
                 <h1 className='text-6xl text-white font-bold pr-6'>28</h1>
             </div>
-            <div className="p-6 flex items-center justify-between w-[350px] h-[160px] rounded-lg bg-white shadow-md">
+            <div className="p-6 flex items-center justify-between w-[400px] h-[160px] rounded-lg bg-white shadow-md">
                 <div>
                     <h3 className='text-4xl text-[#222] font-bold'>89</h3>
                     <p className='text-lg text-gray-500'>Current Tenants</p>
@@ -25,7 +25,7 @@ function Cards() {
                 <FaUsers className='text-8xl text-[#00befe] pr-4'/>
             </div>
 
-            <div className="p-6 flex items-center justify-between w-[350px] h-[160px] rounded-lg bg-white shadow-md">
+            <div className="p-6 flex items-center justify-between w-[400px] h-[160px] rounded-lg bg-white shadow-md">
                 <div>
                     <h3 className='text-4xl text-[#222] font-bold'>15</h3>
                     <p className='text-lg text-gray-500'>Pending Tenants</p>

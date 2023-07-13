@@ -9,7 +9,7 @@ import {BsChatSquareQuote} from 'react-icons/bs'
 function Sidebar() {
     const location = useLocation()
   return (
-    <div className='z-10 w-[200px] h-screen bg-white shadow-2xl p-6 flex items-center flex-col gap-4'>
+    <div className='fixed left-0 top-0 z-10 w-[200px] h-[100vh] bg-white shadow-2xl p-6 flex items-center flex-col gap-4'>
         <div className='flex items-center justify-center flex-col gap-2'>
             <FaUserCircle className='text-[#00befe] text-6xl'/>
             <span className='font-bold text-xl'>Henry Jr</span>
