@@ -2,9 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    overflow-x: hidden;
+    background: #f6f6f6;
 
-.home-page .house1{
- position: relative;
- bottom:0px;
- right: 0px;
 }
