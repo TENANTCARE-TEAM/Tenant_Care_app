@@ -1,6 +1,8 @@
 import React from 'react'
 import Nav from '../../components/TenDhashContent/Nav'
 import Side from '../../components/TenDhashContent/Side'
+import CardItem from '../../components/TenDhashContent/CardItem'
+import ResentItem from '../../components/TenDhashContent/ResentItem'
 
 function Dhashboard() {
   return (
@@ -13,6 +15,9 @@ function Dhashboard() {
             <span className="text-[#7E7E7E]">Welcome to TenantCare</span>
         </div>
         {/* content */}
+      <CardItem/>
+      <ResentItem/>
+
     </div>
 </div>
   )
