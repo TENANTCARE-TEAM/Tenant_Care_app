@@ -1,6 +1,7 @@
 import React from 'react'
 import Side from '../../components/TenDhashContent/Side'
 import Nav from '../../components/TenDhashContent/Nav'
+import PropertiesContent from '../../components/TenDhashContent/PropertiesContent'
 
 function Properties() {
   return (
@@ -13,6 +14,7 @@ function Properties() {
             <span className="text-[#7E7E7E]">Welcome to TenantCare</span>
         </div>
         {/* content */}
+        <PropertiesContent/>
     </div>
 </div>
   )

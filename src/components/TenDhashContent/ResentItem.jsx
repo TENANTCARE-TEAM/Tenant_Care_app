@@ -17,10 +17,9 @@ function ResentItem() {
         <span className='text-[#00befe]'>See all</span>
     </div>
     {/* Recent items */}
-    <div className='mt-4 flex flex-wrap gap-5 p-4 pb-5'>
+        <div className='mt-4 flex flex-wrap gap-5 p-4 pb-5'>
         {/* item */}
-        
-        <div className='flex gap-6 p-3 overflow-hidden w-[540px] h-[200px] bg-white shadow-lg border-2 border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all'>
+        <div className='flex gap-6 overflow-hidden w-[480px] h-[200px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all'>
             <img src={houseThree} alt="" className='w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
             <div className='flex flex-col gap-7 w-full h-full'>
                 <div className='flex flex-col gap-3'>
@@ -34,12 +33,12 @@ function ResentItem() {
             </div>
         </div>
     
-        <div className='flex gap-4 p-3 overflow-hidden w-[540px] h-[200px] bg-white shadow-lg border-2 border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all'>
+        <div className='flex gap-4 overflow-hidden w-[480px] h-[200px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all'>
             <img src={housefour} alt="" className='w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
             <div className='flex flex-col gap-7 w-full h-full'>
                 <div className='flex flex-col gap-3'>
                     <h3 className='font-bold text-2xl'>103/143 West Street, <br/>Crows Nest</h3>
-                    <span className='text-sm text-[#acacac]'>10 bedroom</span>
+                    <span className='text-sm text-[#c09999]'>10 bedroom</span>
                 </div>
                 <div className='flex items-center justify-between'>
                     <span className='text-sm text-[#acacac]'>Landlord Name</span>
@@ -47,7 +46,7 @@ function ResentItem() {
                 </div>
             </div>
         </div>
-        <div className='flex gap-4 p-3 overflow-hidden w-[540px] h-[200px] bg-white shadow-lg border-2 border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all'>
+        <div className='flex gap-4 overflow-hidden w-[480px] h-[200px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all'>
             <img src={houseThree} alt="" className='w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
             <div className='flex flex-col gap-7 w-full h-full'>
                 <div className='flex flex-col gap-3'>
