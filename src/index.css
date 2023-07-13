@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.home-page .house1{
+ position: relative;
+ bottom:0px;
+ right: 0px;
+}
