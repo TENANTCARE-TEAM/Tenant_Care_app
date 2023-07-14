@@ -3,6 +3,7 @@ import GetStarted from "./pages/getStarted/GetStarted"
 import Home from "./pages/home/Home"
 import {Routes, Route,} from 'react-router-dom'
 import SignIn from './pages/signIn/SignIn'
+import SignUp from './pages/signUp/SignUp'
 import Dhashboard from "./pages/TenateDhashboard/Dhashboard"
 import Properties from "./pages/TenateDhashboard/Properties"
 import Dashboard from './pages/LanDashboard/Dashboard'
@@ -19,7 +20,8 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="/about" element={<About/>}/>
       <Route path="/signIn" element={<SignIn/>}/>
-      <Route path="/getStarted" element={<GetStarted/>}/>
+      <Route path="/GetStarted" element={<GetStarted/>}/>
+      <Route path="/signUp" element={<SignUp/>}/>
       <Route path="/tenant/dashboard" element ={<Dhashboard/>}/>
       <Route path="/tenant/Properties" element = {<Properties/>}/>
       <Route path='/landlord/Dashboard' element={<Dashboard/>}/>

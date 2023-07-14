@@ -14,8 +14,8 @@ function Dashboard() {
                 <h3 className='font-bold text-xl text-[#00befe]'>Dashboard</h3>
                 <span className="text-[#7E7E7E]">Welcome to TenantCare</span>
             </div>
-            <Cards/>
             {/* Contents */}
+            <Cards/>
             <RecentItems/>
         </div>
     </div>

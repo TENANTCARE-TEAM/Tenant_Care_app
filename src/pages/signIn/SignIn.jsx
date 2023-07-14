@@ -5,13 +5,13 @@ import Content from '../../components/SignInContent/Content'
 
 function SignIn() {
   return (
-   <>
+   <div className='mt-16 bg-white'>
     <Header/>
      
     <Content/>
    
     <Footer/>
-   </>
+   </div>
   )
 }
 

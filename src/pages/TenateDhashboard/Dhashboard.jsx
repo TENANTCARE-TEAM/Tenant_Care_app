@@ -15,8 +15,8 @@ function Dhashboard() {
             <span className="text-[#7E7E7E]">Welcome to TenantCare</span>
         </div>
         {/* content */}
-      <CardItem/>
-      <ResentItem/>
+        <CardItem/>
+       <ResentItem/>
 
     </div>
 </div>
