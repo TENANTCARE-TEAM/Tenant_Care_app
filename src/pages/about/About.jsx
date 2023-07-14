@@ -5,7 +5,7 @@ import Middle from '../../components/aboutContent/Middle'
 
 function About() {
   return (
-    <div>
+    <div className='mt-16 bg-white'>
         <Header/>
         <Middle/>
         <Footer/>

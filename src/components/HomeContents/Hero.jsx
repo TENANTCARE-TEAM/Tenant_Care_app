@@ -4,30 +4,22 @@ import House from "../../assets/images/House.png"
 
 function Hero() {
   return (
-    <div className='p-10'>
-
-    
-    <div className="home-page flex items-center p-12 rounded-3xl bg-blue-50 flex-col-reverse md:flex-row justify-between" >
-    {/* left-side */}
-    <div className="md:w-1/2 space-y-5 p-8 mt-14 md:mt-0">
-    <h1 className="text-6xl">Easy way to manage</h1>
-
+    <div className="flex items-center p-12 md:px-[10%] bg-[#ECF1F8] flex-col-reverse md:flex-row justify-between" >
+     <div className="md:w-1/2 space-y-5 p-8 mt-14 md:mt-0">
+      <h1 className="text-6xl">Easy way to manage</h1>
       <h2 className="text-4xl">your property</h2>
       <p className="text-lg text-gray-500">
         We take the guess out of managing <br />
         your property
       </p>
-      <button
-        className="bg-blue-500 px-5 text-white rounded-xl hover:bg-blue-400 py-2 shadow transition-all
-    duration-500"
-      >
-        <Link to="/getStarted">Get Started</Link>
-      </button>
+      <Link to='/GetStarted'>
+        <button 
+        className='bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'>GET STARTED</button>
+      </Link>
     </div>
     <div className='house1'>
-      <img className='	 ' src={House} alt="" width={700} height={800}/>
+      <img className='rounded-xl' src={House} alt="" width={600} height={700}/>
     </div>
-  </div>
   </div>
   )
     

@@ -6,13 +6,10 @@ import ItemLists from '../../components/HomeContents/ItemLists'
 
 function Home() {
   return (
-    <div>
-      
+    <div className="mt-16 bg-white">
         <Header/>
-      
           <Hero/>
           <ItemLists/>
-
         <Footer/>
     </div>
   )

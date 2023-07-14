@@ -6,7 +6,7 @@ import Acounts from '../../components/GetStart/Acounts'
 
 function GetStarted() {
   return (
-    <div>
+    <div className='mt-16 bg-white'>
         <Header/>
         <Acounts/>
         <Footer/>
