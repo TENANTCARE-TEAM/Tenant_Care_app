@@ -10,10 +10,10 @@ function Footer() {
                     <p className='text-gray-400 break-words'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div className='flex gap-3 mt-4 text-[#00befe]'>
-                       <FaFacebook/>
-                       <FaYoutube/>
-                       <FaTwitter/>
-                       <FaInstagram/>
+                       <FaFacebook style={{color: "#1877f2"}}/>
+                       <FaYoutube style={{color: "#FF0000"}}/>
+                       <FaTwitter style={{color: "#1DA1F2"}}/>
+                       <FaInstagram style={{color: "#EC3397"}}/>
                     </div>
                     <p className='mt-2 text-gray-500 text-sm'>© 2023 . All rights reserved.</p>
                 </li>

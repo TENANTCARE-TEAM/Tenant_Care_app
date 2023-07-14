@@ -3,15 +3,16 @@ import key from "../../assets/images/key.png"
 
 function Middle() {
   return (
-    // <div>
-    //     <div className='flex  bg-blue-100 items-center  h-48 max-h-full	'>
-    //          <h1 className=' items-center text-2xl p-50 text-center text-bold text-blue-700'>About</h1>
-    //     </div>
-        
-    //     </div>
+       
+     <>
+      <div className='w-full bg-[#ECF1F8] h-[200px] mt-3'>
+         <h1 className='text-center pt-[60px] text-5xl text-[#00BEFE]
+         font-bold'>About</h1>
+      </div>
+
     <div className='grid grid-cols-1 grid-rows-1 mx-16 p-16 gap-6'>
        <div className='text-3xl text-bold p-2'>
-        <h1>About TenantCare</h1>
+        <h1 className='mt-5'>About TenantCare</h1>
        </div>
        <div>
         <p>Introducing TenantCare, 
@@ -26,6 +27,7 @@ function Middle() {
        </div>
 
     </div>
+    </>
   )
 }
 
