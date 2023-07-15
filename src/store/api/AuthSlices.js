@@ -19,7 +19,7 @@ export const authSlice = createApi({
             url : '/api/landlords/signup',
             method: 'POST',
             body: newUser,
-          })   
+          }),
         }),
 
         // Sign IN Business 

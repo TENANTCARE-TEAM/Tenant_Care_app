@@ -3,22 +3,42 @@ import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import SignUp from "../../assets/images/SignUp.png";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSignUpPeMutation } from "../../store/api/AuthSlices";
 
 function Content() {
+  const navigate = useNavigate()
+
+  const [signUpPe, {error = {}}] = useSignUpPeMutation();
+
   const initialValues = {
-    firstName: "",
-    lastName: "",
+    first_name: "",
+    last_name: "",
     email: "",
     password: "",
   };
 
   const validationSchema = Yup.object({
-    firstName: Yup.string().required("First Name is required"),
-    lastName: Yup.string().required("Last Name is required"),
+    first_name: Yup.string().required("First Name is required"),
+    last_name: Yup.string().required("Last Name is required"),
     password: Yup.string().required("Password is required"),
-    email: Yup.string().required("Email is required"),
+    email: Yup.string().required("email is required"),
   });
+
+  const handleSubmit = (values) => {
+    signUpPe({
+      first_name: values.first_name,
+      last_name: values.last_name,
+      email: values.email,
+      password: values.password,
+    }).unwrap().then(() => {
+      navigate("/tenant/dashboard")
+    }).catch((error) => {
+      console.log(error)
+    })
+  }
+
+  console.log("Error Sign Up Personal", error)
 
   return (
     <div className="md:px-[9%]">
@@ -32,18 +52,19 @@ function Content() {
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
+            onSubmit={handleSubmit}
           >
             <Form>
               <div>
                 <Field
                   type="text"
-                  id="firstName"
-                  name="firstName"
+                  id="first_name"
+                  name="first_name"
                   placeholder="First Name"
                   className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3  mt-6 outline-[#00befe]"
                 />
                 <ErrorMessage
-                  name="firstName"
+                  name="first_name"
                   component="div"
                   className="text-left text-red-400"
                 />
@@ -51,13 +72,13 @@ function Content() {
               <div>
                 <Field
                   type="text"
-                  id="lastName"
-                  name="lastName"
+                  id="last_name"
+                  name="last_name"
                   placeholder="Last Name"
                   className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 mt-6 outline-[#00befe]"
                 />
                 <ErrorMessage
-                  name="lastName"
+                  name="last_name"
                   component="div"
                   className="text-left text-red-400"
                 />
@@ -83,7 +104,7 @@ function Content() {
                   type="password"
                   id="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="password"
                   className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 mt-6 outline-[#00befe] "
                 />
                 <ErrorMessage
