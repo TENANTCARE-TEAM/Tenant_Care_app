@@ -47,7 +47,9 @@ const Account = () => {
                 All ready have account
               </p>
               <div className="mt-2">
+                <Link to='/signIn'>
                <p className="text-sm cursior-pointer text-[#00befe]">Sign in</p>
+                </Link>
               </div>
             </div>
           </div>
@@ -80,7 +82,7 @@ const Account = () => {
                 </ul>
               </div>
             <div className="px-6 py-2">
-              <Link to='/signUp'>
+              <Link to='/busines/signUp'>
                 <button className='w-full bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'>
                   Register
                 </button>
@@ -89,7 +91,9 @@ const Account = () => {
                 All ready have account
               </p>
               <div className="mt-2">
+                <Link to='/signIn'>
                <p className="text-sm cursior-pointer text-[#00befe]">Sign in</p>
+                </Link>
               </div>
             </div>
           </div>

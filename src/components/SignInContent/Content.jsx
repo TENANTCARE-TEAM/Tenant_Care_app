@@ -1,8 +1,9 @@
 import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import SignIn from "../../assets/images/signIn.png";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+
+import BuContent from "../signIBuContent/BuContent";
 
 function Content() {
   const initialValues = {
@@ -17,13 +18,13 @@ function Content() {
 
   return (
     <div className="md:px-[9%]">
-      <div className=" items-center flex justify-around text-center mb-[2%] mt-[2%] p-4">
-        <div className="max-[768px]:hidden w-[490px] h-[480px] items-center left-4 mb-5">
-          <img src={SignIn} alt="SignUp image" />
-        </div>
+      <h2 className="text-center font-medium text-3xl text-[#00befe] pt-[4%]">Login With...</h2>
+      <div className=" items-center flex justify-around text-center mb-[2%] mt-[4%] p-4 max-[768px]:flex-col ">
+       
+       <BuContent/>
 
-        <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg shadow-xl mb-2">
-         <h2 className="text-center font-medium text-2xl text-[#00befe]">Sign Up</h2>
+        <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2">
+         <h2 className="text-center font-medium text-2xl text-[#00befe]">Sign In Personal</h2>
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
