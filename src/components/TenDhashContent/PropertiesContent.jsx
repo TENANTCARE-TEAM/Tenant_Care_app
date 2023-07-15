@@ -12,48 +12,76 @@ function PropertiesContent() {
             <h3 className='font-bold text-2xl'>All Properties</h3>
         </div>
         {/* properties */}
-        <div className='mt-4 flex flex-wrap gap-5 p-4 pb-5'>
-            <Link to="/landlord/Dashboard/ViewProperty">
-            <div className='flex gap-6 overflow-hidden w-[480px] h-[200px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all'>
-                <img src={house} alt="" className='w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
-                <div className='flex flex-col gap-7 w-full h-full'>
-                    <div className='flex flex-col gap-3'>
-                        <h3 className='font-bold text-2xl'>103/143 West Street, <br/>Crows Nest</h3>
-                        <span className='text-sm text-[#acacac]'>10 bedroom</span>
+        <div className="mt-4 flex flex-wrap gap-5 p-4 pb-5">
+        {/* item */}
+            <Link to="/Tenant/dashboard/ViewProperty" className="flex max-[768px]:flex-col gap-6  overflow-hidden w-[480px] h-[200px] max-[768px]:w-full max-[768px]:h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
+                <img
+                    src={house}
+                    alt=""
+                    className="max-[768px]:w-full max-[768px]:h-[200px] w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center"
+                />
+                <div className="flex flex-col max-[768px]:gap-4 gap-7 w-full h-full">
+                    <div className="flex flex-col gap-3">
+                    <h3 className="font-bold text-2xl">
+                        103/143 West Street, <br />
+                        Crows Nest
+                    </h3>
+                    <span className="text-sm text-[#acacac]">10 bedroom</span>
                     </div>
-                    <div className='flex items-center justify-between'>
-                        <span className='text-sm text-[#acacac]'>Landlord Name</span>
-                        <button className='py-2 px-3 bg-slate-500 text-white rounded-lg'>$220.09</button>
+                    <div className="flex items-center justify-between">
+                    <span className="text-sm text-[#acacac]">Landlord Name</span>
+                    <button className="py-2 px-3 bg-slate-500 text-white rounded-lg">
+                        $220.09
+                    </button>
                     </div>
                 </div>
-            </div>
             </Link>
-            <div className='flex gap-4 overflow-hidden w-[480px] h-[200px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all'>
-                <img src={house2} alt="" className='w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
-                <div className='flex flex-col gap-7 w-full h-full'>
-                    <div className='flex flex-col gap-3'>
-                        <h3 className='font-bold text-2xl'>103/143 West Street, <br/>Crows Nest</h3>
-                        <span className='text-sm text-[#acacac]'>10 bedroom</span>
+
+            <Link to="/Tenant/dashboard/ViewProperty" className="flex max-[768px]:flex-col gap-6  overflow-hidden w-[480px] h-[200px] max-[768px]:w-full max-[768px]:h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
+                <img
+                    src={house2}
+                    alt=""
+                    className="max-[768px]:w-full max-[768px]:h-[200px] w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center"
+                />
+                <div className="flex flex-col max-[768px]:gap-4 gap-7 w-full h-full">
+                    <div className="flex flex-col gap-3">
+                    <h3 className="font-bold text-2xl">
+                        103/143 West Street, <br />
+                        Crows Nest
+                    </h3>
+                    <span className="text-sm text-[#acacac]">10 bedroom</span>
                     </div>
-                    <div className='flex items-center justify-between'>
-                        <span className='text-sm text-[#acacac]'>Landlord Name</span>
-                        <button className='py-2 px-3 bg-slate-500 text-white rounded-lg'>$220.09</button>
-                    </div>
-                </div>
-            </div>
-            <div className='flex gap-4 overflow-hidden w-[480px] h-[200px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all'>
-                <img src={house} alt="" className='w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
-                <div className='flex flex-col gap-7 w-full h-full'>
-                    <div className='flex flex-col gap-3'>
-                        <h3 className='font-bold text-2xl'>103/143 West Street, <br/>Crows Nest</h3>
-                        <span className='text-sm text-[#acacac]'>10 bedroom</span>
-                    </div>
-                    <div className='flex items-center justify-between'>
-                        <span className='text-sm text-[#acacac]'>Landlord Name</span>
-                        <button className='py-2 px-3 bg-slate-500 text-white rounded-lg'>$220.09</button>
+                    <div className="flex items-center justify-between">
+                    <span className="text-sm text-[#acacac]">Landlord Name</span>
+                    <button className="py-2 px-3 bg-slate-500 text-white rounded-lg">
+                        $220.09
+                    </button>
                     </div>
                 </div>
-            </div>
+            </Link>
+
+            <Link to="/Tenant/dashboard/ViewProperty" className="flex max-[768px]:flex-col gap-6  overflow-hidden w-[480px] h-[200px] max-[768px]:w-full max-[768px]:h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
+                <img
+                    src={house}
+                    alt=""
+                    className="max-[768px]:w-full max-[768px]:h-[200px] w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center"
+                />
+                <div className="flex flex-col max-[768px]:gap-4 gap-7 w-full h-full">
+                    <div className="flex flex-col gap-3">
+                    <h3 className="font-bold text-2xl">
+                        103/143 West Street, <br />
+                        Crows Nest
+                    </h3>
+                    <span className="text-sm text-[#acacac]">10 bedroom</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                    <span className="text-sm text-[#acacac]">Landlord Name</span>
+                    <button className="py-2 px-3 bg-slate-500 text-white rounded-lg">
+                        $220.09
+                    </button>
+                    </div>
+                </div>
+            </Link>
         </div>
     </div>
   )

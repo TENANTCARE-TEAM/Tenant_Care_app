@@ -11,8 +11,8 @@ function PropertieasContent() {
         </div>
         {/* Properties */}
         <div className='mt-4 flex flex-wrap gap-5 p-4 pb-5'>
-            <div className='flex gap-8 overflow-hidden w-full h-[200px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
-                <img src={house} alt="" className='w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
+            <div className='flex max-[768px]:flex-col gap-8 overflow-hidden w-full h-[200px] max-[768px]:h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
+                <img src={house} alt="" className='max-[768px]:w-full w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
                 <div className='flex flex-col gap-5 w-full h-full'>
                     <div className='flex justify-between'>
                         <h3 className='font-bold text-2xl'>103/143 West Street, <br/>Crows Nest</h3>
@@ -28,8 +28,8 @@ function PropertieasContent() {
                 </div>
             </div>
 
-            <div className='flex gap-8 overflow-hidden w-full h-[200px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
-                <img src={house} alt="" className='w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
+            <div className='flex max-[768px]:flex-col gap-8 overflow-hidden w-full h-[200px] max-[768px]:h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
+                <img src={house} alt="" className='max-[768px]:w-full w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
                 <div className='flex flex-col gap-5 w-full h-full'>
                     <div className='flex justify-between'>
                         <h3 className='font-bold text-2xl'>103/143 West Street, <br/>Crows Nest</h3>
@@ -44,6 +44,7 @@ function PropertieasContent() {
                     </div>
                 </div>
             </div>
+            
         </div>
     </div>
   )

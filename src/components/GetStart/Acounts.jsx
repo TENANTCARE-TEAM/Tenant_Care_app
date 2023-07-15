@@ -11,7 +11,7 @@ const Account = () => {
       </div>
       <div class="flex flex-wrap justify-center gap-7 mt-10 ">
 
-        <div class="max-[400px]:w-full w-[278px]  overflow-hidden shadow-2xl rounded-3xl border-2  border-[#00befe] p-5">
+        <div class="max-[400px]:w-full w-[278px]  overflow-hidden shadow-lg rounded-3xl border-2  border-[#00befe] p-5">
            <div class="max-[768px]:px-2 px-6 py-2">
              <h1 className="text-3xl font-bold text-[#00befe]">Personal</h1>
               <span className="text-slate-900">Account</span>
@@ -52,7 +52,7 @@ const Account = () => {
             </div>
           </div>
 
-          <div className="max-[400px]:w-full w-[278px]  overflow-hidden shadow-2xl rounded-3xl border-2  border-[#00befe] p-5">
+          <div className="max-[400px]:w-full w-[278px]  overflow-hidden shadow-lg rounded-3xl border-2  border-[#00befe] p-5">
             <div class="max-[768px]:px-2 px-6 py-2">
               <h1 className="text-3xl font-bold text-[#00befe]">Business</h1>
               <span className="text-slate-900">Account</span>

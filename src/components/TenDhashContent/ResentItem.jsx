@@ -1,6 +1,7 @@
 import React from "react";
 import houseThree from "../../assets/images/house-3.jpg";
 import housefour from "../../assets/images/house-2.jpg";
+import { Link } from "react-router-dom";
 
 function ResentItem() {
   return (
@@ -12,7 +13,7 @@ function ResentItem() {
       {/* Recent items */}
       <div className="mt-4 flex flex-wrap gap-5 p-4 pb-5">
         {/* item */}
-        <div className="flex max-[768px]:flex-col gap-6  overflow-hidden w-[480px] h-[200px] max-[768px]:h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
+        <Link to="/Tenant/dashboard/ViewProperty" className="flex max-[768px]:flex-col gap-6  overflow-hidden w-[480px] h-[200px] max-[768px]:w-full max-[768px]:h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
           <img
             src={houseThree}
             alt=""
@@ -33,9 +34,9 @@ function ResentItem() {
               </button>
             </div>
           </div>
-        </div>
+        </Link>
 
-        <div className="flex max-[768px]:flex-col gap-6  overflow-hidden w-[480px] h-[200px] max-[768px]:h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
+        <div className="flex max-[768px]:flex-col gap-6  overflow-hidden w-[480px] h-[200px] max-[768px]:w-full max-[768px]:h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
           <img
             src={housefour}
             alt=""
@@ -58,7 +59,7 @@ function ResentItem() {
           </div>
         </div>
 
-        <div className="flex max-[768px]:flex-col gap-6  overflow-hidden w-[480px] h-[200px] max-[768px]:h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
+        <div className="flex max-[768px]:flex-col gap-6  overflow-hidden w-[480px] h-[200px] max-[768px]:w-full max-[768px]:h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
           <img
             src={houseThree}
             alt=""

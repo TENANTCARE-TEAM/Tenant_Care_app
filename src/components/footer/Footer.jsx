@@ -4,8 +4,8 @@ function Footer() {
   return (
     
         <footer className='w-full py-10 px-[4%] bg-[#ECF1F8]'>
-            <ul className='grid grid-cols-4 gap-4'>
-                <li className='flex flex-col gap-2'>
+            <ul className='flex flex-col-reverse md:grid md:grid-cols-4 gap-4'>
+                <li className='flexflex-col gap-2'>
                     <h1 className='text-xl font-bold text-slate-900 cursor-pointer'>TENANT<span className='text-[#00befe]'>CARE</span></h1>
                     <p className='text-gray-400 break-words'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -15,9 +15,9 @@ function Footer() {
                        <FaTwitter/>
                        <FaInstagram/>
                     </div>
-                    <p className='mt-2 text-gray-500 text-sm'>© 2023 . All rights reserved.</p>
+                    <p className='md:mt-2 mt-5 text-gray-500 text-sm max-[768px]:text-center '>© 2023 . All rights reserved.</p>
                 </li>
-                <li className='flex flex-col gap-2'>
+                <li className='hidden md:flex flex-col gap-2'>
                     <span className='text-[#222] font-medium'>Take a tour</span>
                     <a className='text-gray-400'>Features</a>
                     <a className='text-gray-400'>Partners</a>
@@ -25,7 +25,7 @@ function Footer() {
                     <a className='text-gray-400'>Product</a>
                     <a className='text-gray-400'>Support</a>
                 </li>
-                <li className='flex flex-col gap-2'>
+                <li className='hidden md:flex flex-col gap-2'>
                     <span className='text-[#222] font-medium'>Our Company</span>
                     <a className='text-gray-400'>About Us</a>
                     <a className='text-gray-400'>Agents</a>

@@ -28,7 +28,7 @@ function AddPropertyContent() {
       </div>
       {/* content */}
          
-      <div className="mx-auto rounded-lg bg-white p-10 shadow-xl md:w-3/4 lg:w-1/2 mb-12">
+      <div className="mx-auto w-full rounded-lg bg-white p-10 shadow-xl md:w-3/4 lg:w-1/2 mb-12">
        
         <Formik
           initialValues={initialValues}
@@ -43,7 +43,7 @@ function AddPropertyContent() {
                 id="name"
                 name="name"
                 placeholder="Name"
-                className="w-full bg-[#f6f6f6] rounded border border-gray-300 p-3 
+                className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 
                  outline-none shadow text-[20px]"
               />
               <ErrorMessage
@@ -58,7 +58,7 @@ function AddPropertyContent() {
                 id="description"
                 name="description"
                 placeholder="Description"
-                className="w-full bg-[#f6f6f6] rounded border border-gray-300 p-3 shadow
+                className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow
                 outline-none text-[20px]"
               />
               <ErrorMessage
@@ -73,7 +73,7 @@ function AddPropertyContent() {
                 id="price"
                 name="price"
                 placeholder="Price"
-                className="w-full bg-[#f6f6f6] rounded border border-gray-300 p-3 shadow
+                className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow
                 outline-none text-[20px]"
               />
               <ErrorMessage
@@ -89,7 +89,7 @@ function AddPropertyContent() {
                 id="bedrrom"
                 name="bedroom"
                 placeholder="Bed room"
-                className="w-full bg-[#f6f6f6] rounded border border-gray-300 p-3 shadow  outline-none text-[20px]"
+                className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow  outline-none text-[20px]"
               />
               <ErrorMessage
                 name="bedroom"
@@ -104,22 +104,17 @@ function AddPropertyContent() {
                 id="image"
                 name="image"
                 placeholder="url image"
-                className="w-full bg-[#f6f6f6] rounded border border-gray-300 p-3 shadow  outline-none text-[20px]"
+                className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow  outline-none text-[20px]"
               />
               <ErrorMessage
                 name="image"
                 component="div"
                 className="text-red-400"
               />
-            </div>
-         
-            <button
-              type="submit"
-              className="mt-4 rounded-2xl bg-[#00befe] px-12 py-3 text-white 
-              hover:bg-sky-500 text-[18px]"
-            >
+            </div>   
+            <button type="submit" className="bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
               Add Property
-            </button>
+            </button>         
           </Form>
         </Formik>
       </div>
