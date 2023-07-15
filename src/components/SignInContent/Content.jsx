@@ -1,11 +1,16 @@
 import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import BuContent from "../signIBuContent/BuContent";
+import { useSignInPeMutation } from "../../store/api/AuthSlices";
 
 function Content() {
+  const navigate = useNavigate()
+
+  const [signInPe, {error = {}}] = useSignInPeMutation()
+
   const initialValues = {
     email: "",
     password: "",
@@ -16,10 +21,23 @@ function Content() {
     email: Yup.string().required(" email is required"),
   });
 
+  const handleSubmit = (values) => {
+    signInPe({
+      email: values.email,
+      password: values.password,
+    }).unwrap().then(() => {
+      navigate("/landlord/Dashboard")
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
+
+  console.log("Error Sign in Personal", error)
+
   return (
     <div className="md:px-[9%]">
       <h2 className="text-center font-medium text-3xl text-[#00befe] pt-[4%]">Login With...</h2>
-      <div className=" items-center flex justify-around text-center mb-[2%] mt-[4%] p-4 max-[768px]:flex-col ">
+      <div className=" items-center flex justify-around text-center mb-[2%] mt-[4%] p-4">
        
        <BuContent/>
 
@@ -28,6 +46,7 @@ function Content() {
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
+            onSubmit={handleSubmit}
           >
             <Form>
               <div>
