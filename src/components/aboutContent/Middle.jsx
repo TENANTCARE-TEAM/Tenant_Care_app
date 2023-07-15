@@ -7,8 +7,8 @@ function Middle() {
       <div className='w-full bg-[#ECF1F8] h-[200px]'>
          <h1 className='text-center pt-[60px] text-5xl text-[#00BEFE] font-bold'>About</h1>
       </div>
-      <div className="px-[10%] py-6 pb-8 flex w-full">
-      <div className="p-2 w-[55%] h-[430px]">
+      <div className="md:px-[10%] px-6 py-6 pb-8 flex max-[768px]:flex-col w-full">
+      <div className="p-2 mw-full md:w-[55%] h-[430px]">
         <img src={key} className="w-full h-full" alt="" />
       </div>
       <div className="pl-4 flex flex-col w-[100%]">
@@ -29,7 +29,7 @@ function Middle() {
           Experience the convenience and efficiency of TenantCare and elevate
           your property management process to new heights.
         </p>
-        <button className='w-[20%] bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'>
+        <button className='md:w-[20%] w-[40%] bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'>
           See More
         </button>
       </div>

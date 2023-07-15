@@ -4,10 +4,10 @@ import House from "../../assets/images/House.png"
 
 function Hero() {
   return (
-    <div className="flex items-center p-12 md:px-[10%] bg-[#ECF1F8] flex-col-reverse md:flex-row justify-between" >
-     <div className="md:w-1/2 space-y-5 p-8 mt-14 md:mt-0">
-      <h1 className="text-6xl">Easy way to manage</h1>
-      <h2 className="text-4xl">your property</h2>
+    <div className="flex items-center p-8 md:px-[10%] bg-[#ECF1F8] flex-col-reverse md:flex-row justify-between" >
+     <div className="md:w-1/2 space-y-5 p-8 mt-6 md:mt-0 max-[768px]:text-center">
+      <h1 className="md:text-6xl text-5xl font-medium max-[434px]:text-4xl">Easy way to manage</h1>
+      <h2 className="text-4xl font-normal max-[366px]:text-3xl">your property</h2>
       <p className="text-lg text-gray-500">
         We take the guess out of managing <br />
         your property
