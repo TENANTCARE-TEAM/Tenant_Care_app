@@ -35,7 +35,7 @@ function BuContent() {
   return (
     <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2">
       <h2 className="text-center font-medium text-2xl text-[#00befe]">
-        Sign In Business
+        Login Business
       </h2>
       <Formik 
       initialValues={initialValues} 
