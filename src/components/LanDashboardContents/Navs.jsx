@@ -1,8 +1,32 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {FaSearch} from 'react-icons/fa'
 import {FiLogOut} from 'react-icons/fi'
+import { useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
+
+
+
 
 function Navs() {
+
+
+const navigate = useNavigate()
+const [userInfo, setUserInfo] = useState(false)
+
+const token = Cookies.get('token')
+console.log(token);
+useEffect(() => {
+  if(token) {
+    setUserInfo(token)
+  }
+}, [userInfo])
+
+const handleLogout = () => {
+   Cookies.remove('token')
+    setUserInfo(true)
+     navigate('/signIn')
+}
+
   return (
     <div className='fixed top-0 right-0 w-[100%] bg-white h-[70px] shadow-lg '>
         <div className="h-[70px] flex items-center text-center justify-around ">
@@ -19,9 +43,12 @@ function Navs() {
                 />
                 <FaSearch className='text-[#acacac] mr-2 cursor-pointer '/>
             </div>
-            <div className="ml-10 hidden md:flex items-center justify-center text-xl text-[#FF6746] gap-3">
-              <FiLogOut/>
-              <span>Logout</span>
+            <div 
+              onClick={handleLogout} 
+            className="ml-10 hidden md:flex items-center justify-center text-xl text-[#ff6746] gap-3 cursor-pointer">
+              <FiLogOut />
+              <span  
+              >Logout</span>
             </div>
         </div>
     </div>

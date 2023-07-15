@@ -32,7 +32,7 @@ function Content() {
       email: values.email,
       password: values.password,
     }).unwrap().then(() => {
-      navigate("/tenant/dashboard")
+      navigate("/signIn")
     }).catch((error) => {
       console.log(error)
     })

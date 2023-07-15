@@ -48,7 +48,7 @@ function Header() {
                 : "text-[#353535]"
             } `}
           >
-            SIGN IN
+            LOGIN
           </li>
         </Link>
 

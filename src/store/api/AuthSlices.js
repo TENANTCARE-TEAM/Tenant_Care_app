@@ -66,6 +66,7 @@ export const authSlice = createApi({
             const result = await queryFulfilled;
             console.log(result);
             setToken(result.data.token)
+          console.log(result.data.token)
           } catch (error) {
               console.log(error);
           }
