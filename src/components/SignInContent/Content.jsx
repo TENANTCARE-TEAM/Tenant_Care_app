@@ -42,7 +42,7 @@ function Content() {
        <BuContent/>
 
         <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2">
-         <h2 className="text-center font-medium text-2xl text-[#00befe]">Login Personal</h2>
+         <h2 className="text-center font-medium text-2xl text-[#00befe]">Sign in Personal</h2>
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}

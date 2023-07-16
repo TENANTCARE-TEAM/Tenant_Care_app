@@ -33,7 +33,6 @@ export const authSlice = createApi({
         onQueryStarted: async (arg, {queryFulfilled}) => {
             try {
               const result = await queryFulfilled;
-              console.log(result);
               setToken(result.data.token)
             } catch (error) {
                 console.log(error);
@@ -64,9 +63,7 @@ export const authSlice = createApi({
       onQueryStarted: async (arg, {queryFulfilled}) => {
           try {
             const result = await queryFulfilled;
-            console.log(result);
             setToken(result.data.token)
-          console.log(result.data.token)
           } catch (error) {
               console.log(error);
           }

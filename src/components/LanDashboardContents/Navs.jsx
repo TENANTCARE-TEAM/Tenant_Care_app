@@ -10,28 +10,28 @@ import Cookies from 'js-cookie'
 function Navs() {
 
 
-const navigate = useNavigate()
-const [userInfo, setUserInfo] = useState(false)
+  const navigate = useNavigate();
+  const [userInfo, setUserInfo] = useState(false);
 
-const token = Cookies.get('token')
-console.log(token);
-useEffect(() => {
-  if(token) {
-    setUserInfo(token)
-  }
-}, [userInfo])
+  const token = Cookies.get("token");
 
-const handleLogout = () => {
-   Cookies.remove('token')
-    setUserInfo(true)
-     navigate('/signIn')
-}
+  useEffect(() => {
+    if (token) {
+      setUserInfo(token);
+    }
+  }, [userInfo]);
+
+  const handleLogout = () => {
+    Cookies.remove("token");
+    setUserInfo(true);
+    navigate("/signIn");
+  };
 
   return (
     <div className='fixed top-0 right-0 w-[100%] bg-white h-[70px] shadow-lg '>
         <div className="h-[70px] flex items-center text-center justify-around ">
           <div>
-          <h1 className="md:hidden flex text-xl font-bold text-slate-900 cursor-pointer">
+          <h1 className="md:hidden flex mr-40 md:mr-0 text-xl font-bold text-slate-900 cursor-pointer">
             TENANT<span className="text-[#00befe]">CARE</span>
           </h1>
           </div>
