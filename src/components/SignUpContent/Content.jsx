@@ -5,10 +5,15 @@ import SignUp from "../../assets/images/SignUp.png";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignUpPeMutation } from "../../store/api/AuthSlices";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
+import {HiEye, HiEyeOff} from 'react-icons/hi'
 
 function Content() {
   const navigate = useNavigate()
 
+  const [change, setChange] = useState(true)
   const [signUpPe, {error = {}}] = useSignUpPeMutation();
 
   const initialValues = {
@@ -21,7 +26,7 @@ function Content() {
   const validationSchema = Yup.object({
     first_name: Yup.string().required("First Name is required"),
     last_name: Yup.string().required("Last Name is required"),
-    password: Yup.string().required("Password is required"),
+    password: Yup.string().required("Password is required").min(8),
     email: Yup.string().required("email is required"),
   });
 
@@ -36,18 +41,22 @@ function Content() {
     }).catch((error) => {
       console.log(error)
     })
-  }
 
-  console.log("Error Sign Up Personal", error)
+    if(error.status === 400) {
+      toast.error("The email already exists")
+    }
+
+  }
 
   return (
     <div className="md:px-[9%]">
-      <div className="flex items-center  justify-around max-[768px]:flex-col text-center mb-[2%] mt-[2%] p-4">
+      <ToastContainer/>
+      <div className="flex items-center justify-around max-[768px]:flex-col text-center mb-[2%] mt-[2%] p-4">
         <div className="max-[768px]:hidden w-[490px] h-[480px] items-center left-4 mb-5">
           <img src={SignUp} alt="SignUp image" />
         </div>
 
-        <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg shadow-xl mt-5">
+        <div className="md:w-[500px] w-[90%] border-2 items-center bg-white md:p-11 p-6 rounded-lg shadow-xl mt-5">
           <h2 className="text-center font-medium text-2xl text-[#00befe]">Sign Up</h2>
           <Formik
             initialValues={initialValues}
@@ -99,9 +108,9 @@ function Content() {
                 />
               </div>
 
-              <div>
+              <div className="relative">
                 <Field
-                  type="password"
+                  type={`${change ? 'password' : 'text'}`}
                   id="password"
                   name="password"
                   placeholder="password"
@@ -112,6 +121,9 @@ function Content() {
                   component="div"
                   className="text-left text-red-400"
                 />
+                <div onClick={() => setChange(!change)} className="cursor-pointer absolute top-10 right-4 text-[#555]">
+                  {change ? <HiEye/> : <HiEyeOff/>}
+                </div>
               </div>
 
               <button

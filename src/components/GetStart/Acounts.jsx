@@ -21,7 +21,7 @@ const Account = () => {
                     All in starter
                   </li>
                   <li className="flex items-center gap-1">
-                     <AiOutlineCheckCircle className="text-[#40725]"/>
+                     <AiOutlineCheckCircle className="text-[#409725]"/>
                     24 hours support
                   </li>
                   <li className="flex items-center gap-1">

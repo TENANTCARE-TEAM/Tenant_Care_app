@@ -3,9 +3,14 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignInBuMutation } from "../../store/api/AuthSlices";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useState } from "react";
+import { HiEye, HiEyeOff } from "react-icons/hi";
 
 function BuContent() {
   const navigate = useNavigate()
+  const [change, setChange] = useState(true)
 
   const [signInBu, {error = {}}] = useSignInBuMutation()
 
@@ -28,15 +33,18 @@ function BuContent() {
     }).catch((err) => {
       console.log(err)
     })
-  }
 
-  console.log("error sign in Busniss", error)
+    if(error.status === 401) {
+      toast.error("Invalid email or passoword")
+    }
+  }
 
   return (
     <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2">
       <h2 className="text-center font-medium text-2xl text-[#00befe]">
         Sign in Business
       </h2>
+      <ToastContainer/>
       <Formik 
       initialValues={initialValues} 
       validationSchema={validationSchema}
@@ -58,9 +66,9 @@ function BuContent() {
             />
           </div>
 
-          <div>
+          <div className="relative">
             <Field
-              type="password"
+              type={`${change ? 'password' : 'text'}`}
               id="password"
               name="password"
               placeholder="Password"
@@ -71,6 +79,9 @@ function BuContent() {
               component="div"
               className="text-left text-red-400"
             />
+            <div onClick={() => setChange(!change)} className="cursor-pointer absolute top-10 right-4 text-[#555]">
+                {change ? <HiEye/> : <HiEyeOff/>}
+            </div>
           </div>
 
           <button

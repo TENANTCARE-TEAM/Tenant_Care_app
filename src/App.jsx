@@ -3,8 +3,6 @@ import { Routes, Route, } from 'react-router-dom'
 import { About, GetStarted, Home, SignIn, SignUp, Dashboard, Dhashboard, Properties, Tenants, Requests, AddProperty, MyProperties, ViewProperty, SignUpB } from './pages'
 import PriveRoute from './PrivateRoute'
 
-
-
 function App() {
   return (
     <>
