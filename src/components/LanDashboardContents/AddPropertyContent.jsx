@@ -1,24 +1,50 @@
-import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
+import {useAddItemMutation} from '../../store/api/ItemsSlice'
+import { useNavigate } from 'react-router-dom/dist'
+
 
 function AddPropertyContent() {
   
+const navigate = useNavigate()
+
+const [addItem] = useAddItemMutation()
+
   const initialValues = {
-    name: '',
+    title: '',
+    address: '',
     description: '',
-    price: '',
-    bedroom: '',
+    rent_fee: '',
+    availability: '',
     image: '',
   };
 
   const validationSchema = Yup.object({
-    name: Yup.string().required('Name is required'),
+    title: Yup.string().required('Name is required'),
+    address: Yup.string().required('Address is required'),
     description: Yup.string().required('Description is required'),
-    price: Yup.string().required('Price is required'),
-    bedroom: Yup.string().required('Bed room is required'),
+    rent_fee: Yup.string().required('Price is required'),
+    availability: Yup.string().required('Bed room is required'),
     image: Yup.string().required('image is required'),
   });
+
+  const handleSubmit = (values, {resetForm}) => {
+   
+    addItem({
+      title: values.title,
+      description: values.description,
+      address: values.address,
+      rent_fee: values.rent_fee,
+      availability: values.availability,
+      image: values.image,
+    }).unwrap().then(() => {
+      // navigate('/landlord/Properties')
+    })
+
+    console.log(values);
+    resetForm()
+  }
+  
    
   return (
     <div className='mt-5 bg-white p-8 w-full flex flex-col shadow rounded '>
@@ -33,6 +59,7 @@ function AddPropertyContent() {
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
+          onSubmit={handleSubmit}
         >
           <Form>
             <div className="mb-5">
@@ -40,18 +67,21 @@ function AddPropertyContent() {
             <div className="mb-5">
               <Field
                 type="text"
-                id="name"
-                name="name"
+                id="title"
+                name="title"
                 placeholder="Name"
                 className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 
                  outline-none shadow text-[20px]"
               />
               <ErrorMessage
-                name="name"
+                name="title"
                 component="div"
                 className="text-red-400"
               />
             </div>
+
+           
+
             <div className="mb-5">
               <Field
                 as="textarea"
@@ -67,17 +97,18 @@ function AddPropertyContent() {
                 className="text-red-400"
               />
             </div>
+
             <div className="mb-5">
               <Field
-                type="number"
-                id="price"
-                name="price"
-                placeholder="Price"
-                className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow
-                outline-none text-[20px]"
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Address"
+                className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 
+                 outline-none shadow text-[20px]"
               />
               <ErrorMessage
-                name="price"
+                name="address"
                 component="div"
                 className="text-red-400"
               />
@@ -86,13 +117,29 @@ function AddPropertyContent() {
             <div className="mb-5">
               <Field
                 type="number"
-                id="bedrrom"
-                name="bedroom"
+                id="rent_fee"
+                name="rent_fee"
+                placeholder="Price"
+                className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow
+                outline-none text-[20px]"
+              />
+              <ErrorMessage
+                name="rent_fee"
+                component="div"
+                className="text-red-400"
+              />
+            </div>
+
+            <div className="mb-5">
+              <Field
+                type="number"
+                id="availability"
+                name="availability"
                 placeholder="Bed room"
                 className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow  outline-none text-[20px]"
               />
               <ErrorMessage
-                name="bedroom"
+                name="availability"
                 component="div"
                 className="text-red-400"
               />
