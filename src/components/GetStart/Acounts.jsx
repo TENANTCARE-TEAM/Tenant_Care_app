@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Account = () => {
   return (
-    <div className="max-[768px]:p-12 max-[400px]:p-8 p-20 text-center">
+    <div className="p-12 max-[400px]:p-8 md:p-20 text-center">
       <div>
         <h1 className="text-3xl font-bold text-[#00befe] cursor-pointer">
           Create <span className="text-slate-900">Account</span>
@@ -12,7 +12,7 @@ const Account = () => {
       <div class="flex flex-wrap justify-center gap-7 mt-10 ">
 
         <div class="max-[400px]:w-full w-[278px]  overflow-hidden shadow-lg rounded-3xl border-2  border-[#00befe] p-5">
-           <div class="max-[768px]:px-2 px-6 py-2">
+           <div class="px-2 md:px-6 py-2">
              <h1 className="text-3xl font-bold text-[#00befe]">Personal</h1>
               <span className="text-slate-900">Account</span>
                 <ul className="mt-3">
@@ -21,7 +21,7 @@ const Account = () => {
                     All in starter
                   </li>
                   <li className="flex items-center gap-1">
-                     <AiOutlineCheckCircle className="text-[#409725]"/>
+                     <AiOutlineCheckCircle className="text-[#40725]"/>
                     24 hours support
                   </li>
                   <li className="flex items-center gap-1">
@@ -55,7 +55,7 @@ const Account = () => {
           </div>
 
           <div className="max-[400px]:w-full w-[278px]  overflow-hidden shadow-lg rounded-3xl border-2  border-[#00befe] p-5">
-            <div class="max-[768px]:px-2 px-6 py-2">
+            <div class="px-2 md:px-6 py-2">
               <h1 className="text-3xl font-bold text-[#00befe]">Business</h1>
               <span className="text-slate-900">Account</span>
                 <ul className="mt-3">

@@ -11,13 +11,13 @@ function TenantContent() {
       </div>
       {/* content */}
       <div className="mt-4 flex flex-wrap gap-5 p-4 pb-5">
-        <div className="flex max-[768px]:flex-col md:gap-6  overflow-hidden w-[480px] h-auto max-[768px]:w-full bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
+        <div className="flex flex-col md:flex-row md:gap-6  overflow-hidden md:w-[480px] h-auto w-full bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
           <img
             src={house}
             alt=""
-            className="max-[768px]:w-full max-[768px]:h-[160px] w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center"
+            className="w-full h-[160px] md:w-[160px] md:h-full rounded-xl bg-auto bg-no-repeat bg-center"
           />
-          <div className="flex flex-col max-[768px]:gap-4 gap-7 w-full md:h-full">
+          <div className="flex flex-col gap-4 md:gap-7 w-full md:h-full">
             <div className="flex flex-col gap-3">
               <h3 className="font-bold text-2xl">
                 103/143 West Street, <br />
@@ -41,13 +41,13 @@ function TenantContent() {
             </div>
           </div>
         </div>
-        <div className="flex max-[768px]:flex-col gap-6  overflow-hidden w-[480px] h-auto max-[768px]:w-full bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
+        <div className="flex flex-col md:flex-row gap-6  overflow-hidden md:w-[480px] h-auto w-full bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
           <img
             src={house}
             alt=""
-            className="max-[768px]:w-full max-[768px]:h-[200px] w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center"
+            className="w-full h-[160px] md:w-[160px] md:h-full rounded-xl bg-auto bg-no-repeat bg-center"
           />
-          <div className="flex flex-col max-[768px]:gap-4 gap-7 w-full md:h-full">
+          <div className="flex flex-col gap-4 md:gap-7 w-full md:h-full">
             <div className="flex flex-col gap-3">
               <h3 className="font-bold text-2xl">
                 103/143 West Street, <br />
@@ -71,13 +71,13 @@ function TenantContent() {
             </div>
           </div>
         </div>
-        <div className="flex max-[768px]:flex-col gap-6  overflow-hidden w-[480px] h-auto max-[768px]:w-full bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
+        <div className="flex flex-col md:flex-row gap-6  overflow-hidden md:w-[480px] h-auto w-full bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
           <img
             src={house}
             alt=""
-            className="max-[768px]:w-full max-[768px]:h-[200px] w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center"
+            className="w-full h-[160px] md:w-[160px] md:h-full rounded-xl bg-auto bg-no-repeat bg-center"
           />
-          <div className="flex flex-col max-[768px]:gap-4 gap-7 w-full md:h-full">
+          <div className="flex flex-col gap-4 md:gap-7 w-full md:h-full">
             <div className="flex flex-col gap-3">
               <h3 className="font-bold text-2xl">
                 103/143 West Street, <br />

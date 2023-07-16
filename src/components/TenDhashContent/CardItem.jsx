@@ -7,7 +7,7 @@ import {BsFolderCheck, BsFolderSymlink} from 'react-icons/bs'
 
 function CardItem() {
   return (
-    <div className='py-8 md:py-6 flex max-[768px]:flex-col items-center gap-6'>
+    <div className='py-8 md:py-6 flex flex-col md:flex-row items-center gap-6'>
         <div className='w-full md:w-[380px] h-[160px] p-6 bg-[#FF6746] rounded-lg flex items-center justify-between shadow-md'>
             <div>
                 <div className='flex gap-2 items-center'>
