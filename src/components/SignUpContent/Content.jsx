@@ -40,11 +40,10 @@ function Content() {
       navigate("/signIn")
     }).catch((error) => {
       console.log(error)
+      if(error.status === 400) {
+        toast.error("The email already exists")
+      }
     })
-
-    if(error.status === 400) {
-      toast.error("The email already exists")
-    }
 
   }
 

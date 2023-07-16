@@ -31,12 +31,13 @@ function BuContent() {
     }).unwrap().then(() => {
       navigate("/landlord/Dashboard")
     }).catch((err) => {
-      console.log(err)
-    })
-
-    if(error.status === 401) {
+      console.log(err) 
+      if(error.status === 401) {
       toast.error("Invalid email or passoword")
     }
+    })
+
+   
   }
 
   return (

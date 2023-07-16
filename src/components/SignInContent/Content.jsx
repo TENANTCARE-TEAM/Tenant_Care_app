@@ -33,11 +33,12 @@ function Content() {
       navigate("/tenant/dashboard")
     }).catch((err) => {
       console.log(err)
-    })
-
-    if(error.status === 401) {
+      if(error.status === 401) {
       toast.error("Invalid email or passoword")
     }
+    })
+
+    
   }
 
   return (
