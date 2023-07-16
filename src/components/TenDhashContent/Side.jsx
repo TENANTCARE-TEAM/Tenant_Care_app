@@ -5,12 +5,32 @@ import {RxDashboard} from 'react-icons/rx'
 import { Link, useLocation } from 'react-router-dom'
 import { MdOutlineHomeWork} from 'react-icons/md'
 import { FiLogOut } from 'react-icons/fi'
+import { useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
+import { useEffect } from 'react'
 
 
 function Side() {
 
   const location = useLocation()
   const [menu , setMenu] = useState(true);
+
+  const navigate = useNavigate();
+  const [userInfo, setUserInfo] = useState(false);
+
+  const token = Cookies.get("token");
+
+  useEffect(() => {
+    if (token) {
+      setUserInfo(token);
+    }
+  }, [userInfo]);
+
+  const handleLogout = () => {
+    Cookies.remove("token");
+    setUserInfo(true);
+    navigate("/signIn");
+  };
 
   return (
     <>
@@ -34,12 +54,13 @@ function Side() {
             <MdOutlineHomeWork className="text-2xl "/>
             <span className='text-sm  font-medium'>Properties</span>
         </Link>
-        <Link to="/" className={`md:hidden w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg
+        <div onClick={handleLogout}
+        className={`md:hidden w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg
          ${location.pathname === '/' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]': 'text-[#acacac]'}
          `}>
             <FiLogOut className="text-2xl "/>
             <span className='text-sm  font-medium'>Logout</span>
-        </Link>
+        </div>
      </ul>
     </div>
     </>

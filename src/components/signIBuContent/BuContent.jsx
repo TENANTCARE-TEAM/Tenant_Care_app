@@ -7,7 +7,7 @@ import { useSignInBuMutation } from "../../store/api/AuthSlices";
 function BuContent() {
   const navigate = useNavigate()
 
-  const [signInBu, {error: data = {}}] = useSignInBuMutation()
+  const [signInBu, {error = {}}] = useSignInBuMutation()
 
   const initialValues = {
     email: "",
@@ -30,12 +30,12 @@ function BuContent() {
     })
   }
 
-  console.log("error sign in Busniss", data.data)
+  console.log("error sign in Busniss", error)
 
   return (
     <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2">
       <h2 className="text-center font-medium text-2xl text-[#00befe]">
-        Login Business
+        Sign in Business
       </h2>
       <Formik 
       initialValues={initialValues} 

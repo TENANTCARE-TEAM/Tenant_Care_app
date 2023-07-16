@@ -5,7 +5,7 @@ import { FaUsers, FaUser } from 'react-icons/fa'
 function Cards() {
     return (
         <div className='py-8 md:py-6 flex flex-col md:flex-row items-center gap-6'>
-            <div className='md:w-full w-[380px] h-[160px] p-6 bg-[#FF6746] rounded-lg flex items-center justify-between shadow-md'>
+            <div className='w-full md:w-[380px] h-[160px] p-6 bg-[#FF6746] rounded-lg flex items-center justify-between shadow-md'>
                 <div>
                     <div className='flex gap-2 items-center'>
                       <MdOutlineHomeWork className='text-7xl text-white'/>
