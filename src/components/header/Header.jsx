@@ -48,7 +48,7 @@ function Header() {
                 : "text-[#353535]"
             } `}
           >
-            LOGIN
+            SING IN
           </li>
         </Link>
 
