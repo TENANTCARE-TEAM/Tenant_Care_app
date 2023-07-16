@@ -3,7 +3,7 @@ import BASE_URL from './BASE_URL'
 import Cookies from 'js-cookie'
 
 const setToken = (token) => {
-  Cookies.set('token', token , {expires: 3})  
+     Cookies.set('token', token , {expires: 1})  
 } 
 
 export const authSlice = createApi({
@@ -30,7 +30,7 @@ export const authSlice = createApi({
         body: user,
         }),
      
-        onQueryStarted: async ({queryFulfilled}) => {
+        onQueryStarted: async (arg, {queryFulfilled}) => {
             try {
               const result = await queryFulfilled;
               console.log(result);
@@ -61,7 +61,7 @@ export const authSlice = createApi({
       body: user,
       }),
    
-      onQueryStarted: async ({queryFulfilled}) => {
+      onQueryStarted: async (arg, {queryFulfilled}) => {
           try {
             const result = await queryFulfilled;
             console.log(result);

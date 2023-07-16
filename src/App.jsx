@@ -14,6 +14,7 @@ function App() {
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/GetStarted" element={<GetStarted />} />
         <Route path="/signUp" element={<SignUp />} />
+        <Route path='/busines/signUp' element={<SignUpB/>}/>
 
         <Route to="/tenant/dashboard" element={<PriveRoute/>}>
           <Route path="/tenant/dashboard" element={<Dhashboard />} />
@@ -47,9 +48,8 @@ function App() {
           <Route path="/landlord/Requests" element={<Requests />} />
         </Route>
 
-        <Route to="/busines/signUp" element={<PriveRoute/>}>
-          <Route path='/busines/signUp' element={<SignUpB/>}/>
-        </Route>
+        
+        
 
       </Routes>
     </>
