@@ -5,6 +5,9 @@ import Business from "../../assets/images/businesSignUp.png";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignUpBuMutation } from "../../store/api/AuthSlices";
+import { ToastContainer , toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function Content() {
   const navigate = useNavigate()
@@ -21,7 +24,7 @@ function Content() {
   const validationSchema = Yup.object({
     first_name: Yup.string().required("First Name is required"),
     last_name: Yup.string().required("Last Name is required"),
-    password: Yup.string().required("password is required"),
+    password: Yup.string().required("password is required").min(8),
     email: Yup.string().required("Email is required"),
   });
 
@@ -36,9 +39,11 @@ function Content() {
     }).catch((error) => {
       console.log(error)
     })
-  }
 
-  console.log("Error Sign Up Busniss", error)
+    if(error.status === 400) {
+      toast.error("The email already exists")
+    }
+  }
 
   return (
     <div className="md:px-[9%]">
@@ -46,7 +51,7 @@ function Content() {
         <div className="max-[768px]:hidden w-[490px] h-[480px] items-center left-4 mb-5">
           <img src={Business} alt="SignUp image" />
         </div>
-
+        <ToastContainer/>
         <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg shadow-xl mt-5">
           <h2 className="text-center font-medium text-2xl text-[#00befe]">
             Sign Up

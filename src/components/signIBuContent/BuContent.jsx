@@ -3,6 +3,8 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignInBuMutation } from "../../store/api/AuthSlices";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function BuContent() {
   const navigate = useNavigate()
@@ -28,15 +30,18 @@ function BuContent() {
     }).catch((err) => {
       console.log(err)
     })
-  }
 
-  console.log("error sign in Busniss", error)
+    if(error.status === 401) {
+      toast.error("Invalid email or passoword")
+    }
+  }
 
   return (
     <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2">
       <h2 className="text-center font-medium text-2xl text-[#00befe]">
         Sign in Business
       </h2>
+      <ToastContainer/>
       <Formik 
       initialValues={initialValues} 
       validationSchema={validationSchema}

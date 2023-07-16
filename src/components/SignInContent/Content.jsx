@@ -2,9 +2,10 @@ import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
-
 import BuContent from "../signIBuContent/BuContent";
 import { useSignInPeMutation } from "../../store/api/AuthSlices";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Content() {
   const navigate = useNavigate()
@@ -30,15 +31,17 @@ function Content() {
     }).catch((err) => {
       console.log(err)
     })
-  }
 
-  console.log("Error Sign in Personal", error)
+    if(error.status === 401) {
+      toast.error("Invalid email or passoword")
+    }
+  }
 
   return (
     <div className="md:px-[9%]">
       <h2 className="text-center font-medium text-3xl text-[#00befe] pt-[4%]">Login With...</h2>
       <div className=" items-center flex md:flex-row flex-col md:gap-0 gap-4 justify-around text-center mb-[2%] mt-[4%] p-4">
-       
+       <ToastContainer/>
        <BuContent/>
 
         <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2">
