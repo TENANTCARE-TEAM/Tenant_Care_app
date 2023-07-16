@@ -10,7 +10,7 @@ function ViewpropertyContent() {
       </div>
       {/* content */}
 
-      <div className="flex max-[768p]:flex-col bg-white w-full md:w-4/5 md:ml-10 rounded-lg p-10 mb-12">
+      <div className="flex flex-col md:flex-row bg-white w-full md:w-4/5 md:ml-10 rounded-lg p-10 mb-12">
         <img
           src={house}
           alt="viewpropertyi-image"
@@ -31,7 +31,7 @@ function ViewpropertyContent() {
             10 Bedroom
           </span>
 
-          <div className="w-full mt-8 flex max-[768px]:flex-col gap-5">
+          <div className="w-full mt-8 flex flex-col md:flex-row gap-5">
             <button className="py-[8px] px-[20px] rounded-[10px] bg-[#62B7DA] text-xl text-white">
               Sende Request
             </button>

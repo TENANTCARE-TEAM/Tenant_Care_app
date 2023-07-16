@@ -7,7 +7,7 @@ function Middle() {
       <div className='w-full bg-[#ECF1F8] h-[200px]'>
          <h1 className='text-center pt-[60px] text-5xl text-[#00BEFE] font-bold'>About</h1>
       </div>
-      <div className="md:px-[10%] px-6 py-6 pb-8 flex max-[768px]:flex-col w-full">
+      <div className="md:px-[10%] px-6 py-6 pb-8 flex flex-col md:flex-row w-full">
       <div className="p-2 mw-full md:w-[55%] h-[430px]">
         <img src={key} className="w-full h-full" alt="" />
       </div>

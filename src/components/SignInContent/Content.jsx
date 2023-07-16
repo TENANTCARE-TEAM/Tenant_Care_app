@@ -37,7 +37,7 @@ function Content() {
   return (
     <div className="md:px-[9%]">
       <h2 className="text-center font-medium text-3xl text-[#00befe] pt-[4%]">Login With...</h2>
-      <div className=" items-center flex justify-around text-center mb-[2%] mt-[4%] p-4">
+      <div className=" items-center flex md:flex-row flex-col md:gap-0 gap-4 justify-around text-center mb-[2%] mt-[4%] p-4">
        
        <BuContent/>
 
