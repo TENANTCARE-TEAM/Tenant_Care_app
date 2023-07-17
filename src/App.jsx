@@ -24,8 +24,8 @@ function App() {
           <Route path="/tenant/Properties" element={<Properties />} />
         </Route>
 
-        <Route to="/Tenant/dashboard/ViewProperty" element={<PriveRoute/>}>
-          <Route path="/Tenant/dashboard/ViewProperty" element={<ViewProperty />} />
+        <Route to="/Tenant/dashboard/ViewProperty/:property_id" element={<PriveRoute/>}>
+          <Route path="/Tenant/dashboard/ViewProperty/:property_id" element={<ViewProperty />} />
         </Route>
 
         <Route to="/landlord/Dashboard" element={<PriveRoute/>}>
