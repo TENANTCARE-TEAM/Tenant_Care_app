@@ -23,8 +23,8 @@ const [addItem] = useAddItemMutation()
     title: Yup.string().required('Name is required'),
     address: Yup.string().required('Address is required'),
     description: Yup.string().required('Description is required'),
-    rent_fee: Yup.string().required('Price is required'),
-    availability: Yup.string().required('Bed room is required'),
+    rent_fee: Yup.number().required('Price is required'),
+    availability: Yup.number().required('availability').max(1),
     image: Yup.string().required('image is required'),
   });
 
@@ -38,7 +38,7 @@ const [addItem] = useAddItemMutation()
       availability: values.availability,
       image: values.image,
     }).unwrap().then(() => {
-      // navigate('/landlord/Properties')
+      navigate('/landlord/Properties')
     })
 
     console.log(values);
@@ -138,6 +138,11 @@ const [addItem] = useAddItemMutation()
                 placeholder="Bed room"
                 className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow  outline-none text-[20px]"
               />
+             {/* <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-[#00befe] block w-full p-2.5 dark:text-white focus:ring-blue-500 dark:focus:border-blue-500">
+                <option selected>Select obtions</option>
+                <option value="0">Not Availability</option>
+                <option value="1">Availabiliy</option>
+              </select> */}
               <ErrorMessage
                 name="availability"
                 component="div"
