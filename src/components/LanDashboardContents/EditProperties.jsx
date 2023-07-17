@@ -7,33 +7,35 @@ import { useGetItemQuery, useEditItemMutation } from '../../store/api/ItemsSlice
 
 
 function EditProperties() {
+
+    const [editItem, {error = {}}] = useEditItemMutation()
+    const { data: Items = [] } = useGetItemQuery()
+
+    const params = useParams()
     const navigate = useNavigate()
-    const { data: properties = [] } = useGetItemQuery()
-    const [editProperties] = useEditItemMutation()
-    const prams = useParams()
+
     const [initialValues, setInitialValues] = useState({
-        title: '',
-        address: '',
-        description: '',
-        rent_fee: '',
-        availability: '',
-        image: '',
+        title: "",
+        address: "" ,
+        description: "",
+        rent_fee: "",
+        availability: "",
+        image: "",
     })
 
     useEffect(() => {
-        const proper = properties.find((pro) => pro.id === Number(prams.id));
-        if (proper) {
+        const item = Items.find((item) => item.id === Number(params.property_id));
+        if (item) {
             setInitialValues({
-                title: proper.title,
-                address: proper.address,
-                description: proper.description,
-                rent_fee: proper.rent_fee,
-                availability: proper.availability,
-                image: proper.image,
-            });
+                title: item.title,
+                address: item.address,
+                description: item.description,
+                rent_fee: item.rent_fee,
+                availability: item.availability,
+                image: item.image,
+            })
         }
-    }, [properties, prams.id]);
-
+    }, [Items, params.property_id]);
 
     const validationSchema = Yup.object({
         title: Yup.string().required('Name is required'),
@@ -45,13 +47,16 @@ function EditProperties() {
     });
 
     const handleSubmit = (values) => {
-        editProperties({
-           id: Number(prams.id),
+        editItem({
+           id: Number(params.property_id),
            update: values
+        }).then(() => {
+            navigate('/landlord/Properties')
         })
 
     }
-    // id, update
+
+    console.log("Error is edit", error)
 
     return (
         <div className='mt-5 bg-white p-8 w-full flex flex-col shadow rounded '>
@@ -168,7 +173,7 @@ function EditProperties() {
                             />
                         </div>
                         <button type="submit" className="bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
-                            Edit Property
+                            Update Property
                         </button>
                     </Form>
                 </Formik>

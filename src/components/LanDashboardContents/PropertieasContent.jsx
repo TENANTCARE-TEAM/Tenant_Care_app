@@ -8,15 +8,13 @@ import { Link } from 'react-router-dom'
 function PropertieasContent() {
   
 
-   const {data: items = []} = useGetItemQuery()
-   console.log(items)
-   const [delateItem] = useDelateItemMutation()
-
-  const handleDelate = (id) =>{
-    delateItem(id)
-  }
   const {data: items = [], isLoading} = useGetItemQuery()
+ 
+  const [delateItem] = useDelateItemMutation()
 
+  const handleDelate = (property_id) =>{
+    delateItem(property_id)
+  }
 
   return (
     <div className='mt-5 bg-white p-6 w-full flex flex-col shadow rounded'>
@@ -42,7 +40,7 @@ function PropertieasContent() {
                 <div className='flex justify-between'>
                     <h3 className='font-bold text-2xl'>{item.address}, <br/>{item.title}</h3>
                     <FaTrash 
-                     onClick={handleDelate}
+                     onClick={() => handleDelate(item.id)}
                     className='text-[#FF6746] text-xl cursor-pointer'/>
                 </div>
                 <div>
@@ -50,7 +48,7 @@ function PropertieasContent() {
                 </div>
                 <div className='mt-3 flex items-center justify-between'>
                     <span className='text-sm text-[#acacac]'>Landlord Name</span>
-                 <Link to='/edit/properties'>  
+                 <Link to={`/landlord/Properties/Edit/${item.id}`}>  
                   <FaEdit className='text-xl text-[#00befe] cursor-pointer'/>
                   </Link>
                 </div>

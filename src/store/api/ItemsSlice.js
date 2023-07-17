@@ -22,14 +22,15 @@ export const itemsSlice = createApi({
         }
 
     }),
-    tagTypes: 'item',
+    tagTypes: ['item'],
 
     endpoints: builder => ({
         getItem: builder.query({
             query: () => ({
                 url: '/api/properties',
                 method: 'GET'
-            })
+            }),
+            providesTags: ['item']
         }),
 
         addItem : builder.mutation({
@@ -39,8 +40,7 @@ export const itemsSlice = createApi({
               body: newItem
               
             }),
-            invalidatesTags: ['item'],
-            
+            invalidatesTags: ['item']
         }),
 
         editItem : builder.mutation({
@@ -49,21 +49,17 @@ export const itemsSlice = createApi({
               method: 'PUT',
               body: update
               
-            })
-            ,
-            invalidatesTags: ['item'],
+            }),
+            invalidatesTags: ['item']
         }),
 
         
         delateItem : builder.mutation({
-            query: (id) => ({
-              url: `/api/properties/${id}`,
+            query: (property_id) => ({
+              url: `/api/properties/${property_id}`,
               method: 'DELETE',
-            
-              
-            })
-            ,
-            invalidatesTags: ['item'],
+            }),
+            invalidatesTags: ['item']
         }),
 
 
