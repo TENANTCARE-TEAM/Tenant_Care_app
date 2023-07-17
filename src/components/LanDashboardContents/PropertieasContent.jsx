@@ -2,10 +2,21 @@ import React from 'react'
 import house from '../../assets/images/house-2.jpg'
 import {FaTrash, FaEdit} from 'react-icons/fa'
 import { useGetItemQuery } from '../../store/api/ItemsSlice'
+import {useDelateItemMutation} from '../../store/api/ItemsSlice'
+import { Link } from 'react-router-dom'
 
 function PropertieasContent() {
   
+
+   const {data: items = []} = useGetItemQuery()
+   console.log(items)
+   const [delateItem] = useDelateItemMutation()
+
+  const handleDelate = (id) =>{
+    delateItem(id)
+  }
   const {data: items = [], isLoading} = useGetItemQuery()
+
 
   return (
     <div className='mt-5 bg-white p-6 w-full flex flex-col shadow rounded'>
@@ -30,14 +41,18 @@ function PropertieasContent() {
             <div className='flex flex-col gap-5 w-full h-full'>
                 <div className='flex justify-between'>
                     <h3 className='font-bold text-2xl'>{item.address}, <br/>{item.title}</h3>
-                    <FaTrash className='text-[#FF6746] text-xl cursor-pointer'/>
+                    <FaTrash 
+                     onClick={handleDelate}
+                    className='text-[#FF6746] text-xl cursor-pointer'/>
                 </div>
                 <div>
                   <span className='text-sm text-[#acacac]'>{item.availability} Availability </span>
                 </div>
                 <div className='mt-3 flex items-center justify-between'>
                     <span className='text-sm text-[#acacac]'>Landlord Name</span>
-                    <FaEdit className='text-xl text-[#00befe] cursor-pointer'/>
+                 <Link to='/edit/properties'>  
+                  <FaEdit className='text-xl text-[#00befe] cursor-pointer'/>
+                  </Link>
                 </div>
             </div>
             </div> 
