@@ -24,7 +24,7 @@ const [addItem] = useAddItemMutation()
     address: Yup.string().required('Address is required'),
     description: Yup.string().required('Description is required'),
     rent_fee: Yup.number().required('Price is required'),
-    availability: Yup.number().required('availability').max(1),
+    availability: Yup.number().required('availability is required').max(1),
     image: Yup.string().required('image is required'),
   });
 
@@ -135,7 +135,7 @@ const [addItem] = useAddItemMutation()
                 type="number"
                 id="availability"
                 name="availability"
-                placeholder="Bed room"
+                placeholder="Type 1 or 0 only"
                 className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow  outline-none text-[20px]"
               />
              {/* <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-[#00befe] block w-full p-2.5 dark:text-white focus:ring-blue-500 dark:focus:border-blue-500">
