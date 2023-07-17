@@ -26,7 +26,8 @@ function PropertiesContent() {
           ) : (
             <>
               {items.map(item => (
-              <div key={item.id} className='flex flex-col md:flex-row gap-6  overflow-hidden w-[480px] md:h-[200px] h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all'>
+              <Link to={`/Tenant/dashboard/ViewProperty/${item.id}`}>
+                 <div key={item.id} className='flex flex-col md:flex-row gap-6  overflow-hidden w-[480px] md:h-[200px] h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all'>
                 <img src={item.image} alt="" className='w-full h-[200px] md:w-[160px] md:h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
                 <div className='flex flex-col gap-4 md:gap-7 w-full h-full'>
                     <div className='flex flex-col gap-3'>
@@ -39,6 +40,7 @@ function PropertiesContent() {
                     </div>
                     </div>
               </div>
+              </Link>
             ))}
             </>
           )}
