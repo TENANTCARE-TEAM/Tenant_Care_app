@@ -23,8 +23,8 @@ const [addItem] = useAddItemMutation()
     title: Yup.string().required('Name is required'),
     address: Yup.string().required('Address is required'),
     description: Yup.string().required('Description is required'),
-    rent_fee: Yup.string().required('Price is required'),
-    availability: Yup.string().required('Bed room is required'),
+    rent_fee: Yup.number().required('Price is required'),
+    availability: Yup.number().required('availability is required').max(1),
     image: Yup.string().required('image is required'),
   });
 
@@ -38,7 +38,7 @@ const [addItem] = useAddItemMutation()
       availability: values.availability,
       image: values.image,
     }).unwrap().then(() => {
-      // navigate('/landlord/Properties')
+      navigate('/landlord/Properties')
     })
 
     console.log(values);
@@ -135,7 +135,7 @@ const [addItem] = useAddItemMutation()
                 type="number"
                 id="availability"
                 name="availability"
-                placeholder="Bed room"
+                placeholder="Type 1 or 0 only"
                 className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow  outline-none text-[20px]"
               />
               <ErrorMessage
