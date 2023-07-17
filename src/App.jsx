@@ -2,6 +2,8 @@
 import { Routes, Route, } from 'react-router-dom'
 import { About, GetStarted, Home, SignIn, SignUp, Dashboard, Dhashboard, Properties, Tenants, Requests, AddProperty, MyProperties, ViewProperty, SignUpB } from './pages'
 import PriveRoute from './PrivateRoute'
+import EditProperties from './components/LanDashboardContents/EditProperties'
+
 
 function App() {
   return (
@@ -45,7 +47,9 @@ function App() {
         <Route to="/landlord/Requests" element={<PriveRoute/>}>
           <Route path="/landlord/Requests" element={<Requests />} />
         </Route>
-
+          <Route path="/edit/properties" element={<EditProperties />} />
+           
+          
         
         
 
