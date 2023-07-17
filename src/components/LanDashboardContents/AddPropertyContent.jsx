@@ -138,11 +138,6 @@ const [addItem] = useAddItemMutation()
                 placeholder="Type 1 or 0 only"
                 className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow  outline-none text-[20px]"
               />
-             {/* <select class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-[#00befe] block w-full p-2.5 dark:text-white focus:ring-blue-500 dark:focus:border-blue-500">
-                <option selected>Select obtions</option>
-                <option value="0">Not Availability</option>
-                <option value="1">Availabiliy</option>
-              </select> */}
               <ErrorMessage
                 name="availability"
                 component="div"
