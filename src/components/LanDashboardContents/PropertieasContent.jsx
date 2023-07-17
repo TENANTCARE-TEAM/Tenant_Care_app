@@ -1,9 +1,10 @@
 import React from 'react'
-import house from '../../assets/images/house-2.jpg'
+// import Loading from '../../assets/images/spinner.jpg'
 import {FaTrash, FaEdit} from 'react-icons/fa'
 import { useGetItemQuery } from '../../store/api/ItemsSlice'
 import {useDelateItemMutation} from '../../store/api/ItemsSlice'
 import { Link } from 'react-router-dom'
+
 
 function PropertieasContent() {
   
