@@ -31,11 +31,11 @@ function PropertiesContent() {
                 <img src={item.image} alt="" className='w-full h-[200px] md:w-[160px] md:h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
                 <div className='flex flex-col gap-4 md:gap-7 w-full '>
                     <div className='flex flex-col gap-3'>
-                        <h3 className='font-bold text-2xl'> {item.address}, <br/>{item.title}</h3>
-                        <span className='text-sm text-[#acacac]'>{item.availability} availability</span>
+                        <h3 className='font-bold text-2xl'> {item.address}</h3>
+                        <span className='text-sm text-[#00befe]'>{item.title}</span>
                     </div>
                     <div className='flex items-center justify-between'>
-                    <span className='text-sm text-[#222] '>Aparment name: <b className="text-[#555]">{item.title}</b></span>
+                    <span className='text-sm text-[#c3c2c2] '>{item.description}</span>
                         <button className='py-2 px-3 bg-slate-500 text-white rounded-lg'>{item.rent_fee} $</button>
                     </div>
                 </div>

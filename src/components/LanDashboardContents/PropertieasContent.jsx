@@ -42,16 +42,16 @@ function PropertieasContent() {
             <img src={item.image} alt="" className='w-full md:w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
             <div className='flex flex-col gap-5 w-full h-full'>
                 <div className='flex justify-between'>
-                    <h3 className='font-bold text-2xl'>{item.address}, <br/>{item.title}</h3>
+                    <h3 className='text-2xl'>{item.address}</h3>
                     <FaTrash 
                      onClick={() => handleDelate(item.id)}
                     className='text-[#FF6746] text-xl cursor-pointer'/>
                 </div>
                 <div>
-                  <span className='text-sm text-[#acacac]'>{item.availability} Availability </span>
+                  <span className='text-sm font-bold text-[#00befe]'>{item.title}</span>
                 </div>
                 <div className='mt-3 flex items-center justify-between'>
-                    <span className='text-sm text-[#acacac]'>Landlord Name</span>
+                    <span className='text-sm text-[#acacac]'>{item.description}</span>
                  <Link to={`/landlord/Properties/Edit/${item.id}`}>  
                   <FaEdit className='text-xl text-[#00befe] cursor-pointer'/>
                   </Link>
