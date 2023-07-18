@@ -2,14 +2,25 @@ import React, { useEffect, useState } from 'react'
 import { MdDoNotDisturbOnTotalSilence, MdOutlineHomeWork} from 'react-icons/md'
 import { FaUsers, FaUser } from 'react-icons/fa'
 import { useGetItemQuery } from '../../store/api/ItemsSlice'
+import { useGetUserLandlordQuery } from '../../store/api/UsersSlice'
 
 function Cards() {
-    const [total, setTotal] = useState()
+    const [userPropertiesCount, setUserPropertiesCount] = useState(0);
     const { data: items = []} = useGetItemQuery()
+    const {data : user = []} = useGetUserLandlordQuery()
+console.log(user);
+
 
     useEffect(() => {
-        setTotal(items.length)
-    }, [setTotal, items])
+        const userIdentifier = user.id
+        const userPrperties = items.filter((item) => item.landlord_id === userIdentifier);
+       
+        const totalProperties = userPrperties.length;
+         
+        setUserPropertiesCount(totalProperties)
+
+        console.log(userPropertiesCount);
+    }, [user, items])
 
     return (
         <div className='py-8 md:py-6 flex flex-col md:flex-row items-center gap-6'>
@@ -24,7 +35,7 @@ function Cards() {
                     </div>
                     
                 </div>
-                <h1 className='text-6xl text-white font-bold pr-6'>{total}</h1>
+                <h1 className='text-6xl text-white font-bold pr-6'>{userPropertiesCount}</h1>  
             </div>
             <div className="p-6 flex items-center justify-between w-full md:w-[320px] h-[160px] rounded-lg bg-white shadow-md">
                 <div>

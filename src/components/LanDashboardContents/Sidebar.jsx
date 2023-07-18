@@ -15,7 +15,7 @@ function Sidebar() {
   const [menu , setMenu] = useState(true);
 
   const {data: user = []} = useGetUserLandlordQuery();
-  console.log(user)
+  
 
   const navigate = useNavigate();
   const [userInfo, setUserInfo] = useState(false);
