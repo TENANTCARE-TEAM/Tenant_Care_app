@@ -1,6 +1,6 @@
 
 import { Routes, Route, } from 'react-router-dom'
-import { About, GetStarted, Home, SignIn, SignUp, Dashboard, Dhashboard, Properties, Tenants, Requests, AddProperty, MyProperties, ViewProperty, SignUpB , EditProperty} from './pages'
+import { About, GetStarted, Home, SignIn, SignUp, Dashboard, Dhashboard, Properties, MyProfile, LanEditProfile,Tenants, EditProfile, Requests, AddProperty, MyProperties, ViewProperty, SignUpB , EditProperty, Profile} from './pages'
 import PriveRoute from './PrivateRoute'
 
 function App() {
@@ -20,6 +20,14 @@ function App() {
 
         <Route to="/tenant/Properties" element={<PriveRoute/>}>
           <Route path="/tenant/Properties" element={<Properties />} />
+        </Route>
+
+        <Route to="/tenant/Profile" element={<PriveRoute/>}>
+          <Route path="/tenant/Profile" element={<Profile />} />
+        </Route>
+
+        <Route to="/tenant/Profile/Edit" element={<PriveRoute/>}>
+          <Route path="/tenant/Profile/Edit" element={<EditProfile />} />
         </Route>
 
         <Route to="/Tenant/dashboard/ViewProperty/:property_id" element={<PriveRoute/>}>
@@ -44,7 +52,15 @@ function App() {
 
         <Route to="/landlord/Requests" element={<PriveRoute/>}>
           <Route path="/landlord/Requests" element={<Requests />} />
-        </Route>           
+        </Route>     
+        
+        <Route to="/landlord/Profile" element={<PriveRoute/>}>
+          <Route path="/landlord/Profile" element={<MyProfile />} />
+        </Route>   
+
+        <Route to="/landlord/Profile/Edit" element={<PriveRoute/>}>
+          <Route path="/landlord/Profile/Edit" element={<LanEditProfile />} />
+        </Route>               
         
         <Route to="/landlord/Properties/Edit/:property_id" element={<PriveRoute/>}>
           <Route path="/landlord/Properties/Edit/:property_id" element={<EditProperty />} />
