@@ -22,7 +22,7 @@ function PropertiesContent() {
                <span class="animate-spin h-8 w-8 mr-3 rounded-full border-2 border-[#00befe] border-t-gray-100 "></span> 
                 loading...
               </div>
-          </div>
+            </div>
           ) : (
             <>
             {items.map(item =>   
@@ -35,8 +35,8 @@ function PropertiesContent() {
                         <span className='text-sm text-[#acacac]'>{item.availability} availability</span>
                     </div>
                     <div className='flex items-center justify-between'>
-                    <span className='text-sm text-[#4aa347] '>APARTMENT_NAME: <b className="text-[#ff6347]">{item.title}</b></span>
-                        <button className='py-2 px-3 bg-slate-500 text-white rounded-lg'>{item.rent_fee}$</button>
+                    <span className='text-sm text-[#222] '>Aparment name: <b className="text-[#555]">{item.title}</b></span>
+                        <button className='py-2 px-3 bg-slate-500 text-white rounded-lg'>{item.rent_fee} $</button>
                     </div>
                 </div>
             </div>

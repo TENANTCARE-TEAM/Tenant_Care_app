@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Sidebar from '../../components/LanDashboardContents/Sidebar'
 import Navs from '../../components/LanDashboardContents/Navs'
 import Cards from '../../components/LanDashboardContents/Cards'
@@ -19,7 +19,7 @@ function Dashboard() {
                 <span className="text-[#7E7E7E]">Welcome to TenantCare</span>
             </div>
             {/* Contents */}
-            <Cards/>
+            <Cards />
             <RecentItems/>
         </div>
     </div>

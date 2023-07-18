@@ -1,11 +1,18 @@
-import React from 'react'
-import {FaUsers, FaUser} from 'react-icons/fa'
+import React, { useEffect, useState } from 'react'
 import {MdOutlineHomeWork} from 'react-icons/md'
-
 import {RiFolderSharedLine} from 'react-icons/ri'
 import {BsFolderCheck, BsFolderSymlink} from 'react-icons/bs'
+import { useGetItemQuery } from '../../store/api/ItemsSlice'
 
 function CardItem() {
+ 
+  const [total, setTotal] = useState()
+  const { data: items = []} = useGetItemQuery()
+
+  useEffect(() => {
+    setTotal(items.length)
+  }, [setTotal, items])
+    
   return (
     <div className='py-8 md:py-6 flex flex-col md:flex-row items-center gap-6'>
         <div className='w-full md:w-[380px] h-[160px] p-6 bg-[#FF6746] rounded-lg flex items-center justify-between shadow-md'>
@@ -18,7 +25,7 @@ function CardItem() {
                     </div>
                 </div>
             </div>
-            <h1 className='text-6xl text-white font-bold pr-6 '>28</h1>
+            <h1 className='text-6xl text-white font-bold pr-6 '>{total}</h1>
         </div>
         <div className="p-6 flex items-center justify-between w-full md:w-[320px] h-[160px] rounded-lg bg-white shadow-md">
             <div>
