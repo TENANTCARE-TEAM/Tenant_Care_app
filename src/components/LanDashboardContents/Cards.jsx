@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdDoNotDisturbOnTotalSilence, MdOutlineHomeWork} from 'react-icons/md'
 import { FaUsers, FaUser } from 'react-icons/fa'
+import { useGetItemQuery } from '../../store/api/ItemsSlice'
 
 function Cards() {
+    const [total, setTotal] = useState()
+    const { data: items = []} = useGetItemQuery()
+
+    useEffect(() => {
+        setTotal(items.length)
+    }, [setTotal, items])
+
     return (
         <div className='py-8 md:py-6 flex flex-col md:flex-row items-center gap-6'>
             <div className='w-full md:w-[380px] h-[160px] p-6 bg-[#FF6746] rounded-lg flex items-center justify-between shadow-md'>
@@ -16,7 +24,7 @@ function Cards() {
                     </div>
                     
                 </div>
-                <h1 className='text-6xl text-white font-bold pr-6'>28</h1>
+                <h1 className='text-6xl text-white font-bold pr-6'>{total}</h1>
             </div>
             <div className="p-6 flex items-center justify-between w-full md:w-[320px] h-[160px] rounded-lg bg-white shadow-md">
                 <div>
