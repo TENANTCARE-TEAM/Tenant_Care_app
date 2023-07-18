@@ -4,10 +4,12 @@ import {FaTrash, FaEdit} from 'react-icons/fa'
 import { useGetItemQuery } from '../../store/api/ItemsSlice'
 import {useDelateItemMutation} from '../../store/api/ItemsSlice'
 import { Link } from 'react-router-dom'
+import { useGetUserLandlordQuery } from '../../store/api/UsersSlice'
 
 
 function PropertieasContent() {
   
+  const {data: user = []} = useGetUserLandlordQuery();
 
   const {data: items = [], isLoading} = useGetItemQuery()
  
@@ -35,7 +37,8 @@ function PropertieasContent() {
          ) : (
           <>
            {items.map(item => (
-            <div key={item.id} className='flex flex-col md:flex-row  gap-8 overflow-hidden w-full md:h-[200px] h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
+            user.id === item.landlord_id && (
+              <div key={item.id} className='flex flex-col md:flex-row  gap-8 overflow-hidden w-full md:h-[200px] h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
             <img src={item.image} alt="" className='w-full md:w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
             <div className='flex flex-col gap-5 w-full h-full'>
                 <div className='flex justify-between'>
@@ -55,6 +58,7 @@ function PropertieasContent() {
                 </div>
             </div>
             </div> 
+            )
           ))}
           </>
          )}            
