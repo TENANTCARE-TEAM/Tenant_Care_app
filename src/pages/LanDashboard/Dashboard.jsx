@@ -3,8 +3,23 @@ import Sidebar from '../../components/LanDashboardContents/Sidebar'
 import Navs from '../../components/LanDashboardContents/Navs'
 import Cards from '../../components/LanDashboardContents/Cards'
 import RecentItems from '../../components/LanDashboardContents/RecentItems'
+import { useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
+import { useGetUserLandlordQuery } from '../../store/api/UsersSlice'
 
 function Dashboard() {
+
+const {data : user = [], error} = useGetUserLandlordQuery()
+  console.log(user);
+  
+  const navigate = useNavigate()
+  
+    if(error && error.status === 401){
+      Cookies.remove('token')
+      navigate('/signIn')   
+    }
+
+
   useEffect(() => {
     document.title = "Dashboard | TenantCare"
   }, [])

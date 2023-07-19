@@ -38,7 +38,7 @@ function Content() {
       password: values.password,
     }).unwrap().then(() => {
       navigate("/signIn")
-    }).catch((error) => {c
+    }).catch((error) => {
       console.log(error)
       if(error.status === 400) {
         toast.error("The email already exists")
