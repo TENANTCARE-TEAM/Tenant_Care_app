@@ -38,22 +38,19 @@ function PropertieasContent() {
           <>
            {items.map(item => (
             user.id === item.landlord_id && (
-              <div key={item.id} className='flex flex-col md:flex-row  gap-8 overflow-hidden w-full md:h-[200px] h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
-            <img src={item.image} alt="" className='w-full md:w-[160px] h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
-            <div className='flex flex-col gap-5 w-full h-full'>
-                <div className='flex justify-between'>
-                    <h3 className='text-2xl'>{item.address}</h3>
-                    <FaTrash 
-                     onClick={() => handleDelate(item.id)}
-                    className='text-[#FF6746] text-xl cursor-pointer'/>
+              <div key={item.id} className='flex flex-col  gap-8 overflow-hidden w-full md:w-[300px] h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
+            <img src={item.image} alt="" className='w-full h-full rounded-xl bg-auto bg-no-repeat bg-center'/>
+            <div className='flex flex-col gap-5 md:gap-6 w-full h-full'>
+                <div className='flex flex-col gap-2'>
+                    <h3 className='text-2xl'>{item.title}</h3>
+                    <span className='text-sm  text-[#00befe]'>{item.address}</span>
+                    <span className="text-[#222]">$ {item.rent_fee}</span>
                 </div>
-                <div>
-                  <span className='text-sm font-bold text-[#00befe]'>{item.title}</span>
-                </div>
-                <div className='mt-3 flex items-center justify-between'>
-                    <span className='text-sm text-[#acacac]'>{item.description}</span>
-                 <Link to={`/landlord/Properties/Edit/${item.id}`}>  
-                  <FaEdit className='text-xl text-[#00befe] cursor-pointer'/>
+                <div className='mt-3 pb-2 flex items-center justify-between'>
+                  <FaTrash onClick={() => handleDelate(item.id)}
+                  className='text-[#FF6746] text-xl cursor-pointer'/>
+                  <Link to={`/landlord/Properties/Edit/${item.id}`}>  
+                    <FaEdit className='text-xl text-[#00befe] cursor-pointer'/>
                   </Link>
                 </div>
             </div>

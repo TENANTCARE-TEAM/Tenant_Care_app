@@ -36,13 +36,13 @@ function Sidebar() {
 
   return (
     <>
-    <div onClick={() => setMenu(!menu)} className="z-10 fixed top-[2%] right-[4%] md:hidden flex items-center justify-center w-[40px] h-[40px] bg-[#00befe] text-white text-xl rounded cursor-pointer">
+    <div onClick={() => setMenu(!menu)} className="z-30 fixed top-[2%] right-[4%] md:hidden flex items-center justify-center w-[40px] h-[40px] bg-[#00befe] text-white text-xl rounded cursor-pointer">
         {menu ? <FaBars/> : <FaTimes/> }
     </div>
 
-    <div className={`${menu ? "hidden md:flex" : 'w-full md:w-[200px]'} fixed left-0 md:top-0 top-[70px] z-10 w-[200px] h-[100vh] bg-white shadow-2xl p-6 flex items-center flex-col gap-4`}>
+    <div className={`${menu ? "hidden md:flex" : 'w-full md:w-[200px]'} fixed left-0 top-0 z-10 w-[200px] h-[100vh] bg-white shadow-2xl p-6 flex items-center flex-col gap-4 `}>
         <div className='flex items-center justify-center flex-col gap-2'>
-            <FaUserCircle className='text-[#00befe] text-6xl'/>
+            <Link to="/landlord/Profile"><FaUserCircle className='text-[#00befe] text-6xl'/></Link>
             <span className='font-bold text-xl text-center'>{user.first_name} {user.last_name}</span>
         </div>
         <ul className='flex w-full flex-col gap-4 mt-4'>
@@ -73,12 +73,12 @@ function Sidebar() {
                 <MdOutlineMarkEmailUnread className="text-2xl "/>
                 <span className='text-sm  font-medium'>Requests</span>
             </Link>
-            <Link to="/landlord/Profile" className={`md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg
+            {/* <Link to="/landlord/Profile" className={`md:w-[140px] w-full p-2 py-4 hidden md:flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg
             ${location.pathname === '/landlord/Profile' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]': 'text-[#acacac]'}
             `}>
                 <CgProfile className="text-2xl "/>
                 <span className='text-sm  font-medium'>Profile</span>
-            </Link>
+            </Link> */}
             <div onClick={handleLogout}
              className={`md:hidden md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg 
              ${location.pathname === '/landlord/Requests' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]': 'text-[#acacac]'}`}>

@@ -9,15 +9,15 @@ import { useGetUserLandlordQuery } from '../../store/api/UsersSlice'
 
 function Dashboard() {
 
-const {data : user = [], error} = useGetUserLandlordQuery()
-  console.log(user);
+  const {data : user = [], error} = useGetUserLandlordQuery()
+  // console.log(user);
   
   const navigate = useNavigate()
   
-    if(error && error.status === 401){
-      Cookies.remove('token')
-      navigate('/signIn')   
-    }
+  if(error && error.status === 401){
+    Cookies.remove('token')
+    navigate('/signIn')   
+  }
 
 
   useEffect(() => {
