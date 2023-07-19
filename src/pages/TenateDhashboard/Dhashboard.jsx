@@ -3,8 +3,25 @@ import Nav from '../../components/TenDhashContent/Nav'
 import Side from '../../components/TenDhashContent/Side'
 import CardItem from '../../components/TenDhashContent/CardItem'
 import ResentItem from '../../components/TenDhashContent/ResentItem'
+import { useGetUserTenantQuery } from '../../store/api/UsersSlice'
+import { useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie'
 
 function Dhashboard() {
+
+  
+  const {date : user = [], error} = useGetUserTenantQuery()
+  
+  console.log(user);
+  
+  const navigate = useNavigate()
+  
+    if(error && error.status === 401){
+      Cookies.remove('token')
+      navigate('/signIn')   
+    }
+  
+
   useEffect(() => {
     document.title = "Dashboard | TenantCare"
   }, [])
