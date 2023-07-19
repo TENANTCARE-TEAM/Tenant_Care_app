@@ -12,15 +12,14 @@ function Dhashboard() {
   
   const {date : user = [], error} = useGetUserTenantQuery()
   
-  console.log(user);
+  // console.log(user);
   
   const navigate = useNavigate()
   
-    if(error && error.status === 401){
-      Cookies.remove('token')
-      navigate('/signIn')   
-    }
-  
+  if(error && error.status === 401){
+    Cookies.remove('token')
+    navigate('/signIn')   
+  }
 
   useEffect(() => {
     document.title = "Dashboard | TenantCare"
