@@ -16,7 +16,7 @@ function ResentItem() {
         </Link>
       </div>
       {/* Recent items */}
-      <div className="mt-4 flex flex-wrap gap-5 p-4 pb-5">
+      <div className="mt-4 flex flex-wrap justify-center gap-5 p-4 pb-5">
         {/* item */}
             {items.slice(-5, +1).map(item =>           
               <div key={item.id} className='flex flex-col gap-6  overflow-hidden w-[300px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>

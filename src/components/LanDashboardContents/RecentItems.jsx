@@ -27,7 +27,7 @@ function RecentItems() {
         </Link>
       </div>
       {/* Recent items */}
-      <div className="mt-4 flex flex-wrap gap-5 p-4 pb-5">
+      <div className="mt-4 flex justify-center flex-wrap gap-5 p-4 pb-5">
         {/* item */}
         <>
           {extractedItems.map((item) => (

@@ -42,7 +42,7 @@ export const userSlice = createApi({
         }),
 
         
-        userTenantDelete : builder.mutation({
+        userTenantDelete: builder.mutation({
             query: () => ({
               url: `/api/tenants/delete_profile`,
               method: 'DELETE',
@@ -50,33 +50,70 @@ export const userSlice = createApi({
             invalidatesTags: ['userApi']
         }),
 
+        SendRequests: builder.mutation({
+          query: (property_id) => ({
+            url: `/api/properties/${property_id}/request`,
+            method: 'POST',
+          }),
+          invalidatesTags: ['userApi']
+        }),
+
+        ApproveRequest: builder.mutation({
+          query: (property_id, tenant_id) => ({
+            url: `/api/properties/${property_id}/approve`,
+            method: "POST",
+            body: tenant_id
+          }),
+          invalidatesTags: ['userApi']
+
+        }),
+
         getUserLandlord: builder.query({
-            query: () => {
-               return {
-                 url: '/api/landlords/profile',
-                 method: 'GET'
-               }
-            },
-            providesTags: ["userApi"]
-        }),
+          query: () => {
+             return {
+               url: '/api/landlords/profile',
+               method: 'GET'
+             }
+          },
+          providesTags: ["userApi"]
+      }),
 
-        editUserLandlord : builder.mutation({
-            query: (newData) => ({
-              url: `/api/landlords/update_profile`,
-              method: 'PUT',
-              body: newData
-              
-            }),
-            invalidatesTags: ['userApi']
-        }),
+      getRequests: builder.query({
+        query: () => {
+          return  {
+            url: '/api/landlords/requests_to_approve',
+            method: "GET"
+          }
+        },
+        providesTags: ["userApi"]
+      }),
 
-        userLandlordDelete : builder.mutation({
-            query: () => ({
-              url: `/api/landlords/delete_profile`,
-              method: 'DELETE',
-            }),
-            invalidatesTags: ['userApi']
-        }),
+      editUserLandlord : builder.mutation({
+          query: (newData) => ({
+            url: `/api/landlords/update_profile`,
+            method: 'PUT',
+            body: newData
+            
+          }),
+          invalidatesTags: ['userApi']
+      }),
+
+      userLandlordDelete : builder.mutation({
+          query: () => ({
+            url: `/api/landlords/delete_profile`,
+            method: 'DELETE',
+          }),
+          invalidatesTags: ['userApi']
+      }),
+
+      getRequestApproved: builder.query({
+        query: () => {
+          return {
+            url: "/api/landlords/approved_requests",
+            method: 'GET'
+          }
+        }
+      })
     })
 })
 
@@ -86,6 +123,11 @@ export const {
     useEditUserLandlordMutation,
     useEditUserTenantMutation,
     useUserTenantDeleteMutation,
-    useUserLandlordDeleteMutation
+    useUserLandlordDeleteMutation,
+    useSendRequestsMutation,
+    useGetRequestsQuery,
+    useApproveRequestMutation,
+    useGetRequestApprovedQuery
 } = userSlice
+
 export default userSlice.reducer

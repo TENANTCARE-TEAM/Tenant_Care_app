@@ -2,14 +2,25 @@ import React, { useEffect, useState } from 'react'
 import { MdDoNotDisturbOnTotalSilence, MdOutlineHomeWork} from 'react-icons/md'
 import { FaUsers, FaUser } from 'react-icons/fa'
 import { useGetItemQuery } from '../../store/api/ItemsSlice'
-import { useGetUserLandlordQuery } from '../../store/api/UsersSlice'
+import { useGetRequestsQuery, useGetRequestApprovedQuery, useGetUserLandlordQuery } from '../../store/api/UsersSlice'
 
 function Cards() {
     const [userPropertiesCount, setUserPropertiesCount] = useState(0);
+    const [pending, setPending] =  useState(0)
+    const [current, setCurrent] =  useState(0)
+    
     const { data: items = []} = useGetItemQuery()
     const {data : user = []} = useGetUserLandlordQuery()
-console.log(user);
+    const {data: requests = []} = useGetRequestsQuery();
+    const {data: approved = []} = useGetRequestApprovedQuery()
+    
+    useEffect(() => {
+        setPending(requests.length)
+    }, [requests])
 
+    useEffect(() => {
+        setCurrent(approved.length)
+    }, [requests])
 
     useEffect(() => {
         const userIdentifier = user.id
@@ -19,7 +30,6 @@ console.log(user);
          
         setUserPropertiesCount(totalProperties)
 
-        console.log(userPropertiesCount);
     }, [user, items])
 
     return (
@@ -39,7 +49,7 @@ console.log(user);
             </div>
             <div className="p-6 flex items-center justify-between w-full md:w-[320px] h-[160px] rounded-lg bg-white shadow-md">
                 <div>
-                    <h3 className='text-4xl text-[#222] font-bold'>89</h3>
+                    <h3 className='text-4xl text-[#222] font-bold'>{current}</h3>
                     <p className='text-lg text-gray-500'>Current Tenants</p>
                 </div>
                 <FaUsers className='text-8xl text-[#00befe] pr-4'/>
@@ -47,7 +57,7 @@ console.log(user);
 
             <div className="p-6 flex items-center justify-between w-full md:w-[320px] h-[160px] rounded-lg bg-white shadow-md">
                 <div>
-                    <h3 className='text-4xl text-[#222] font-bold'>15</h3>
+                    <h3 className='text-4xl text-[#222] font-bold'>{pending}</h3>
                     <p className='text-lg text-gray-500'>Pending Tenants</p>
                 </div>
                 <FaUser className='text-6xl text-[#00befe] pr-4'/>
