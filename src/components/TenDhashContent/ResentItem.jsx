@@ -18,7 +18,7 @@ function ResentItem() {
       {/* Recent items */}
       <div className="mt-4 flex flex-wrap justify-center gap-5 p-4 pb-5">
         {/* item */}
-            {items.slice(-5, +1).map(item =>           
+            {items.slice(-3).map(item =>           
               <div key={item.id} className='flex flex-col gap-6  overflow-hidden w-[300px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
                 <Link to={`/Tenant/dashboard/ViewProperty/${item.id}`}>       
                   <img src={item.image} alt="" className='w-full h-[160px] md:h-full rounded-xl bg-auto bg-no-repeat bg-center cursor-pointer'/>
