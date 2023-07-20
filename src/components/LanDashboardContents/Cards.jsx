@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { MdDoNotDisturbOnTotalSilence, MdOutlineHomeWork} from 'react-icons/md'
 import { FaUsers, FaUser } from 'react-icons/fa'
 import { useGetItemQuery } from '../../store/api/ItemsSlice'
-import { useGetRequestsQuery, useGetRequestApprovedQuery, useGetUserLandlordQuery } from '../../store/api/UsersSlice'
+import { useGetRequestsQuery, useGetTenantsQuery, useGetUserLandlordQuery } from '../../store/api/UsersSlice'
 
 function Cards() {
     const [userPropertiesCount, setUserPropertiesCount] = useState(0);
@@ -12,7 +12,7 @@ function Cards() {
     const { data: items = []} = useGetItemQuery()
     const {data : user = []} = useGetUserLandlordQuery()
     const {data: requests = []} = useGetRequestsQuery();
-    const {data: approved = []} = useGetRequestApprovedQuery()
+    const {data: approved = []} = useGetTenantsQuery()
     
     useEffect(() => {
         setPending(requests.length)

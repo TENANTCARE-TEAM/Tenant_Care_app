@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
-
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useGetItemQuery, useEditItemMutation } from '../../store/api/ItemsSlice'
+import {toast} from 'react-toastify'
 
 
 function EditProperties() {
@@ -51,6 +51,7 @@ function EditProperties() {
            id: Number(params.property_id),
            update: values
         }).then(() => {
+            toast.success("Property updated successfully")
             navigate('/landlord/Properties')
         })
 

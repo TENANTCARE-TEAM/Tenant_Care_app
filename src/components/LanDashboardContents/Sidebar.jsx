@@ -40,7 +40,7 @@ function Sidebar() {
         {menu ? <FaBars/> : <FaTimes/> }
     </div>
 
-    <div className={`${menu ? "hidden md:flex" : 'w-full md:w-[200px]'} fixed left-0 top-0 z-10 w-[200px] h-[100vh] bg-white shadow-2xl p-6 flex items-center flex-col gap-4 `}>
+    <div className={`${menu ? "hidden md:flex" : 'w-full md:w-[200px]'} fixed left-0 top-0 z-20 w-[200px] h-[100vh] bg-white shadow-2xl p-6 flex items-center flex-col gap-4 `}>
         <div className='flex items-center justify-center flex-col gap-2'>
             <Link to="/landlord/Profile"><FaUserCircle className='text-[#00befe] text-6xl'/></Link>
             <span className='font-bold text-xl text-center'>{user.first_name} {user.last_name}</span>

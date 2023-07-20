@@ -44,9 +44,6 @@ function RecentItems() {
                 <div className="flex flex-col gap-2">
                   <h3 className=" text-2xl"> {item.address}</h3>
                   <span className="text-sm text-[#00befe]">{item.title}</span>
-                  <span className="text-sm text-[#ccc]">
-                    {item.description}
-                  </span>
                   <span className="text-[#222]">$ {item.rent_fee}</span>
                 </div>
                 <div className="flex">

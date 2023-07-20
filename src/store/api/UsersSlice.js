@@ -106,7 +106,7 @@ export const userSlice = createApi({
           invalidatesTags: ['userApi']
       }),
 
-      getRequestApproved: builder.query({
+      getTenants: builder.query({
         query: () => {
           return {
             url: "/api/landlords/approved_requests",
@@ -127,7 +127,7 @@ export const {
     useSendRequestsMutation,
     useGetRequestsQuery,
     useApproveRequestMutation,
-    useGetRequestApprovedQuery
+    useGetTenantsQuery
 } = userSlice
 
 export default userSlice.reducer
