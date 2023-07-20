@@ -11,7 +11,7 @@ function RecentItems() {
   const { data: user = [] } = useGetUserLandlordQuery();
 
   const filteredItems = items.filter((item) => user.id === item.landlord_id);
-  const startIndex = Math.max(filteredItems.length - 4, 0);
+  const startIndex = Math.max(filteredItems.length - 3, 0);
   const endIndex = Math.max(filteredItems.length - 1, 0);
   const extractedItems = filteredItems.splice(
     startIndex,
