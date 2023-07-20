@@ -6,12 +6,12 @@ import { useGetItemQuery } from '../../store/api/ItemsSlice'
 
 function CardItem() {
  
-  const [total, setTotal] = useState()
+  const [total, setTotal] = useState(0)
   const { data: items = []} = useGetItemQuery()
 
   useEffect(() => {
     setTotal(items.length)
-  }, [setTotal, items])
+  }, [items])
     
   return (
     <div className='py-8 md:py-6 flex flex-col md:flex-row items-center gap-6'>
