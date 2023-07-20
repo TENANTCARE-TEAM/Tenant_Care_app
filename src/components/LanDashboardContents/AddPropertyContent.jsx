@@ -2,7 +2,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import {useAddItemMutation} from '../../store/api/ItemsSlice'
 import { useNavigate } from 'react-router-dom/dist'
-
+import {toast} from 'react-toastify'
 
 function AddPropertyContent() {
   
@@ -38,6 +38,7 @@ const [addItem] = useAddItemMutation()
       availability: values.availability,
       image: values.image,
     }).unwrap().then(() => {
+      toast.success("Property created successfully")
       navigate('/landlord/Properties')
     })
 
@@ -79,8 +80,6 @@ const [addItem] = useAddItemMutation()
                 className="text-red-400"
               />
             </div>
-
-           
 
             <div className="mb-5">
               <Field
