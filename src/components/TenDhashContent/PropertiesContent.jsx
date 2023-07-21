@@ -2,8 +2,7 @@ import React from 'react'
 import house from '../../assets/images/house-2.jpg'
 import house2 from '../../assets/images/house-3.jpg'
 import { Link } from 'react-router-dom'
-import { useGetItemQuery } from '../../store/api/ItemsSlice'
-import { useSendRequestsMutation } from "../../store/api/UsersSlice";
+import { useGetItemQuery, useSendRequestsMutation } from '../../store/api/ItemsSlice'
 import { ToastContainer, toast } from "react-toastify"
 
 function PropertiesContent() {
@@ -30,7 +29,7 @@ function PropertiesContent() {
             <h3 className='font-bold text-2xl'>All Properties</h3>
         </div>
         {/* properties */}
-        <div className="mt-4 flex flex-wrap justify-center gap-5 p-4 pb-5">
+        <div className="mt-4 flex flex-wrap items-center  justify-center gap-5 p-4 pb-5">
           {isLoading ? (
             <div className="w-full h-full flex items-center justify-center">
             <div className="text-3xl font-bold flex items-center justify-center uppercase">
@@ -43,7 +42,7 @@ function PropertiesContent() {
             {items.map(item =>   
               <div key={item.id} className='flex items-center flex-col gap-6  overflow-hidden w-[300px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
                     <Link to={`/Tenant/dashboard/ViewProperty/${item.id}`}>       
-                      <img src={item.image} alt="" className='w-full h-[160px] md:h-full rounded-xl bg-auto bg-no-repeat bg-center cursor-pointer'/>
+                      <img src={item.image} alt="" className='w-full h-[180px] rounded-xl bg-auto bg-no-repeat bg-center cursor-pointer'/>
                     </Link> 
                     <div className='flex flex-col gap-4 md:gap-4 w-full '>
                         <div className='flex flex-col gap-2'>

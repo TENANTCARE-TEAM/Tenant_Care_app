@@ -1,6 +1,6 @@
 import { FaUserCircle } from "react-icons/fa";
-import { useGetTenantsQuery } from "../../store/api/UsersSlice";
 import notFound from '../../assets/images/NotFound.png'
+import { useGetTenantsQuery } from "../../store/api/ItemsSlice";
 
 function TenantContent() {
   const {data: tenants = [], isLoading} = useGetTenantsQuery()
@@ -36,7 +36,7 @@ function TenantContent() {
               <img
                 src={tenant.image}
                 alt=""
-                className="w-full h-[160px] md:h-full rounded-xl bg-auto bg-no-repeat bg-center"
+                className="w-full h-[180px]  rounded-xl bg-auto bg-no-repeat bg-center"
               />
             <div className="flex flex-col gap-4 md:gap-7 w-full md:h-full">
               <div className="flex flex-col gap-3">
