@@ -309,6 +309,209 @@ Retrieve a single available property by its ID.
 }
 ```
 
+#### Tenant Profile
+
+- Endpoint: `GET /api/tenants/profile`
+- Description: Retrieves the profile information of the currently logged-in tenant.
+- Authorization: Required
+
+#### Update Tenant Profile
+
+- Endpoint: `PUT /api/tenants/update_profile`
+- Description: Updates the profile information of the currently logged-in tenant.
+- Authorization: Required
+- Request Body:
+
+  ```json
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com"
+  }
+  ```
+
+#### Delete Tenant Account
+
+- Endpoint: `DELETE /api/tenants/delete_profile`
+- Description: Deletes the account of the currently logged-in tenant.
+- Authorization: Required
+
+### Landlord Endpoints
+
+#### Landlord Profile
+
+- Endpoint: `GET /api/landlords/profile`
+- Description: Retrieves the profile information of the currently logged-in landlord.
+- Authorization: Required
+
+#### Update Landlord Profile
+
+- Endpoint: `PUT /api/landlords/update_profile`
+- Description: Updates the profile information of the currently logged-in landlord.
+- Authorization: Required
+- Request Body:
+
+  ```json
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com"
+  }
+  ```
+
+#### Delete Landlord Account
+
+- Endpoint: `DELETE /api/landlords/delete_profile`
+- Description: Deletes the account of the currently logged-in landlord.
+- Authorization: Required
+
+
+
+### Get Approved Properties for Tenant
+
+Get a list of all properties that a tenant has been approved to rent, along with information about the landlord who approved the requests.
+
+**URL:** `/api/tenants/approved_properties`
+
+**Method:** `GET`
+
+**Authentication required:** Yes (Tenant)
+
+**Response Status Codes:**
+- 200 OK: Request successful, returns the list of approved properties.
+- 401 Unauthorized: Authentication required. The request does not include a valid authentication token.
+- 500 Internal Server Error: An error occurred while processing the request.
+
+**Sample Response:**
+```json
+[
+  {
+    "id": 1,
+    "landlord_id": 2,
+    "title": "Cozy Apartment",
+    "description": "A beautiful apartment in the heart of the city.",
+    "address": "123 Main Street",
+    "rent_fee": 1500,
+    "availability": 1,
+    "image": "https://example.com/images/apartment.jpg",
+    "landlord_first_name": "John",
+    "landlord_last_name": "Doe"
+  },
+  {
+    "id": 3,
+    "landlord_id": 4,
+    "title": "Spacious House",
+    "description": "A spacious house with a large backyard.",
+    "address": "456 Oak Avenue",
+    "rent_fee": 2500,
+    "availability": 1,
+    "image": "https://example.com/images/house.jpg",
+    "landlord_first_name": "Jane",
+    "landlord_last_name": "Smith"
+  }
+]
+```
+
+### Get Requests to be Approved for Landlord
+
+Get a list of all property requests that need approval from a landlord, along with information about the tenants who made the requests.
+
+**URL:** `/api/landlords/requests_to_approve`
+
+**Method:** `GET`
+
+**Authentication required:** Yes (Landlord)
+
+**Response Status Codes:**
+- 200 OK: Request successful, returns the list of property requests to be approved.
+- 401 Unauthorized: Authentication required. The request does not include a valid authentication token.
+- 500 Internal Server Error: An error occurred while processing the request.
+
+**Sample Response:**
+```json
+[
+  {
+    "id": 1,
+    "tenant_id": 3,
+    "property_id": 1,
+    "tenant_first_name": "Alice",
+    "tenant_last_name": "Johnson",
+    "title": "Cozy Apartment",
+    "description": "A beautiful apartment in the heart of the city.",
+    "address": "123 Main Street",
+    "rent_fee": 1500,
+    "availability": 1,
+    "image": "https://example.com/images/apartment.jpg"
+  },
+  {
+    "id": 2,
+    "tenant_id": 5,
+    "property_id": 3,
+    "tenant_first_name": "Bob",
+    "tenant_last_name": "Smith",
+    "title": "Spacious House",
+    "description": "A spacious house with a large backyard.",
+    "address": "456 Oak Avenue",
+    "rent_fee": 2500,
+    "availability": 1,
+    "image": "https://example.com/images/house.jpg"
+  }
+]
+```
+
+### Get Approved Requests for Landlord
+
+Get a list of all property requests that have been approved by the landlord, along with information about the tenants who made the requests.
+
+**URL:** `/api/landlords/approved_requests`
+
+**Method:** `GET`
+
+**Authentication required:** Yes (Landlord)
+
+**Response Status Codes:**
+- 200 OK: Request successful, returns the list of approved property requests.
+- 401 Unauthorized: Authentication required. The request does not include a valid authentication token.
+- 500 Internal Server Error: An error occurred while processing the request.
+
+**Sample Response:**
+```json
+[
+  {
+    "id": 1,
+    "tenant_id": 3,
+    "property_id": 1,
+    "tenant_first_name": "Alice",
+    "tenant_last_name": "Johnson",
+    "title": "Cozy Apartment",
+    "description": "A beautiful apartment in the heart of the city.",
+    "address": "123 Main Street",
+    "rent_fee": 1500,
+    "availability": 1,
+    "image": "https://example.com/images/apartment.jpg"
+  },
+  {
+    "id": 3,
+    "tenant_id": 5,
+    "property_id": 3,
+    "tenant_first_name": "Bob",
+    "tenant_last_name": "Smith",
+    "title": "Spacious House",
+    "description": "A spacious house with a large backyard.",
+    "address": "456 Oak Avenue",
+    "rent_fee": 2500,
+    "availability": 1,
+    "image": "https://example.com/images/house.jpg"
+  }
+]
+```
+
+These are the new endpoints for your API. You can use them to retrieve the required information based on the user's role (tenant or landlord) and their authentication token.
+
+Please note that the endpoints marked with "Authorization: Required" require authentication with a valid JWT token in the request headers.
+
+For the complete list of endpoints and their descriptions, please refer to the code provided.
+
 #### Error Responses
 
 - `Property not found or not available`: The requested property does not exist or is not currently available.
