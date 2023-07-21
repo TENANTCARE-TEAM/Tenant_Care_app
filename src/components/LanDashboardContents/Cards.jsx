@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { MdDoNotDisturbOnTotalSilence, MdOutlineHomeWork} from 'react-icons/md'
 import { FaUsers, FaUser } from 'react-icons/fa'
-import { useGetItemQuery } from '../../store/api/ItemsSlice'
-import { useGetRequestsQuery, useGetTenantsQuery, useGetUserLandlordQuery } from '../../store/api/UsersSlice'
+import { useGetItemQuery, useGetRequestsQuery, useGetTenantsQuery } from '../../store/api/ItemsSlice'
+import { useGetUserLandlordQuery } from '../../store/api/UsersSlice'
 
 function Cards() {
     const [userPropertiesCount, setUserPropertiesCount] = useState(0);

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import house from "../../assets/images/house-2.jpg";
-import { useGetItemQuery } from "../../store/api/ItemsSlice";
+import { useGetItemQuery, useSendRequestsMutation } from "../../store/api/ItemsSlice";
 import { useParams } from "react-router-dom";
-import { useSendRequestsMutation } from "../../store/api/UsersSlice";
 import { ToastContainer, toast } from "react-toastify";
 
 function ViewpropertyContent() {

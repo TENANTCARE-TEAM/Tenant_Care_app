@@ -41,7 +41,7 @@ const {data: items = [], isLoading} = useGetItemQuery()
                 <img
                   src={item.image}
                   alt=""
-                  className=" cursor-pointer w-full h-[160px] md:h-full rounded-xl bg-auto bg-no-repeat bg-center"
+                  className=" cursor-pointer w-full h-[180px] rounded-xl bg-auto bg-no-repeat bg-center"
                 />
                 <div className="flex flex-col gap-4 md:gap-4 w-full ">
                   <div className="flex flex-col gap-2">

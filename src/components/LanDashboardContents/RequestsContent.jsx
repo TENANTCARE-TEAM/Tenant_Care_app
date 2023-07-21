@@ -1,7 +1,7 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
-import { useApproveRequestMutation, useGetRequestsQuery } from "../../store/api/UsersSlice";
 import notFound from '../../assets/images/NotFound.png'
+import { useApproveRequestMutation, useGetRequestsQuery } from "../../store/api/ItemsSlice";
 
 function RequestsContent() {
 
@@ -47,7 +47,7 @@ function RequestsContent() {
               <img
                 src={request.image}
                 alt=""
-                className="w-full h-auto rounded-xl bg-auto bg-no-repeat bg-center"
+                className="w-full h-[180px] rounded-xl bg-auto bg-no-repeat bg-center"
               />
               <div className="flex flex-col gap-2 md:gap-7 w-full md:-full">
                 <div className="flex flex-col gap-3">

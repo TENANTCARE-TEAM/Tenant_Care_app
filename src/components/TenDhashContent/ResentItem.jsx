@@ -2,14 +2,13 @@ import React from "react";
 import house1 from "../../assets/images/house-3.jpg";
 import house2 from "../../assets/images/house-2.jpg";
 import { Link } from "react-router-dom";
-import { useGetItemQuery } from "../../store/api/ItemsSlice";
-import { useSendRequestsMutation } from "../../store/api/UsersSlice";
+import { useGetItemQuery, useSendRequestsMutation } from "../../store/api/ItemsSlice";
 import { ToastContainer, toast } from "react-toastify"
 
 function ResentItem() {
 
   const {data: items = []} = useGetItemQuery()
-
+ 
   const [SendRequest] = useSendRequestsMutation()
 
   const handleRequest = (property_id) => {
@@ -38,7 +37,7 @@ function ResentItem() {
             {items.slice(-3).map(item =>           
               <div key={item.id} className='flex flex-col gap-6  overflow-hidden w-[300px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
                 <Link to={`/Tenant/dashboard/ViewProperty/${item.id}`}>       
-                  <img src={item.image} alt="" className='w-full h-[160px] md:h-full rounded-xl bg-auto bg-no-repeat bg-center cursor-pointer'/>
+                  <img src={item.image} alt="" className='w-full h-[180px] rounded-xl bg-auto bg-no-repeat bg-center cursor-pointer'/>
                 </Link> 
                 <div className='flex flex-col gap-4 md:gap-4 w-full '>
                     <div className='flex flex-col gap-2'>
