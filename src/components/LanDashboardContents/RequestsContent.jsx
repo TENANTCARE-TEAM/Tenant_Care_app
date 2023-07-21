@@ -8,12 +8,14 @@ function RequestsContent() {
   const {data: requests = [], isLoading} = useGetRequestsQuery();
   const [ApproveRequest] = useApproveRequestMutation()
 
+  console.log("Api Request to Approve (Response): ", requests)
+  console.log("Hey")
 
   const handleApprove = (property_id, tenant_id) => {
     ApproveRequest(property_id,tenant_id).unwrap().then(() => {
-      console.log("success")
+      console.log("success approve")
     }).catch((error) => {
-      console.log(error)
+      console.log("Approve Error: ",error)
     })
   }
 
