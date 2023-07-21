@@ -10,7 +10,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 
-
 function Content() {
   const navigate = useNavigate()
   const [change, setChange] = useState(true)

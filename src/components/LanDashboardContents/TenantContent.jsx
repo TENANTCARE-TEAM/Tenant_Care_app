@@ -5,7 +5,7 @@ import { useGetTenantsQuery } from "../../store/api/ItemsSlice";
 function TenantContent() {
   const {data: tenants = [], isLoading} = useGetTenantsQuery()
 
-  console.log(tenants)
+  console.log("Approved requests: ",tenants)
 
   return (
     <div className="mt-5 bg-white p-6 w-full flex flex-col shadow rounded">
