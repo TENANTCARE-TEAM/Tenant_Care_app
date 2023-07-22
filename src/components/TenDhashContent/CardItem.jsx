@@ -2,26 +2,32 @@ import React, { useEffect, useState } from 'react'
 import {MdOutlineHomeWork} from 'react-icons/md'
 import {RiFolderSharedLine} from 'react-icons/ri'
 import {BsFolderCheck, BsFolderSymlink} from 'react-icons/bs'
-import { useGetAprrovedRequestQuery, useGetItemQuery } from '../../store/api/ItemsSlice'
+import {useGetAprrovedRequestQuery, useGetItemQuery } from '../../store/api/ItemsSlice'
 
 function CardItem() {
  
   const [total, setTotal] = useState(0)
-//   const [approved, setAppoved] = useState(0)
 
   const { data: items = []} = useGetItemQuery()
-  // const { data: approvedData = []} = useGetAprrovedRequestQuery()
 
-//   console.log("Approved data: ",approvedData)
-
-
+  const [aproveRequestes, setAproveRequestes] = useState(0)
+  const {data : aprData = []} =useGetAprrovedRequestQuery() 
+  
+  
   useEffect(() => {
     setTotal(items.length)
   }, [items])
+  
+  useEffect(() => {
+    const totalData = aprData.reduce((acc, item) => acc + 1, 0);
 
-//   useEffect(() => {
-//     setAppoved(approvedData.length)
-//   }, [approvedData])
+
+    setAproveRequestes( totalData)
+    
+  }, [ aprData])
+  
+  console.log("Approved data: ", aprData)
+
     
   return (
     <div className='py-8 md:py-6 flex flex-col md:flex-row items-center gap-6'>
@@ -47,7 +53,7 @@ function CardItem() {
 
         <div className="p-6 flex items-center justify-between w-full md:w-[320px] h-[160px] rounded-lg bg-white shadow-md">
             <div>
-                <h3 className='text-4xl text-[#222] font-bold'>{approved}</h3>
+                <h3 className='text-4xl text-[#222] font-bold'>{aproveRequestes}</h3>
                 <p className='text-lg text-gray-500'>Approved Requests</p>
             </div>
             <BsFolderCheck className='text-8xl text-[#00befe] pr-4'/>

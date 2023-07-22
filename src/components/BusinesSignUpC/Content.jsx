@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import Business from "../../assets/images/businesSignUp.png";
+import Business from "../../assets/images/Signing.png";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignUpBuMutation } from "../../store/api/AuthSlices";
