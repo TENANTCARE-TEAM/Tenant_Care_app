@@ -44,7 +44,7 @@ const Account = () => {
                 className='w-full bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'>Register</button>
               </Link>
               <p className="mt-2 text-sm text-gray-700 padding-right:16">
-                All ready have account
+                Already have account?
               </p>
               <div className="mt-2">
                 <Link to='/signIn'>
@@ -82,16 +82,16 @@ const Account = () => {
                 </ul>
               </div>
             <div className="px-6 py-2">
-              <Link to='/busines/signUp'>
+              <Link to='/business/signUp'>
                 <button className='w-full bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'>
                   Register
                 </button>
               </Link>
               <p className="mt-2 text-sm text-gray-700 padding-right:16">
-                All ready have account
+               Already have account?
               </p>
               <div className="mt-2">
-                <Link to='/signIn'>
+                <Link to='/business/signIn'>
                <p className="text-sm cursior-pointer text-[#00befe]">Sign in</p>
                 </Link>
               </div>

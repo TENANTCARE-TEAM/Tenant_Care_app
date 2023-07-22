@@ -24,7 +24,7 @@ function Navs() {
   const handleLogout = () => {
     Cookies.remove("token");
     setUserInfo(true);
-    navigate("/signIn");
+    navigate("/business/signIn");
   };
 
   return (

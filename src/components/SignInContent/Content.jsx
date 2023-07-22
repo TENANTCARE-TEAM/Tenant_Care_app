@@ -21,8 +21,12 @@ function Content() {
   };
 
   const validationSchema = Yup.object({
-    password: Yup.string().required("password is required"),
-    email: Yup.string().required(" email is required"),
+    password: Yup.string().required("Please Enter your Password")
+    .min(8, 'Password must be 8 characters long')
+    .matches(/[0-9]/ , 'Password requires a number')
+    .matches(/[a-z]/, 'Password requires a lowercase letter')
+    .matches(/[A-Z]/, 'Password requires a uppercase letter'),
+    email: Yup.string().email().required("Please Enter your Email"),
   });
 
   const handleSubmit = (values) => {
@@ -35,26 +39,24 @@ function Content() {
       console.log(err)
       if (error.status === 401) {
         toast.error("Invalid email or passoword")
-
       }
-
     })
-
 
   }
 
   return (
     <div className="md:px-[9%]">
       <ToastContainer />
-      <h2 className="text-center font-medium text-3xl text-[#00befe] pt-[4%]">Login With...</h2>
-      <div className=" items-center flex md:flex-row flex-col md:gap-0 gap-4 justify-around text-center mb-[2%] mt-[4%] p-4">
+      {/* <h2 className="text-center font-medium text-3xl text-[#00befe] pt-[4%]">Personal Sing in</h2> */}
+      <div className="flex items-center md:flex-row flex-col md:gap-0 gap-4 justify-around text-center mb-[2%] mt-[5%] pt-9 p-4">
       
       <div className="max-[768px]:hidden w-[490px] h-[480px] items-center left-4 mb-5">
           <img src={SignIn} alt="SignUp image" />
         </div>
 
-        <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-8 rounded-lg  mb-2 shadow-2xl border-2">
-          <h2 className="text-center font-medium text-2xl text-[#00befe]">Login Tenant</h2>
+        <div className="w-full md:w-auto flex flex-col gap-col-2">
+        <div className="md:w-[500px] w-[100%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2 pb-9">
+          <h2 className="text-center font-medium text-2xl text-[#00befe]">Sign in Personal</h2>
           <Formik
             className='p-8'
             initialValues={initialValues}
@@ -112,20 +114,16 @@ function Content() {
               Sign Up
             </Link>
           </div>
-            <div className="text-center mt-5 flex justify-between">
-              <h5>if You want Business LogIn </h5>
-
-          <Link to='/busines/signIn' >
-              <p>
-                <b className="text-[#00befe]">Click here</b>
-              </p>
-          </Link>
-            </div>
+            
+        </div>
+        <div className="text-center mt-5 flex items-center justify-center gap-2">
+            <h5>if You want Business</h5>
+            <Link to='/business/signIn' >
+              <p className="text-[#00befe] hover:underline">Sign In</p>
+            </Link>
+        </div>
         </div>
       </div>
-
-      {/* <BuContent/> */}
-
 
     </div>
   );
