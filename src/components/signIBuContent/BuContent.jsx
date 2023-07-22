@@ -7,6 +7,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
+import BuSignIn from '../../assets/images/login-pana.png'
+
 
 function BuContent() {
   const navigate = useNavigate()
@@ -41,9 +43,18 @@ function BuContent() {
   }
 
   return (
-    <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2">
+    <div className="md:px-[9%]">
+      <ToastContainer/>
+      {/* <h2 className="text-center font-medium text-3xl text-[#00befe] pt-[8%]">Login With...</h2> */}
+      <div className=" items-center flex md:flex-row flex-col md:gap-0 gap-4 justify-around text-center mb-[2%] mt-[4%] p-4">
+  
+      <div className="max-[768px]:hidden w-[490px] h-[480px] items-center left-4 mb-5 pt-6">
+          <img src={BuSignIn} alt="SignUp image" />
+        </div>
+
+    <div className="md:w-[500px] w-[90%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2 pb-9">
       <h2 className="text-center font-medium text-2xl text-[#00befe]">
-        Sign in Business
+        Login Lanlord
       </h2>
       <ToastContainer/>
       <Formik 
@@ -105,6 +116,10 @@ function BuContent() {
         </Link>
       </div>
     </div>
+
+    </div>
+
+</div>
   );
 }
 
