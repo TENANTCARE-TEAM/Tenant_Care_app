@@ -68,15 +68,17 @@ export const itemsSlice = createApi({
         url: `/api/properties/${property_id}/request`,
         method: "POST",
       }),
+      invalidatesTags: ["item"],
     }),
 
     // Approve requests
     ApproveRequest: builder.mutation({
-        query: (property_id, tenant_id) => ({
-          url: `/api/properties/${property_id}/approve`,
+        query: (data) => ({
+          url: `/api/properties/${data.property_id}/approve`,
           method: "POST",
-          body: tenant_id
+          body: {tenant_id: data.tenant_id}
         }),
+        invalidatesTags: ["item"],
     }),
 
     // Get requests
@@ -87,6 +89,7 @@ export const itemsSlice = createApi({
             method: "GET"
           }
         },
+        providesTags: ["item"],
     }),
 
     // Get Approved Requests
@@ -97,7 +100,20 @@ export const itemsSlice = createApi({
             method: 'GET'
           }
         },
+        providesTags: ["item"],
+    }),
+
+    // Get Approved Requests
+    getAprrovedRequest: builder.query({
+      query: () => {
+        return {
+          url: "/api/tenants/approved_properties",
+          method: 'GET'
+        }
+      },
+      providesTags: ["item"],
     })
+
 
   }),
 });
@@ -110,6 +126,7 @@ export const {
   useSendRequestsMutation,
   useGetRequestsQuery,
   useApproveRequestMutation,
-  useGetTenantsQuery
+  useGetTenantsQuery,
+  useGetAprrovedRequestQuery
 } = itemsSlice;
 export default itemsSlice.reducer;

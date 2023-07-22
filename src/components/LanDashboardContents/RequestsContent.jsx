@@ -1,6 +1,7 @@
 import React from "react";
 import { FaUserCircle } from "react-icons/fa";
 import notFound from '../../assets/images/NotFound.png'
+import {ToastContainer, toast} from 'react-toastify'
 import { useApproveRequestMutation, useGetRequestsQuery } from "../../store/api/ItemsSlice";
 
 function RequestsContent() {
@@ -12,8 +13,8 @@ function RequestsContent() {
   console.log("Hey")
 
   const handleApprove = (property_id, tenant_id) => {
-    ApproveRequest(property_id,tenant_id).unwrap().then(() => {
-      console.log("success approve")
+    ApproveRequest({property_id,tenant_id}).unwrap().then(() => {
+      toast.success("Property approved successfull")
     }).catch((error) => {
       console.log("Approve Error: ",error)
     })
@@ -21,6 +22,7 @@ function RequestsContent() {
 
   return (
     <div className="mt-5 bg-white p-6 w-full flex flex-col shadow rounded">
+      <ToastContainer/>
       {/* title */}
       <div className="flex items-center justify-between">
         <h3 className="font-bold text-2xl">Requests</h3>
@@ -45,16 +47,17 @@ function RequestsContent() {
          ) : (
            <>
             {requests.map((request) => (
-              <div key={request.id} className="flex  flex-col gap-4  overflow-hidden md:w-[300px] h-auto w-full bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
+              <div key={request.id} className="flex  flex-col gap-2  overflow-hidden md:w-[300px] h-auto w-full bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
               <img
                 src={request.image}
                 alt=""
                 className="w-full h-[180px] rounded-xl bg-auto bg-no-repeat bg-center"
               />
-              <div className="flex flex-col gap-2 md:gap-7 w-full md:-full">
-                <div className="flex flex-col gap-3">
-                  <h3 className="font-bold text-2xl">{request.title}</h3>
-                  <span className="text-sm text-[#acacac]">{request.address}</span>
+              <div className="flex flex-col gap-2 md:gap-4 w-full md:-full">
+                <div className="flex flex-col gap-2">
+                  <h3 className="font-bold text-2xl">{request.property_title}</h3>
+                  <span className="text-sm text-[#acacac]">{request.property_address}</span>
+                  <h3 className="font-medium text-sm text-gray-400">Price: $ {request.property_rent_fee}</h3>
                 </div>
                 <div className="flex flex-col gap-2">
                   <span className="text-sm text-[#acacac]">Tenant info</span>
@@ -67,7 +70,7 @@ function RequestsContent() {
                 </div>
               </div>
               <button onClick={() => handleApprove(request.property_id, request.tenant_id)}
-              className=" bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
+              className=" bg-[#00befe] mt-2 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
                   Approve
               </button>
             </div>
