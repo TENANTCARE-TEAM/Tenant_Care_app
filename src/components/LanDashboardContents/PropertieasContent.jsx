@@ -54,9 +54,10 @@ function PropertieasContent() {
            ) : (
             <>
             {MyItem.map(item => (
-               <div key={item.id} className='flex flex-col gap-8 overflow-hidden w-full md:w-[300px] h-auto bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
-             <img src={item.image} alt="" className='w-full h-[180px] rounded-xl bg-auto bg-no-repeat bg-center'/>
-             <div className='flex flex-col gap-5 md:gap-6 w-full h-full'>
+               <div key={item.id} className='flex flex-col gap-6  overflow-hidden w-[300px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
+             <img src={item.image} alt="" 
+             className='w-full h-[180px]  rounded-xl bg-auto bg-no-repeat bg-center'/>
+             <div className='flex flex-col gap-4 md:gap-4 w-full'>
                  <div className='flex flex-col gap-2'>
                      <h3 className='text-2xl'>{item.address}</h3>
                      <span className='text-sm  text-[#00befe]'>{item.title}</span>
