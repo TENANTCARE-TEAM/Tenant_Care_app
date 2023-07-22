@@ -24,7 +24,6 @@ const [addItem] = useAddItemMutation()
     address: Yup.string().required('Address is required'),
     description: Yup.string().required('Description is required'),
     rent_fee: Yup.number().required('Price is required'),
-    availability: Yup.number().required('availability is required').max(1),
     image: Yup.string().required('image is required'),
   });
 
@@ -35,7 +34,6 @@ const [addItem] = useAddItemMutation()
       description: values.description,
       address: values.address,
       rent_fee: values.rent_fee,
-      availability: values.availability,
       image: values.image,
     }).unwrap().then(() => {
       toast.success("Property created successfully")
@@ -131,21 +129,6 @@ const [addItem] = useAddItemMutation()
 
             <div className="mb-5">
               <Field
-                type="number"
-                id="availability"
-                name="availability"
-                placeholder="Type 1 or 0 only"
-                className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 shadow  outline-none text-[20px]"
-              />
-              <ErrorMessage
-                name="availability"
-                component="div"
-                className="text-red-400"
-              />
-            </div>
-
-            <div className="mb-5">
-              <Field
                 type="text"
                 id="image"
                 name="image"
@@ -158,9 +141,11 @@ const [addItem] = useAddItemMutation()
                 className="text-red-400"
               />
             </div>   
+
             <button type="submit" className="bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
               Add Property
-            </button>         
+            </button>   
+                  
           </Form>
         </Formik>
       </div>

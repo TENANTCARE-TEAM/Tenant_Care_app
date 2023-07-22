@@ -32,20 +32,20 @@ function TenantContent() {
           ) : (
             <>
             {tenants.map((tenant) => (
-              <div className="flex flex-col md:gap-6  overflow-hidden md:w-[300px] h-auto w-full bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
+              <div className="flex flex-col md:gap-4  overflow-hidden md:w-[300px] h-auto w-full bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] cursor-pointer transition-all">
               <img
                 src={tenant.image}
                 alt=""
                 className="w-full h-[180px]  rounded-xl bg-auto bg-no-repeat bg-center"
               />
-            <div className="flex flex-col gap-4 md:gap-7 w-full md:h-full">
-              <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-2 md:gap-4 w-full md:h-full">
+              <div className="flex flex-col gap-2">
                 <h3 className="font-bold text-2xl">
-                  {tenant.title}
+                 {tenant.property_title}
                 </h3>
-                <span className="text-sm text-[#acacac]">{tenant.address}</span>
+                <span className="text-sm text-[#acacac]">{tenant.property_address}</span>
               </div>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
                 <span className="text-sm text-[#acacac]">Tenant info</span>
                 <div className="flex flex-col gap-2">
                   <div className="flex gap-2">
