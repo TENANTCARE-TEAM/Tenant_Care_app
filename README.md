@@ -12,12 +12,12 @@ Register a new landlord in the database.
 
 #### Request Body
 
-| Parameter      | Type   | Required | Description                             |
-| -------------- | ------ | -------- | --------------------------------------- |
-| `first_name`   | string | Yes      | First name of the landlord.              |
-| `last_name`    | string | Yes      | Last name of the landlord.               |
-| `email`        | string | Yes      | Email of the landlord.                   |
-| `password`     | string | Yes      | Password for the landlord's account.      |
+| Parameter      | Type   | Required | Description                   |
+| -------------- | ------ | -------- | ------------------------------ |
+| `first_name`   | string | Yes      | First name of the landlord.|
+| `last_name`    | string | Yes      | Last name of the landlord. |
+| `email`        | string | Yes      | Email of the landlord.  |
+| `password`     | string | Yes      | Password for the landlord's account.|
 
 #### Response
 
