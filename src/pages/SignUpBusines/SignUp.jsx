@@ -7,7 +7,7 @@ import Content from '../../components/BusinesSignUpC/Content'
 function SignUp() {
 
     useEffect(() => {
-        document.title = 'BUsines Sign Up'
+        document.title = 'Sign Up | TenantCare'
     }, [])
 
   return (

@@ -2,7 +2,6 @@
 import { Routes, Route, } from 'react-router-dom'
 import { BuContent, About, GetStarted, Home, SignIn, SignUp, Dashboard, Dhashboard, Properties, MyProfile, LanEditProfile,Tenants, EditProfile, Requests, AddProperty, MyProperties, ViewProperty, SignUpB , EditProperty, Profile} from './pages'
 import PriveRoute from './PrivateRoute'
-// import BuContent from "../signIBuContent/BuContent";
 
 function App() {
   return (
@@ -13,8 +12,8 @@ function App() {
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/GetStarted" element={<GetStarted />} />
         <Route path="/signUp" element={<SignUp />} />
-        <Route path='/busines/signUp' element={<SignUpB/>}/>
-       <Route path='/busines/signIn' element ={<BuContent/>}/>
+        <Route path='/business/signUp' element={<SignUpB/>}/>
+        <Route path='/business/signIn' element ={<BuContent/>}/>
       
         <Route to="/tenant/dashboard" element={<PriveRoute/>}>
           <Route path="/tenant/dashboard" element={<Dhashboard />} />

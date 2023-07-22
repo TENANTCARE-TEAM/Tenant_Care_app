@@ -24,10 +24,14 @@ function Content() {
   };
 
   const validationSchema = Yup.object({
-    first_name: Yup.string().required("First Name is required"),
-    last_name: Yup.string().required("Last Name is required"),
-    password: Yup.string().required("password is required").min(8),
-    email: Yup.string().required("Email is required"),
+    first_name: Yup.string().required("Please Enter your First Name"),
+    last_name: Yup.string().required("Please Enter your Last Name"),
+    password: Yup.string().required("Please Enter your Password")
+             .min(8, 'Password must be 8 characters long')
+             .matches(/[0-9]/ , 'Password requires a number')
+             .matches(/[a-z]/, 'Password requires a lowercase letter')
+             .matches(/[A-Z]/, 'Password requires a uppercase letter'),
+    email: Yup.string().email().required("Please Enter your Email"),
   });
 
   const handleSubmit = (values) => {
@@ -37,7 +41,7 @@ function Content() {
       email: values.email,
       password: values.password,
     }).unwrap().then(() => {
-      navigate("/signIn")
+      navigate("/business/signIn")
     }).catch((error) => {
       console.log(error)
       if(error.status === 400) {
@@ -57,7 +61,7 @@ function Content() {
         <ToastContainer/>
         <div className="md:w-[500px] w-[90%] border-2 items-center bg-white md:p-11 p-6 rounded-lg shadow-xl mt-5">
           <h2 className="text-center font-medium text-2xl text-[#00befe]">
-            Sign Up
+            Sign Up Business
           </h2>
           <Formik
             initialValues={initialValues}
@@ -139,7 +143,7 @@ function Content() {
 
           <div className="flex justify-between items-center pt-4">
             <p className="text-sm">Already have account?</p>
-            <Link to="/signIn" className="text-sm text-[#00befe] font-medium">
+            <Link to="/business/signIn" className="text-sm text-[#00befe] font-medium">
               Sign in
             </Link>
           </div>
