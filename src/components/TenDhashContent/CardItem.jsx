@@ -10,7 +10,7 @@ function CardItem() {
 //   const [approved, setAppoved] = useState(0)
 
   const { data: items = []} = useGetItemQuery()
-//   const { data: approvedData = []} = useGetAprrovedRequestQuery()
+  // const { data: approvedData = []} = useGetAprrovedRequestQuery()
 
 //   console.log("Approved data: ",approvedData)
 
