@@ -5,7 +5,7 @@ function Middle() {
 
   const [ShowMore, setIsShowMore] = useState(false);
 
-  const toggleReadMoreLess = () => {
+  const toggleMoreLess = () => {
     setIsShowMore(!ShowMore);
   };
 
@@ -42,7 +42,7 @@ function Middle() {
            </span>
         )}
         <button className='md:w-[20%] w-[40%] bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'
-        onClick={toggleReadMoreLess}>
+        onClick={toggleMoreLess}>
           See More
         </button>
       </div>
