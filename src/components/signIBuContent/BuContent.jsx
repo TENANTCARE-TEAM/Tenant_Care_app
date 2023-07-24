@@ -3,7 +3,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignInBuMutation } from "../../store/api/AuthSlices";
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
@@ -35,6 +35,7 @@ function BuContent() {
       email: values.email,
       password: values.password,
     }).unwrap().then(() => {
+      toast.success("sign in was succesfull");
       navigate("/landlord/Dashboard")
     }).catch((err) => {
       console.log(err) 
@@ -48,7 +49,7 @@ function BuContent() {
 
   return (
     <div className="md:px-[9%]">
-      <ToastContainer/>
+     
       {/* <h2 className="text-center font-medium text-3xl text-[#00befe] pt-[8%]">Login With...</h2> */}
       <div className="flex items-center md:flex-row flex-col md:gap-0 gap-4 justify-around text-center mb-[2%] mt-[5%] pt-9 p-4">
   
@@ -58,7 +59,7 @@ function BuContent() {
 
     <div className="md:w-[500px] w-[100%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2 pb-9">
       <h2 className="text-center font-medium text-2xl text-[#00befe]">
-        Login Business
+        Sign In Business
       </h2>
       <Formik 
       initialValues={initialValues} 
