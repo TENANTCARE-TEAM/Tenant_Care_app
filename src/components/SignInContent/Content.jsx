@@ -3,7 +3,7 @@ import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignInPeMutation } from "../../store/api/AuthSlices";
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
@@ -34,6 +34,7 @@ function Content() {
       email: values.email,
       password: values.password,
     }).unwrap().then(() => {
+      toast.success("sign in was succesfull");
       navigate("/tenant/dashboard")
     }).catch((err) => {
       console.log(err)
@@ -46,7 +47,7 @@ function Content() {
 
   return (
     <div className="md:px-[9%]">
-      <ToastContainer />
+      
       {/* <h2 className="text-center font-medium text-3xl text-[#00befe] pt-[4%]">Personal Sing in</h2> */}
       <div className="flex items-center md:flex-row flex-col md:gap-0 gap-4 justify-around text-center mb-[2%] mt-[5%] pt-9 p-4">
       
