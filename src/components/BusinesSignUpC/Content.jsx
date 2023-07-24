@@ -5,10 +5,9 @@ import Business from "../../assets/images/Signing.png";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignUpBuMutation } from "../../store/api/AuthSlices";
-import { ToastContainer , toast} from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
+import { toast } from 'react-toastify';
 
 function Content() {
   const navigate = useNavigate()
@@ -41,6 +40,7 @@ function Content() {
       email: values.email,
       password: values.password,
     }).unwrap().then(() => {
+      toast.success("sign up was succesfull");
       navigate("/business/signIn")
     }).catch((error) => {
       console.log(error)
@@ -58,7 +58,7 @@ function Content() {
         <div className="max-[768px]:hidden w-[490px] h-[480px] items-center left-4 mb-5">
           <img src={Business} alt="SignUp image" />
         </div>
-        <ToastContainer/>
+        
         <div className="md:w-[500px] w-[90%] border-2 items-center bg-white md:p-11 p-6 rounded-lg shadow-xl mt-5">
           <h2 className="text-center font-medium text-2xl text-[#00befe]">
             Sign Up Business
