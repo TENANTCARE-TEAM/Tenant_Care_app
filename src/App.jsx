@@ -2,6 +2,9 @@
 import { Routes, Route, } from 'react-router-dom'
 import { BuContent, About, GetStarted, Home, SignIn, SignUp, Dashboard, Dhashboard, Properties, MyProfile, LanEditProfile,Tenants, EditProfile, Requests, AddProperty, MyProperties, ViewProperty, SignUpB , EditProperty, Profile} from './pages'
 import PriveRoute from './PrivateRoute'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
   return (
@@ -68,6 +71,8 @@ function App() {
         </Route>
 
       </Routes>
+
+      <ToastContainer/>
     </>
   )
 }

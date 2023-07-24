@@ -5,7 +5,7 @@ import SignUp from "../../assets/images/SignUp.png";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignUpPeMutation } from "../../store/api/AuthSlices";
-import { ToastContainer, toast } from 'react-toastify';
+import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
 import {HiEye, HiEyeOff} from 'react-icons/hi'
@@ -41,6 +41,7 @@ function Content() {
       email: values.email,
       password: values.password,
     }).unwrap().then(() => {
+      toast.success("sign up was succesfull");
       navigate("/signIn")
     }).catch((error) => {
       console.log(error)
@@ -53,7 +54,7 @@ function Content() {
 
   return (
     <div className="md:px-[9%]">
-      <ToastContainer/>
+    
       <div className="flex items-center justify-around max-[768px]:flex-col text-center mb-[2%] mt-[2%] p-4">
         <div className="max-[768px]:hidden w-[490px] h-[480px] items-center left-4 mb-5">
           <img src={SignUp} alt="SignUp image" />
