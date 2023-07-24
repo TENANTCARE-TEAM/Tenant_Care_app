@@ -19,7 +19,7 @@ function CardItem() {
   }, [items])
   
   useEffect(() => {
-    const totalData = aprData.reduce((acc, item) => acc + 1, 0);
+    const totalData = aprData.length
 
 
     setAproveRequestes( totalData)
