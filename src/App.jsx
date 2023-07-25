@@ -1,6 +1,6 @@
 
 import { Routes, Route, } from 'react-router-dom'
-import { BuContent, About, GetStarted, Home, SignIn, SignUp, Dashboard, Dhashboard, Properties, MyProfile, LanEditProfile,Tenants, EditProfile, Requests, AddProperty, MyProperties, ViewProperty, SignUpB , EditProperty, Profile} from './pages'
+import {ApprovedProper, BuContent, About, GetStarted, Home, SignIn, SignUp, Dashboard, Dhashboard, Properties, MyProfile, LanEditProfile,Tenants, EditProfile, Requests, AddProperty, MyProperties, ViewProperty, SignUpB , EditProperty, Profile} from './pages'
 import PriveRoute from './PrivateRoute'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
@@ -24,6 +24,10 @@ function App() {
 
         <Route to="/tenant/Properties" element={<PriveRoute/>}>
           <Route path="/tenant/Properties" element={<Properties />} />
+        </Route>
+
+        <Route to="/tenant/AprovedProperty" element={<PriveRoute/>}>
+          <Route path="/tenant/AprovedProperty" element={<ApprovedProper />} />
         </Route>
 
         <Route to="/tenant/Profile" element={<PriveRoute/>}>
