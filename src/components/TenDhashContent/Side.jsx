@@ -4,8 +4,8 @@ import {FaBars, FaTimes, FaUserCircle} from 'react-icons/fa'
 import {CgProfile} from 'react-icons/cg'
 import {RxDashboard} from 'react-icons/rx'
 import { Link, useLocation } from 'react-router-dom'
-import { MdOutlineHomeWork} from 'react-icons/md'
-import {FcApproval} from 'react-icons/fc'
+import { MdOutlineApproval, MdOutlineHomeWork} from 'react-icons/md'
+// import {FcApproval} from 'react-icons/fc'
 import { FiLogOut } from 'react-icons/fi'
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'
@@ -64,7 +64,7 @@ function Side() {
         <Link to="/tenant/AprovedProperty" className={`md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg
          ${location.pathname === '/tenant/AprovedProperty' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]': 'text-[#acacac]'}
          `}>
-            <FcApproval className="text-2xl "/>
+            <MdOutlineApproval className="text-3xl "/>
             <span className='text-sm  font-medium'>Approved</span>
         </Link>
 
