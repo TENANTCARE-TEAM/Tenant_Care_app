@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 // import Loading from '../../assets/images/spinner.jpg'
 import {FaTrash, FaEdit} from 'react-icons/fa'
 import { useGetItemQuery } from '../../store/api/ItemsSlice'
@@ -7,10 +7,17 @@ import { Link } from 'react-router-dom'
 import { useGetUserLandlordQuery } from '../../store/api/UsersSlice'
 import notFound from '../../assets/images/NotFound.png'
 import {ToastContainer, toast} from 'react-toastify'
-import { useEffect } from 'react'
+import Search from './Search'
+
+
 
 function PropertieasContent() {
   
+  const [ search, setSearch ] = useState("");
+  const [filteredItems, setFilteredItems ] = useState([]);
+
+  
+ 
   const {data: user = []} = useGetUserLandlordQuery();
 
   const {data: items = [], isLoading} = useGetItemQuery()
@@ -28,12 +35,26 @@ function PropertieasContent() {
     }
   }
 
+  useEffect(()=> {
+    setFilteredItems(
+     MyItem.filter((item) => item.title.toLowerCase()
+      .includes(search.toLowerCase()))
+    )
+  }, [search, items]);
+
+  const handleSearch = (e) => {
+    setSearch(e.target.value)
+   }
+
   return (
     <div className='mt-5 bg-white p-6 w-full flex flex-col shadow rounded'>
       {/* title */}
       <ToastContainer/>
       <div className='flex items-center justify-between'>
             <h3 className='font-bold text-2xl'>My Properties</h3>
+           
+            <Search inputValue={search} onInputChange={handleSearch }
+            />
         </div>
         {/* Properties */}
          <div className='mt-4 flex justify-center flex-wrap gap-5 p-4 pb-5'>
@@ -53,7 +74,7 @@ function PropertieasContent() {
             </div>
            ) : (
             <>
-            {MyItem.map(item => (
+            {filteredItems.map(item => (
                <div key={item.id} className='flex flex-col gap-6  overflow-hidden w-[300px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
              <img src={item.image} alt="" 
              className='w-full h-[180px]  rounded-xl bg-auto bg-no-repeat bg-center'/>
