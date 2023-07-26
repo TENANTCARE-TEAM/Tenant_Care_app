@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import house from "../../assets/images/house-2.jpg";
 import house2 from "../../assets/images/house-3.jpg";
 import { Link } from "react-router-dom";
 import { useGetItemQuery } from "../../store/api/ItemsSlice";
 import { useGetUserLandlordQuery } from "../../store/api/UsersSlice";
 
+
+
 function RecentItems() {
-  const { data: items = [] } = useGetItemQuery();
+
+ 
+ 
+ const { data: items = [] } = useGetItemQuery();
 
   const { data: user = [] } = useGetUserLandlordQuery();
 
+  
+  
   const filteredItems = items.filter((item) => user.id === item.landlord_id);
   const startIndex = Math.max(filteredItems.length - 3, 0);
   const endIndex = Math.max(filteredItems.length - 1, 0);
@@ -18,13 +25,22 @@ function RecentItems() {
     endIndex - startIndex + 1
   );
 
+  
+
+  
+
   return (
     <div className="bg-white p-6 w-full flex flex-col shadow rounded">
       <div className="flex items-center justify-between">
+       
         <h3 className="font-bold text-2xl">Recently Added</h3>
+       
+        
+
         <Link to="/landlord/Properties">
           <span className="text-[#00befe]">See all</span>
         </Link>
+       
       </div>
       {/* Recent items */}
       <div className="mt-4 flex justify-center flex-wrap gap-5 p-4 pb-5">
@@ -46,6 +62,7 @@ function RecentItems() {
                   <span className="text-sm text-[#00befe]">{item.title}</span>
                   <span className="text-[#222]">$ {item.rent_fee}</span>
                 </div>
+                
                 <div className="flex">
                   <Link to={`/landlord/Properties/Edit/${item.id}`} className="w-full py-2 cursor-pointer px-3 text-center bg-[#00befe] text-white rounded-lg">
                     Edit Property
@@ -54,7 +71,7 @@ function RecentItems() {
               </div>
             </div>
           ))}
-          ;
+          
         </>
       </div>
     </div>
