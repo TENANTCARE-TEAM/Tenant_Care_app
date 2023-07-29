@@ -31,7 +31,7 @@ function EditProperties() {
                 address: item.address,
                 description: item.description,
                 rent_fee: item.rent_fee,
-                availability: item.availability,
+                // availability: item.availability,
                 image: item.image,
             })
         }
@@ -42,7 +42,7 @@ function EditProperties() {
         address: Yup.string().required('Address is required'),
         description: Yup.string().required('Description is required'),
         rent_fee: Yup.number().required('Price is required'),
-        availability: Yup.number().required('availability is required').max(1),
+        // availability: Yup.number().required('availability is required').max(1),
         image: Yup.string().required('image is required'),
     });
 
@@ -144,7 +144,7 @@ function EditProperties() {
                             />
                         </div>
 
-                        <div className="mb-5">
+                        {/* <div className="mb-5">
                             <Field
                                 type="number"
                                 id="availability"
@@ -157,7 +157,7 @@ function EditProperties() {
                                 component="div"
                                 className="text-red-400"
                             />
-                        </div>
+                        </div> */}
 
                         <div className="mb-5">
                             <Field
