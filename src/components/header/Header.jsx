@@ -9,9 +9,11 @@ function Header() {
 
   return (
     <header className="fixed top-0 left-0 z-10 w-full h-[70px] bg-white shadow flex justify-between items-center md:px-[12%] px-[7%]">
+      <Link to='/'>
       <h1 className="text-xl font-bold text-slate-900 cursor-pointer">
         TENANT<span className="text-[#00befe]">CARE</span>
       </h1>
+      </Link>
       <div onClick={() => setMenu(!menu)} className="md:hidden flex items-center justify-center w-[40px] h-[40px] bg-[#00befe] text-white text-xl rounded cursor-pointer">
         {menu ? <FaBars/> : <FaTimes/> }
       </div>
