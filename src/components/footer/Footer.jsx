@@ -1,5 +1,7 @@
 import React from 'react'
-import {FaFacebook, FaYoutube, FaTwitter, FaInstagram} from 'react-icons/fa'
+import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+
 function Footer() {
   return (
     
@@ -10,10 +12,24 @@ function Footer() {
                     <p className='text-gray-400 break-words'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
                       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                     <div className='flex gap-3 mt-4 text-[#00befe]'>
-                       <FaFacebook/>
-                       <FaYoutube/>
-                       <FaTwitter/>
-                       <FaInstagram/>
+                    
+                        <Link to={"https://www.facebook.com/"} target="_blank">
+                         <FaFacebook/>
+                        </Link>
+                          
+                        <Link to={"https://www.youtube.com/"} target="_blank">
+                         <FaYoutube/>
+                        </Link>
+                       
+                        <Link to={"https://twitter.com/"} target="_blank">
+                         <FaTwitter/> 
+                        </Link>
+
+                        <Link to={"https://www.instagram.com/"} target="_blank">
+                         <FaInstagram/>
+                        </Link>
+                       
+                      
                     </div>
                     <p className='md:mt-2 mt-5 text-gray-500 text-sm max-[768px]:text-center '>© 2023 . All rights reserved.</p>
                 </div>
