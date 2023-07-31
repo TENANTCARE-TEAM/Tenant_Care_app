@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { FiLogOut } from "react-icons/fi";
@@ -19,7 +20,7 @@ function Navs() {
   const handleLogout = () => {
     Cookies.remove("token");
     setUserInfo(true);
-    navigate("/business/signIn");
+    navigate("/owner/signIn");
   };
 
   return (

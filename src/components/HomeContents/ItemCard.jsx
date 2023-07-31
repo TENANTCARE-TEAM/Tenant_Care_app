@@ -1,6 +1,5 @@
 import React from 'react'
-import house from '../../assets/images/house-2.jpg'
-import house2 from '../../assets/images/house-3.jpg'
+
 import { Link } from 'react-router-dom';
 
 import {useGetItemQuery} from '../../store/api/ItemsSlice'
@@ -9,8 +8,6 @@ function ItemCard() {
 
 const {data: items = [], isLoading} = useGetItemQuery()
 
-// const itemSplice = items.splice(-6 , -1)
-// console.log(itemSplice);
   return (
     <div className="px[6%] md:px-[9%] bg-white p-6 w-full flex flex-col shadow rounded">
       <div className="flex items-center justify-between md:mx-16 mx-6">

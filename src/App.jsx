@@ -15,8 +15,8 @@ function App() {
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/GetStarted" element={<GetStarted />} />
         <Route path="/signUp" element={<SignUp />} />
-        <Route path='/business/signUp' element={<SignUpB/>}/>
-        <Route path='/business/signIn' element ={<BuContent/>}/>
+        <Route path='/owner/signUp' element={<SignUpB/>}/>
+        <Route path='/owner/signIn' element ={<BuContent/>}/>
       
         <Route to="/tenant/dashboard" element={<PriveRoute/>}>
           <Route path="/tenant/dashboard" element={<Dhashboard />} />

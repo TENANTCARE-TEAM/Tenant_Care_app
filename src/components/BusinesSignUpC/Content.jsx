@@ -41,7 +41,7 @@ function Content() {
       password: values.password,
     }).unwrap().then(() => {
       toast.success("sign up was succesfull");
-      navigate("/business/signIn")
+      navigate("/owner/signIn")
     }).catch((error) => {
       console.log(error)
       if(error.status === 400) {
@@ -143,7 +143,7 @@ function Content() {
 
           <div className="flex justify-between items-center pt-4">
             <p className="text-sm">Already have account?</p>
-            <Link to="/business/signIn" className="text-sm text-[#00befe] font-medium">
+            <Link to="/owner/signIn" className="text-sm text-[#00befe] font-medium">
               Sign in
             </Link>
           </div>
