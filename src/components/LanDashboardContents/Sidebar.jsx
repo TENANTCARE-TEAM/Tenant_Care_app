@@ -31,7 +31,7 @@ function Sidebar() {
   const handleLogout = () => {
     Cookies.remove("token");
     setUserInfo(true);
-    navigate("/signIn");
+    navigate("/business/signIn");
   };
 
   return (
@@ -73,15 +73,9 @@ function Sidebar() {
                 <MdOutlineMarkEmailUnread className="text-2xl "/>
                 <span className='text-sm  font-medium'>Requests</span>
             </Link>
-            {/* <Link to="/landlord/Profile" className={`md:w-[140px] w-full p-2 py-4 hidden md:flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg
-            ${location.pathname === '/landlord/Profile' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]': 'text-[#acacac]'}
-            `}>
-                <CgProfile className="text-2xl "/>
-                <span className='text-sm  font-medium'>Profile</span>
-            </Link> */}
+        
             <div onClick={handleLogout}
-             className={`md:hidden md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg 
-             ${location.pathname === '/landlord/Requests' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]': 'text-[#acacac]'}`}>
+             className={`md:hidden md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg text-[#acacac]`}>
                 <FiLogOut className="text-2xl "/>
                 <span className='text-sm  font-medium'>Logout</span>
             </div>
