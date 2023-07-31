@@ -31,7 +31,7 @@ function Sidebar() {
   const handleLogout = () => {
     Cookies.remove("token");
     setUserInfo(true);
-    navigate("/signIn");
+    navigate("/business/signIn");
   };
 
   return (
@@ -54,32 +54,31 @@ function Sidebar() {
           <Link to="/landlord/Properties" className={`md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg
              ${location.pathname === '/landlord/Properties' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]' : 'text-[#acacac]'}
              `}>
-            <MdOutlineHomeWork className="text-2xl " />
-            <span className='text-sm  font-medium'>Properties</span>
-          </Link>
-          <Link to="/landlord/Tenants" className={`md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg
-             ${location.pathname === '/landlord/Tenants' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]' : 'text-[#acacac]'}`}>
-            <HiOutlineUserGroup className="text-2xl " />
-            <span className='text-sm  font-medium'>Tenants</span>
-          </Link>
-          <Link to="/landlord/AddProperty" className={`md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg 
-             ${location.pathname === '/landlord/AddProperty' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]' : 'text-[#acacac]'}`}
-          >
-            <MdOutlineAddHomeWork className="text-2xl " />
-            <span className='text-sm  font-medium'>Add Property</span>
-          </Link>
-          <Link to="/landlord/Requests" className={`md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg 
-             ${location.pathname === '/landlord/Requests' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]' : 'text-[#acacac]'}`}>
-            <MdOutlineMarkEmailUnread className="text-2xl " />
-            <span className='text-sm  font-medium'>Requests</span>
-          </Link>
-          
-          <div onClick={handleLogout}
-            className={`md:hidden md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg 
-             ${location.pathname === '/landlord/Requests' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]' : 'text-[#acacac]'}`}>
-            <FiLogOut className="text-2xl " />
-            <span className='text-sm  font-medium'>Logout</span>
-          </div>
+                <MdOutlineHomeWork className="text-2xl "/>
+                <span className='text-sm  font-medium'>Properties</span>
+            </Link>
+            <Link to="/landlord/Tenants" className={`md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg
+             ${location.pathname === '/landlord/Tenants' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]': 'text-[#acacac]'}`}>
+                <HiOutlineUserGroup className="text-2xl "/>
+                <span className='text-sm  font-medium'>Tenants</span>
+            </Link>
+            <Link to="/landlord/AddProperty" className={`md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg 
+             ${location.pathname === '/landlord/AddProperty' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]': 'text-[#acacac]'}`}
+             >
+                <MdOutlineAddHomeWork className="text-2xl "/>
+                <span className='text-sm  font-medium'>Add Property</span>
+            </Link>
+            <Link to="/landlord/Requests" className={`md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg 
+             ${location.pathname === '/landlord/Requests' ? 'before:block before:absolute before:left-1 before: before:w-[6px] before:h-[58px] before:rounded-lg transition-all before:bg-[#00befe] text-[#00befe]': 'text-[#acacac]'}`}>
+                <MdOutlineMarkEmailUnread className="text-2xl "/>
+                <span className='text-sm  font-medium'>Requests</span>
+            </Link>
+        
+            <div onClick={handleLogout}
+             className={`md:hidden md:w-[140px] w-full p-2 py-4 flex flex-col items-center gap-2 justify-center cursor-pointer  bg-[#F6F6F6] rounded-lg text-[#acacac]`}>
+                <FiLogOut className="text-2xl "/>
+                <span className='text-sm  font-medium'>Logout</span>
+            </div>
         </ul>
       </div>
     </>

@@ -6,3 +6,19 @@ body {
     overflow-x: hidden;
     background: #f6f6f6;
 }
+
+@media (max-width: 1285px) {
+    #cards {
+        gap: 6px;
+    }
+}
+
+@media (max-width: 1250px) {
+    #cards {
+        flex-direction: column;
+        gap: 14px;
+    }
+    #box {
+        width: 100%;
+    }
+}
