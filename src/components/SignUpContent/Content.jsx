@@ -5,16 +5,16 @@ import SignUp from "../../assets/images/SignUp.png";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useSignUpPeMutation } from "../../store/api/AuthSlices";
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
-import {HiEye, HiEyeOff} from 'react-icons/hi'
+import { HiEye, HiEyeOff } from 'react-icons/hi'
 
 function Content() {
   const navigate = useNavigate()
 
   const [change, setChange] = useState(true)
-  const [signUpPe, {error = {}}] = useSignUpPeMutation();
+  const [signUpPe, { error = {} }] = useSignUpPeMutation();
 
   const initialValues = {
     first_name: "",
@@ -27,10 +27,10 @@ function Content() {
     first_name: Yup.string().required("Please Enter your First Name"),
     last_name: Yup.string().required("Please Enter your Last Name"),
     password: Yup.string().required("Please Enter your Password")
-    .min(8, 'Password must be 8 characters long')
-    .matches(/[0-9]/ , 'Password requires a number')
-    .matches(/[a-z]/, 'Password requires a lowercase letter')
-    .matches(/[A-Z]/, 'Password requires a uppercase letter'),
+      .min(8, 'Password must be 8 characters long')
+      .matches(/[0-9]/, 'Password requires a number')
+      .matches(/[a-z]/, 'Password requires a lowercase letter')
+      .matches(/[A-Z]/, 'Password requires a uppercase letter'),
     email: Yup.string().required("Please Enter your Email"),
   });
 
@@ -45,7 +45,7 @@ function Content() {
       navigate("/signIn")
     }).catch((error) => {
       console.log(error)
-      if(error.status === 400) {
+      if (error.status === 400) {
         toast.error("The email already exists")
       }
     })
@@ -54,7 +54,7 @@ function Content() {
 
   return (
     <div className="md:px-[9%]">
-    
+
       <div className="flex items-center justify-around max-[768px]:flex-col text-center mb-[2%] mt-[2%] p-4">
         <div className="max-[768px]:hidden w-[490px] h-[480px] items-center left-4 mb-5">
           <img src={SignUp} alt="SignUp image" />
@@ -126,7 +126,7 @@ function Content() {
                   className="text-left text-red-400"
                 />
                 <div onClick={() => setChange(!change)} className="cursor-pointer absolute top-10 right-4 text-[#555]">
-                  {change ? <HiEye/> : <HiEyeOff/>}
+                  {change ? <HiEye /> : <HiEyeOff />}
                 </div>
               </div>
 

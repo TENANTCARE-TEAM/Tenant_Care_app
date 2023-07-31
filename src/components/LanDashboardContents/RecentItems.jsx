@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import house from "../../assets/images/house-2.jpg";
-import house2 from "../../assets/images/house-3.jpg";
+
 import { Link } from "react-router-dom";
 import { useGetItemQuery } from "../../store/api/ItemsSlice";
 import { useGetUserLandlordQuery } from "../../store/api/UsersSlice";
@@ -8,8 +7,6 @@ import { useGetUserLandlordQuery } from "../../store/api/UsersSlice";
 
 
 function RecentItems() {
-
- 
  
  const { data: items = [] } = useGetItemQuery();
 
