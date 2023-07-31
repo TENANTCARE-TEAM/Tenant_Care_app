@@ -15,7 +15,7 @@ function Middle() {
          <h1 className='text-center pt-[60px] text-5xl text-[#00BEFE] font-bold'>About</h1>
       </div>
       <div className="md:px-[10%] px-6 py-6 pb-8 mb-12 flex flex-col md:flex-row w-full">
-      <div className="p-2 mw-full md:w-[60%] h-[450px]">
+      <div className="p-2 w-full md:w-[60%] md:h-[24rem] h-[22rem]">
         <img src={key} className="w-full h-full" alt="" />
       </div>
       <div className="pl-4 mt-5 flex flex-col w-[100%]">
@@ -41,7 +41,7 @@ function Middle() {
            your property management process to new heights.
            </span>
         )}
-        <button className='md:w-[20%] w-[40%] bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'
+        <button className='w-[40%] bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'
         onClick={toggleMoreLess}>
           See More
         </button>

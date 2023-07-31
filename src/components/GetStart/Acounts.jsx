@@ -11,30 +11,26 @@ const Account = () => {
       </div>
       <div class="flex flex-wrap justify-center gap-7 mt-10 ">
 
-        <div class="max-[400px]:w-full w-[278px]  overflow-hidden shadow-lg rounded-3xl border-2  border-[#00befe] p-5">
-           <div class="px-2 md:px-6 py-2">
-             <h1 className="text-3xl font-bold text-[#00befe]">Personal</h1>
+        <div class="max-[400px]:w-[94%] w-[260px]  overflow-hidden shadow-lg rounded-3xl border-2  border-[#00befe] p-5">
+           <div class="px-2 md:px-3 py-2">
+             <h1 className="text-3xl font-bold text-[#00befe]">Renter</h1>
               <span className="text-slate-900">Account</span>
                 <ul className="mt-3">
                   <li className="flex items-center gap-1">
                     <AiOutlineCheckCircle className="text-[#409725]"/>
-                    All in starter
+                    View All Properties
                   </li>
                   <li className="flex items-center gap-1">
                      <AiOutlineCheckCircle className="text-[#409725]"/>
-                    24 hours support
+                    Send Requests
+                  </li>
+                  <li className="flex items-center gap-1">
+                    <AiOutlineCheckCircle className="text-[#409725]"/>
+                    Update Account
                   </li>
                   <li className="flex items-center gap-1">
                       <AiOutlineCloseCircle className='text-[#FF6746]'/>
                     Add property
-                  </li>
-                  <li className="flex items-center gap-1">
-                      <AiOutlineCloseCircle className='text-[#FF6746]'/>
-                    Finan Analyzing
-                  </li>
-                  <li className="flex items-center gap-1">
-                      <AiOutlineCloseCircle className='text-[#FF6746]'/>
-                    Customer management
                   </li>
                 </ul>
               </div>
@@ -54,30 +50,26 @@ const Account = () => {
             </div>
           </div>
 
-          <div className="max-[400px]:w-full w-[278px]  overflow-hidden shadow-lg rounded-3xl border-2  border-[#00befe] p-5">
-            <div class="px-2 md:px-6 py-2">
-              <h1 className="text-3xl font-bold text-[#00befe]">Business</h1>
+          <div className="max-[400px]:w-[94%] w-[260px]  overflow-hidden shadow-lg rounded-3xl border-2  border-[#00befe] p-5">
+            <div class="px-2 md:px-3 py-2">
+              <h1 className="text-3xl font-bold text-[#00befe]">Owner</h1>
               <span className="text-slate-900">Account</span>
                 <ul className="mt-3">
                   <li className="flex items-center gap-1">
                      <AiOutlineCheckCircle className="text-[#409725]"/>
-                    All in starter
+                    Approve Requests 
                   </li>
                   <li className="flex items-center gap-1">
                      <AiOutlineCheckCircle className="text-[#409725]"/>
-                    24 hours support
+                    Property management
                   </li>
                   <li className="flex items-center gap-1">
                      <AiOutlineCheckCircle className="text-[#409725]"/>
                     Add property
                   </li>
                   <li className="flex items-center gap-1">
-                     <AiOutlineCheckCircle className="text-[#409725]"/>
-                    finan analyzing
-                  </li>
-                  <li className="flex items-center gap-1">
-                     <AiOutlineCheckCircle className="text-[#409725]"/>
-                    Customer management
+                    <AiOutlineCheckCircle className="text-[#409725]"/>
+                    Update Account
                   </li>
                 </ul>
               </div>

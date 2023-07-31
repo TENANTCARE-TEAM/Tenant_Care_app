@@ -57,7 +57,7 @@ function Content() {
 
         <div className="w-full md:w-auto flex flex-col gap-col-2">
         <div className="md:w-[500px] w-[100%] items-center bg-white md:p-11 p-6 rounded-lg  mb-2 shadow-2xl border-2 pb-9">
-          <h2 className="text-center font-medium text-2xl text-[#00befe]">Sign in Personal</h2>
+          <h2 className="text-center font-medium text-2xl text-[#00befe]">Sign in Renter</h2>
           <Formik
             className='p-8'
             initialValues={initialValues}
