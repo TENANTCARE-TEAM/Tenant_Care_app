@@ -61,7 +61,7 @@ function Content() {
         
         <div className="md:w-[500px] w-[90%] border-2 items-center bg-white md:p-11 p-6 rounded-lg shadow-xl mt-5">
           <h2 className="text-center font-medium text-2xl text-[#00befe]">
-            Sign Up Business
+            Sign Up Owner
           </h2>
           <Formik
             initialValues={initialValues}

@@ -58,7 +58,7 @@ function TenantContent() {
                     <h3 className="font-bold text-2xl">
                      {tenant.property_title}
                     </h3>
-                    <span className="text-sm text-[#acacac]">{tenant.property_address}</span>
+                    <span className="text-sm text-[#acacac]">{tenant.property_address.slice(0, 20) + [tenant.property_address.length >= 20 ? '...' : '']}</span>
                   </div>
                   <div className="flex flex-col gap-2 pb-2">
                     <span className="text-sm text-[#acacac]">Tenant info</span>

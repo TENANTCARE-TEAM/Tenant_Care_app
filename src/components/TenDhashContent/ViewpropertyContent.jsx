@@ -56,6 +56,9 @@ function ViewpropertyContent() {
           <p className="leading-[30px] font-semibold ">
             {Item.description}
           </p>
+          <p className="leading-[30px] font-semibold ">
+            Address: {Item.address}
+          </p>
           <p className="text-xl text-[#222] font-semibold ">
             Price : $ {Item.rent_fee}
           </p>

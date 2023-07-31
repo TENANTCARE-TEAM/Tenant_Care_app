@@ -68,7 +68,7 @@ function RequestsContent() {
                   <div className="flex flex-col gap-2 md:gap-4 w-full md:-full">
                     <div className="flex flex-col gap-2">
                       <h3 className="font-bold text-2xl">{request.property_title}</h3>
-                      <span className="text-sm text-[#acacac]">{request.property_address}</span>
+                      <span className="text-sm text-[#acacac]"> {request.property_address.slice(0, 20) + [request.property_address.length >= 20 ? '...' : '']}</span>
                       <h3 className="font-medium text-sm text-gray-400">Price: $ {request.property_rent_fee}</h3>
                     </div>
                     <div className="flex flex-col gap-2">

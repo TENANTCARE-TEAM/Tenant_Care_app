@@ -63,7 +63,7 @@ function PropertiesContent() {
                     </Link> 
                     <div className='flex flex-col gap-4 md:gap-4 w-full '>
                         <div className='flex flex-col gap-2'>
-                            <h3 className=' text-2xl'> {item.address}</h3>
+                            <h3 className=" text-2xl"> {item.address.slice(0, 20) + [item.address.length >= 20 ? '...' : '']}</h3>
                             <span className='text-sm text-[#00befe]'>{item.title}</span>
                             <span className="text-[#222]">${item.rent_fee}</span>
                         </div>
