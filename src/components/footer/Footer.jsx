@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FaFacebook, FaYoutube, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaTwitter,  } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -19,14 +19,14 @@ function Footer() {
             TENANT<span className="text-[#00befe]">CARE</span>
           </h1>
           <p className="text-gray-400 break-words">
-            Introducing TenantCare, the ultimate property management solution 
-            designed to streamline and simplify every aspect of managing properties,
-           tenants, and work orders . 
-          </p>
+        <b>TenantCare:</b> Simplifying property management. Manage properties, tenants,
+           and work orders effortlessly with our all-in-one solution. Streamline
+           operations, enhance tenant communication, and maximize efficiency. Experience
+            the power of TenantCare for seamless property management.</p>
           <div className="flex gap-3 mt-4 text-[#00befe]">
-            <Link to='https://www.facebook.com'><FaFacebook /></Link>
-            <Link to='https://twitter.com'><FaTwitter /></Link>
-            <Link to='https://instagram.com'><FaInstagram /></Link>
+            <Link to='https://www.facebook.com/AmesaSolutions'><FaFacebook /></Link>
+            <Link to='https://twitter.com/AmesaSolutions'><FaTwitter /></Link>
+            <Link to='https://github.com/TENANTCARE-TEAM'><FaGithub /></Link>
           </div>
         </div>
         <div className="flex flex-col gap-2">

@@ -32,6 +32,11 @@ const Account = () => {
                       <AiOutlineCloseCircle className='text-[#FF6746]'/>
                     Add property
                   </li>
+
+                  <li className="flex items-center gap-1">
+                      <AiOutlineCloseCircle className='text-[#FF6746]'/>
+                    property management
+                  </li>
                 </ul>
               </div>
             <div className="px-6 py-2">
@@ -71,10 +76,15 @@ const Account = () => {
                     <AiOutlineCheckCircle className="text-[#409725]"/>
                     Update Account
                   </li>
+
+                  <li className="flex items-center gap-1">
+                    <AiOutlineCheckCircle className="text-[#409725]"/>
+                    Tenant management
+                  </li>
                 </ul>
               </div>
             <div className="px-6 py-2">
-              <Link to='/business/signUp'>
+              <Link to='/owner/signUp'>
                 <button className='w-full bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'>
                   Register
                 </button>
@@ -83,7 +93,7 @@ const Account = () => {
                Already have account?
               </p>
               <div className="mt-2">
-                <Link to='/business/signIn'>
+                <Link to='/owner/signIn'>
                <p className="text-sm cursior-pointer text-[#00befe]">Sign in</p>
                 </Link>
               </div>

@@ -6,16 +6,16 @@ import { useNavigate } from "react-router-dom";
 
 function EditProfileContent() {
 
- const navigate = useNavigate()
- const {data: user = []} = useGetUserLandlordQuery()
- const [updateUser] = useEditUserLandlordMutation()
+  const navigate = useNavigate()
+  const { data: user = [] } = useGetUserLandlordQuery()
+  const [updateUser] = useEditUserLandlordMutation()
 
- const initialValues = {
+  const initialValues = {
     first_name: user.first_name,
     last_name: user.last_name,
     email: user.email,
- }
-    
+  }
+
   const validationSchema = Yup.object({
     first_name: Yup.string().required('First Name is required'),
     last_name: Yup.string().required('Last Name is required'),
@@ -24,7 +24,7 @@ function EditProfileContent() {
 
   const handleUpdate = (values) => {
     updateUser(values).unwrap().then(() => {
-        navigate("/landlord/Profile")
+      navigate("/landlord/Profile")
     })
   }
 
@@ -91,7 +91,7 @@ outline-none text-[20px]"
               />
             </div>
             <button type="submit" className="bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
-                Update Profile
+              Update Profile
             </button>
           </Form>
         </Formik>

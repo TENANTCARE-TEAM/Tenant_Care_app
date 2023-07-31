@@ -1,14 +1,14 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
-import {useAddItemMutation} from '../../store/api/ItemsSlice'
+import { useAddItemMutation } from '../../store/api/ItemsSlice'
 import { useNavigate } from 'react-router-dom/dist'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 
 function AddPropertyContent() {
-  
-const navigate = useNavigate()
 
-const [addItem] = useAddItemMutation()
+  const navigate = useNavigate()
+
+  const [addItem] = useAddItemMutation()
 
   const initialValues = {
     title: '',
@@ -27,8 +27,8 @@ const [addItem] = useAddItemMutation()
     image: Yup.string().required('image is required'),
   });
 
-  const handleSubmit = (values, {resetForm}) => {
-   
+  const handleSubmit = (values, { resetForm }) => {
+
     addItem({
       title: values.title,
       description: values.description,
@@ -43,18 +43,18 @@ const [addItem] = useAddItemMutation()
     console.log(values);
     resetForm()
   }
-  
-   
+
+
   return (
     <div className='mt-5 bg-white p-8 w-full flex flex-col shadow rounded '>
-    {/* title */}
+      {/* title */}
       <div className='flex'>
-          <h3 className='font-bold text-2xl'>Add Property</h3>
+        <h3 className='font-bold text-2xl'>Add Property</h3>
       </div>
       {/* content */}
-         
+
       <div className="mx-auto w-full rounded-lg bg-white p-10 shadow-xl md:w-3/4 lg:w-1/2 mb-12">
-       
+
         <Formik
           initialValues={initialValues}
           validationSchema={validationSchema}
@@ -140,12 +140,12 @@ const [addItem] = useAddItemMutation()
                 component="div"
                 className="text-red-400"
               />
-            </div>   
+            </div>
 
             <button type="submit" className="bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
               Add Property
-            </button>   
-                  
+            </button>
+
           </Form>
         </Formik>
       </div>

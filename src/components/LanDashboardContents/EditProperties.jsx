@@ -3,12 +3,12 @@ import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useGetItemQuery, useEditItemMutation } from '../../store/api/ItemsSlice'
-import {toast} from 'react-toastify'
+import { toast } from 'react-toastify'
 
 
 function EditProperties() {
 
-    const [editItem, {error = {}}] = useEditItemMutation()
+    const [editItem, { error = {} }] = useEditItemMutation()
     const { data: Items = [] } = useGetItemQuery()
 
     const params = useParams()
@@ -16,7 +16,7 @@ function EditProperties() {
 
     const [initialValues, setInitialValues] = useState({
         title: "",
-        address: "" ,
+        address: "",
         description: "",
         rent_fee: "",
         availability: "",
@@ -48,8 +48,8 @@ function EditProperties() {
 
     const handleSubmit = (values) => {
         editItem({
-           id: Number(params.property_id),
-           update: values
+            id: Number(params.property_id),
+            update: values
         }).then(() => {
             toast.success("Property updated successfully")
             navigate('/landlord/Properties')
