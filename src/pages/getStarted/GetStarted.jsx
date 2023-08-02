@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
-import Acounts from '../../components/GetStart/Acounts'
+import Content from '../../components/GetStartContent/Content'
 
 
 function GetStarted() {
@@ -12,7 +12,7 @@ function GetStarted() {
   return (
     <div className='mt-16 bg-white'>
         <Header/>
-        <Acounts/>
+        <Content/>
         <Footer/>
     </div>
   )

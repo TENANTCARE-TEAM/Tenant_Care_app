@@ -47,7 +47,7 @@ function Footer() {
               placeholder="Email address "
               className="outline-none p-3 bg-white rounded-lg"
             />
-            <div className="w-full text-center bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
+            <div className="w-full text-center bg-[#00befe] p-3 px-4 rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff] font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
               Subscribe
             </div>
           </div>

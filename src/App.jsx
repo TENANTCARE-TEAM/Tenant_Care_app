@@ -1,6 +1,6 @@
 
 import { Routes, Route, } from 'react-router-dom'
-import {ApprovedProper, BuContent, About, GetStarted, Home, SignIn, SignUp, Dashboard, Dhashboard, Properties, MyProfile, LanEditProfile,Tenants, EditProfile, Requests, AddProperty, MyProperties, ViewProperty, SignUpB , EditProperty, Profile} from './pages'
+import {ApprovedProper, SignInOwner, About, GetStarted, Home, SignIn, SignUp, Dashboard, RentDashboard, Properties, MyProfile, LanEditProfile,Tenants, EditProfile, Requests, AddProperty, MyProperties, ViewProperty, SignUpOwner , EditProperty, Profile} from './pages'
 import PriveRoute from './PrivateRoute'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
@@ -15,63 +15,63 @@ function App() {
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/GetStarted" element={<GetStarted />} />
         <Route path="/signUp" element={<SignUp />} />
-        <Route path='/owner/signUp' element={<SignUpB/>}/>
-        <Route path='/owner/signIn' element ={<BuContent/>}/>
+        <Route path='/Owner/signUp' element={<SignUpOwner/>}/>
+        <Route path='/Owner/signIn' element ={<SignInOwner/>}/>
       
-        <Route to="/tenant/dashboard" element={<PriveRoute/>}>
-          <Route path="/tenant/dashboard" element={<Dhashboard />} />
+        <Route to="/Renter/dashboard" element={<PriveRoute/>}>
+          <Route path="/Renter/dashboard" element={<RentDashboard />} />
         </Route>
 
-        <Route to="/tenant/Properties" element={<PriveRoute/>}>
-          <Route path="/tenant/Properties" element={<Properties />} />
+        <Route to="/Renter/Properties" element={<PriveRoute/>}>
+          <Route path="/Renter/Properties" element={<Properties />} />
         </Route>
 
-        <Route to="/tenant/AprovedProperty" element={<PriveRoute/>}>
-          <Route path="/tenant/AprovedProperty" element={<ApprovedProper />} />
+        <Route to="/Renter/AprovedProperty" element={<PriveRoute/>}>
+          <Route path="/Renter/AprovedProperty" element={<ApprovedProper />} />
         </Route>
 
-        <Route to="/tenant/Profile" element={<PriveRoute/>}>
-          <Route path="/tenant/Profile" element={<Profile />} />
+        <Route to="/Renter/Profile" element={<PriveRoute/>}>
+          <Route path="/Renter/Profile" element={<Profile />} />
         </Route>
 
-        <Route to="/tenant/Profile/Edit" element={<PriveRoute/>}>
-          <Route path="/tenant/Profile/Edit" element={<EditProfile />} />
+        <Route to="/Renter/Profile/Edit" element={<PriveRoute/>}>
+          <Route path="/Renter/Profile/Edit" element={<EditProfile />} />
         </Route>
 
-        <Route to="/Tenant/dashboard/ViewProperty/:property_id" element={<PriveRoute/>}>
-          <Route path="/Tenant/dashboard/ViewProperty/:property_id" element={<ViewProperty />} />
+        <Route to="/Renter/dashboard/ViewProperty/:property_id" element={<PriveRoute/>}>
+          <Route path="/Renter/dashboard/ViewProperty/:property_id" element={<ViewProperty />} />
         </Route>
 
-        <Route to="/landlord/Dashboard" element={<PriveRoute/>}>
-          <Route path='/landlord/Dashboard' element={<Dashboard />} />
+        <Route to="/Owner/Dashboard" element={<PriveRoute/>}>
+          <Route path='/Owner/Dashboard' element={<Dashboard />} />
         </Route>
 
-        <Route to="/landlord/Properties" element={<PriveRoute/>}>
-          <Route path="/landlord/Properties" element={<MyProperties />} />
+        <Route to="/Owner/Properties" element={<PriveRoute/>}>
+          <Route path="/Owner/Properties" element={<MyProperties />} />
         </Route>
 
-        <Route to="/landlord/Tenants" element={<PriveRoute/>}>
-          <Route path="/landlord/Tenants" element={<Tenants />} />
+        <Route to="/Owner/Tenants" element={<PriveRoute/>}>
+          <Route path="/Owner/Tenants" element={<Tenants />} />
         </Route>
 
-        <Route to="/landlord/AddProperty" element={<PriveRoute/>}>
-          <Route path="/landlord/AddProperty" element={<AddProperty />} />
+        <Route to="/Owner/AddProperty" element={<PriveRoute/>}>
+          <Route path="/Owner/AddProperty" element={<AddProperty />} />
         </Route>
 
-        <Route to="/landlord/Requests" element={<PriveRoute/>}>
-          <Route path="/landlord/Requests" element={<Requests />} />
+        <Route to="/Owner/Requests" element={<PriveRoute/>}>
+          <Route path="/Owner/Requests" element={<Requests />} />
         </Route>     
         
-        <Route to="/landlord/Profile" element={<PriveRoute/>}>
-          <Route path="/landlord/Profile" element={<MyProfile />} />
+        <Route to="/Owner/Profile" element={<PriveRoute/>}>
+          <Route path="/Owner/Profile" element={<MyProfile />} />
         </Route>   
 
-        <Route to="/landlord/Profile/Edit" element={<PriveRoute/>}>
-          <Route path="/landlord/Profile/Edit" element={<LanEditProfile />} />
+        <Route to="/Owner/Profile/Edit" element={<PriveRoute/>}>
+          <Route path="/Owner/Profile/Edit" element={<LanEditProfile />} />
         </Route>               
         
-        <Route to="/landlord/Properties/Edit/:property_id" element={<PriveRoute/>}>
-          <Route path="/landlord/Properties/Edit/:property_id" element={<EditProperty />} />
+        <Route to="/Owner/Properties/Edit/:property_id" element={<PriveRoute/>}>
+          <Route path="/Owner/Properties/Edit/:property_id" element={<EditProperty />} />
         </Route>
 
       </Routes>

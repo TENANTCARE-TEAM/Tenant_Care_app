@@ -14,8 +14,8 @@ export const authSlice = createApi({
   tagsTypes: ["User"],
 
   endpoints: builder => ({
-    // sign up Busines
-    signUpBu: builder.mutation({
+    // sign up Owner
+    signUpOwner: builder.mutation({
       query: (newUser) => ({
         url: '/api/landlords/signup',
         method: 'POST',
@@ -24,8 +24,8 @@ export const authSlice = createApi({
       invalidatesTags: ['User']
     }),
 
-    // Sign IN Business 
-    signInBu: builder.mutation({
+    // Sign in Owner
+    signInOwner: builder.mutation({
       query: (user) => ({
         url: '/api/landlords/login',
         method: 'POST',
@@ -45,9 +45,9 @@ export const authSlice = createApi({
 
     }),
 
-    // Sign Up Personal
+    // Sign up Renter
 
-    signUpPe: builder.mutation({
+    signUp: builder.mutation({
       query: (newUser) => ({
         url: '/api/tenants/signup',
         method: 'POST',
@@ -55,8 +55,8 @@ export const authSlice = createApi({
       })
     }),
 
-    // Sign IN Personal
-    signInPe: builder.mutation({
+    // Sign in Renter
+    signIn: builder.mutation({
       query: (user) => ({
         url: '/api/tenants/login',
         method: 'POST',
@@ -78,5 +78,5 @@ export const authSlice = createApi({
   })
 })
 
-export const { useSignInBuMutation, useSignUpBuMutation, useSignInPeMutation, useSignUpPeMutation } = authSlice
+export const { useSignInOwnerMutation, useSignOwnerBuMutation, useSignInMutation, useSignUpMutation } = authSlice
 export default authSlice.reducer

@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom';
+import notFound from '../../assets/images/NotFound.png'
 
 import {useGetItemQuery} from '../../store/api/ItemsSlice'
 
@@ -19,7 +20,7 @@ const {data: items = [], isLoading} = useGetItemQuery()
         </Link>
       </div>
       {/* Recent items */}
-      <div className="mt-4 flex justify-center flex-wrap gap-7 p-4 pb-5 ">
+      <div className="mt-4 flex justifye-center flex-wrap gap-7 p-4 pb-5 ">
         {/* item */}
         {isLoading ? (
           <div className="w-full h-full flex items-center justify-center">
@@ -30,6 +31,13 @@ const {data: items = [], isLoading} = useGetItemQuery()
           </div>
         ) : (
           <>
+           {items.length === 0 ? (
+             <div className="flex flex-col w-full !h-[60vh] items-center justify-center">
+             <img src={notFound} alt="" className="w-full h-60 md:w-[28rem] md:h-80" />
+             <h1 className="font-medium text-xl text-gray-400">Propertyies is Empty</h1>
+           </div>
+           ) : (
+            <>
             {items.slice(-6).map((item) => (
               <div
                 key={item.id}
@@ -54,6 +62,8 @@ const {data: items = [], isLoading} = useGetItemQuery()
                 </div>
               </div>
             ))}
+          </>
+           )}
           </>
         )}
       </div>
