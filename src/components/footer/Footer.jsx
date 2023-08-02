@@ -12,17 +12,16 @@ function Footer() {
   },[year])
 
   return (
-    <footer className="w-full py-10 px-[4%] bg-[#ECF1F8] flex flex-col items-center justify-center">
-      <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
+    <footer className="px-4 md:px-[8%] w-full py-10 bg-[#ECF1F8] flex flex-col items-center justify-center">
+      <div className="flex flex-col gap-4 md:grid place-content-center w-full md:grid-cols-3">
         <div className="flex flex-col gap-2">
           <h1 className="text-xl font-bold text-slate-900 cursor-pointer">
             TENANT<span className="text-[#00befe]">CARE</span>
           </h1>
           <p className="text-gray-400 break-words">
-        <b>TenantCare:</b> Simplifying property management. Manage properties, tenants,
+           Simplifying property management. Manage properties, tenants,
            and work orders effortlessly with our all-in-one solution. Streamline
-           operations, enhance tenant communication, and maximize efficiency. Experience
-            the power of TenantCare for seamless property management.</p>
+           operations, enhance tenant communication, and maximize efficiency.</p>
           <div className="flex gap-3 mt-4 text-[#00befe]">
             <Link to='https://www.facebook.com/AmesaSolutions'><FaFacebook /></Link>
             <Link to='https://twitter.com/AmesaSolutions'><FaTwitter /></Link>
@@ -39,7 +38,7 @@ function Footer() {
         <div className="hidden md:flex flex-col gap-4">
           <span className="text-[#222] font-medium">Subscribe</span>
           <p className="mt-2 text-gray-500 text-sm">
-            Subscribe to get latest property, blog news from us
+            Subscribe to get latest property
           </p>
           <div className="flex flex-col gap-2">
             <input

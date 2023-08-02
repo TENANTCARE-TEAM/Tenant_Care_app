@@ -4,6 +4,7 @@ import {ApprovedProper, SignInOwner, About, GetStarted, Home, SignIn, SignUp, Da
 import PriveRoute from './PrivateRoute'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import NotFound from './pages/NotFoundPage/NotFound';
 
 
 function App() {
@@ -11,12 +12,14 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/Home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/signIn" element={<SignIn />} />
         <Route path="/GetStarted" element={<GetStarted />} />
         <Route path="/signUp" element={<SignUp />} />
         <Route path='/Owner/signUp' element={<SignUpOwner/>}/>
         <Route path='/Owner/signIn' element ={<SignInOwner/>}/>
+        <Route path="*" element={<NotFound/>}/>
       
         <Route to="/Renter/dashboard" element={<PriveRoute/>}>
           <Route path="/Renter/dashboard" element={<RentDashboard />} />
