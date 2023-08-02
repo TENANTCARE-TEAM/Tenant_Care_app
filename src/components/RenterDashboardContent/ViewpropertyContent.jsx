@@ -64,7 +64,7 @@ function ViewpropertyContent() {
           </p>
           <div className="w-full mt-8 flex">
             <button onClick={() => handleRequest(Item.id)}
-            className="py-[8px] px-[20px] rounded-[10px] bg-[#00befe] text-xl text-white">
+            className="py-[8px] px-[20px] rounded-[10px] bg-[#00befe] text-xl text-white shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]">
               Sende Request
             </button>
           </div>

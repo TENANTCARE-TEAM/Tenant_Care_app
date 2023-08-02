@@ -20,7 +20,7 @@ function AddPropertyContent() {
   };
 
   const validationSchema = Yup.object({
-    title: Yup.string().required('Name is required'),
+    title: Yup.string().required('Title is required'),
     address: Yup.string().required('Address is required'),
     description: Yup.string().required('Description is required'),
     rent_fee: Yup.number().required('Price is required'),
@@ -37,7 +37,7 @@ function AddPropertyContent() {
       image: values.image,
     }).unwrap().then(() => {
       toast.success("Property created successfully")
-      navigate('/landlord/Properties')
+      navigate('/Owner/Properties')
     })
 
     console.log(values);
@@ -68,7 +68,7 @@ function AddPropertyContent() {
                 type="text"
                 id="title"
                 name="title"
-                placeholder="Name"
+                placeholder="Title"
                 className="w-full bg-[#fdfdfd] rounded border border-gray-300 p-3 
                  outline-none shadow text-[20px]"
               />

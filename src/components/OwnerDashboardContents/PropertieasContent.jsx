@@ -98,7 +98,7 @@ function PropertieasContent() {
                           onClick={() => handleDelate(item.id)}
                           className="text-[#FF6746] text-xl cursor-pointer"
                         />
-                        <Link to={`/landlord/Properties/Edit/${item.id}`}>
+                        <Link to={`/Owner/Properties/Edit/${item.id}`}>
                           <FaEdit className="text-xl text-[#00befe] cursor-pointer" />
                         </Link>
                       </div>

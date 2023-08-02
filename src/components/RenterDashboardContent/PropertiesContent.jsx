@@ -75,7 +75,7 @@ function PropertiesContent() {
                         </div>
                         <div className='flex'>
                             <button onClick={() => handleRequest(item.id)}
-                             className='cursor-pointer w-full py-2 px-3 bg-[#00befe] text-white rounded-lg'>Send Request</button>
+                             className='cursor-pointer w-full py-2 px-3 bg-[#00befe] text-white rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]'>Send Request</button>
                         </div>
                     </div>
               </div>
