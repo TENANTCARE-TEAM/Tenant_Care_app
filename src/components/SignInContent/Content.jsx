@@ -2,7 +2,7 @@ import React from "react";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
-import { useSignInPeMutation } from "../../store/api/AuthSlices";
+import { useSignInMutation} from "../../store/api/AuthSlices";
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useState } from "react";
@@ -13,7 +13,7 @@ function Content() {
   const navigate = useNavigate()
   const [change, setChange] = useState(true)
 
-  const [signInPe, { error = {} }] = useSignInPeMutation()
+  const [signInPe, { error = {} }] = useSignInMutation()
 
   const initialValues = {
     email: "",
@@ -35,7 +35,7 @@ function Content() {
       password: values.password,
     }).unwrap().then(() => {
       toast.success("sign in was succesfull");
-      navigate("/tenant/dashboard")
+      navigate("/Renter/Dashboard")
     }).catch((err) => {
       console.log(err)
       if (error.status === 401) {
@@ -102,7 +102,7 @@ function Content() {
                 <button
                   type="submit"
                   className="w-full mt-6 rounded-[8px] bg-[#00befe] px-12 py-3 text-white 
-                hover:bg-sky-500 text-[18px]"
+                hover:bg-sky-500 text-[18px] shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]"
                 >
                   Sign In
                 </button>
@@ -119,7 +119,7 @@ function Content() {
           </div>
           <div className="text-center mt-5 flex items-center justify-center gap-2">
             <h5>if You want Business</h5>
-            <Link to='/owner/signIn' >
+            <Link to='/Owner/signIn' >
               <p className="text-[#00befe] hover:underline">Sign In</p>
             </Link>
           </div>

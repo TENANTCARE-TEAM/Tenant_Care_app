@@ -22,7 +22,7 @@ export const userSlice = createApi({
 
   endpoints: builder => ({
 
-    // Get User Tenant profile
+    // Get User Renter profile
     getUserTenant: builder.query({
       query: () => {
         return {
@@ -33,7 +33,7 @@ export const userSlice = createApi({
       providesTags: ["userApi"]
     }),
 
-    // Update User Tenent profile
+    // Update User Renter profile
     editUserTenant: builder.mutation({
       query: (newData) => ({
         url: `/api/tenants/update_profile`,
@@ -43,7 +43,7 @@ export const userSlice = createApi({
       invalidatesTags: ['userApi']
     }),
 
-    // Delete User Tenant 
+    // Delete User Renter
     userTenantDelete: builder.mutation({
       query: () => ({
         url: `/api/tenants/delete_profile`,
@@ -52,7 +52,7 @@ export const userSlice = createApi({
       invalidatesTags: ['userApi']
     }),
 
-    // Get User Landlord Profile
+    // Get User Owner Profile
     getUserLandlord: builder.query({
       query: () => {
         return {
@@ -63,7 +63,7 @@ export const userSlice = createApi({
       providesTags: ["userApi"]
     }),
 
-    // Update User Landlord Profile
+    // Update User Owner Profile
     editUserLandlord: builder.mutation({
       query: (newData) => ({
         url: `/api/landlords/update_profile`,
@@ -74,7 +74,7 @@ export const userSlice = createApi({
       invalidatesTags: ['userApi']
     }),
 
-    // Delete User Landlord
+    // Delete User Owner
     userLandlordDelete: builder.mutation({
       query: () => ({
         url: `/api/landlords/delete_profile`,

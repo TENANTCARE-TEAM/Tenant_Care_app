@@ -14,7 +14,8 @@ function Hero() {
       </p>
       <Link to='/GetStarted'>
         <button 
-        className='bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'>GET STARTED</button>
+        className='bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500 
+        shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]'>GET STARTED</button>
       </Link>
     </div>
     <div className='house1'>

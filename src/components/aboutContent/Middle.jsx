@@ -44,7 +44,7 @@ function Middle() {
               experience.
             </span>
           )}
-          <button className='w-[40%] bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500'
+          <button className='w-[40%] bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500 shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]'
             onClick={toggleMoreLess}>
             See More
           </button>
