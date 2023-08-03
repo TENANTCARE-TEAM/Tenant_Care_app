@@ -78,5 +78,5 @@ export const authSlice = createApi({
   })
 })
 
-export const { useSignInOwnerMutation, useSignOwnerBuMutation, useSignInMutation, useSignUpMutation } = authSlice
+export const { useSignInOwnerMutation, useSignUpOwnerMutation, useSignInMutation, useSignUpMutation } = authSlice
 export default authSlice.reducer
