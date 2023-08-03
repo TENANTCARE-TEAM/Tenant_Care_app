@@ -1,9 +1,9 @@
 ## TENANTCARE TEAM 
 ### Welcome our project
 
-[DEMO LINK NETLIFY :] (https://tenantcare.netlify.app/)
+DEMO LINK NETLIFY : https://tenantcare.netlify.app/
 
-[DEMO LINK VERCEL :] (https://tenant-care-app.vercel.app/)
+DEMO LINK VERCEL : https://tenant-care-app.vercel.app/
 
 ## back end api ↓
 
