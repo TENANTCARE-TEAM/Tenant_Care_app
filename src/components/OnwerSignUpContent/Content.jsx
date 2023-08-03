@@ -7,13 +7,13 @@ import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import { toast } from 'react-toastify';
-import {useSignInOwnerMutation} from '../../store/api/AuthSlices'
+import {useSignUpOwnerMutation} from '../../store/api/AuthSlices'
 
 function Content() {
   const navigate = useNavigate()
   const [change, setChange] = useState(true)
   
-  const [signUpBu, {error = {}}] = useSignInOwnerMutation()
+  const [signUp, {error = {}}] = useSignUpOwnerMutation()
 
   const initialValues = {
     first_name: "",
@@ -34,7 +34,7 @@ function Content() {
   });
 
   const handleSubmit = (values) => {
-    signUpBu({
+    signUp({
       first_name: values.first_name,
       last_name: values.last_name,
       email: values.email,

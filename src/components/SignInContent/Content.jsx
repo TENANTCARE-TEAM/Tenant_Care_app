@@ -118,7 +118,7 @@ function Content() {
 
           </div>
           <div className="text-center mt-5 flex items-center justify-center gap-2">
-            <h5>if You want Business</h5>
+            <h5>if You want Owner</h5>
             <Link to='/Owner/signIn' >
               <p className="text-[#00befe] hover:underline">Sign In</p>
             </Link>
