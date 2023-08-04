@@ -71,8 +71,8 @@ function RecentItems() {
 
                 <div className="flex">
                   <Link
-                    to={`/landlord/Properties/Edit/${item.id}`}
-                    className="w-full py-2 cursor-pointer px-3 text-center bg-[#00befe] shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff] text-white rounded-lg"
+                    to={`/Owner/Properties/Edit/${item.id}`}
+                    className="w-full py-2 cursor-pointer px-3 text-center bg-[#00befe] shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3] text-white rounded-lg"
                   >
                     Edit Property
                   </Link>

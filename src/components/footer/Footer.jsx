@@ -1,15 +1,32 @@
 import React, { useEffect, useState } from "react";
 import { FaFacebook, FaGithub, FaTwitter,  } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Footer() {
   const [year, setYear] = useState()
+  const [input , setInput] = useState("")
 
   useEffect(() => {
     const date = new Date();
 
     setYear(date.getFullYear())
   },[year])
+
+  const handleChange = (e) => {
+   setInput(e.target.value)
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    if(input === ""){
+      toast.error("Please enter your Email")
+    } else {
+      toast.success("Thank you for Subscribing!!!")
+      setInput("")
+    }
+  }
 
   return (
     <footer className="px-4 md:px-[8%] w-full py-10 bg-[#ECF1F8] flex flex-col items-center justify-center">
@@ -28,28 +45,32 @@ function Footer() {
             <Link to='https://github.com/TENANTCARE-TEAM'><FaGithub /></Link>
           </div>
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 md:items-center ">
           <span className="text-[#222] font-medium ">Quick Links</span>
-          <Link to="/" className="text-gray-400 hover:text-[#00befe]">Home</Link>
-          <Link to="/about" className="text-gray-400 hover:text-[#00befe]">About Us</Link>
-          <Link to="/signIn" className="text-gray-400 hover:text-[#00befe]">Sign In</Link>
-          <a className="text-gray-400 hover:text-[#00befe]">Get Started</a>
+          <Link to="/" className=" text-gray-400 hover:text-[#00befe]">Home</Link>
+          <Link to="/about" className=" text-gray-400 hover:text-[#00befe]">About Us</Link>
+          <Link to="/signIn" className=" text-gray-400 hover:text-[#00befe]">Sign In</Link>
+          <Link to="/getStarted" className="text-gray-400 hover:text-[#00befe]">Get Started</Link>
         </div>
         <div className="hidden md:flex flex-col gap-4">
           <span className="text-[#222] font-medium">Subscribe</span>
           <p className="mt-2 text-gray-500 text-sm">
             Subscribe to get latest property
           </p>
-          <div className="flex flex-col gap-2">
+          <form onSubmit={handleSubmit}
+          className="flex flex-col gap-2">
             <input
-              type="text"
+              type="email"
               placeholder="Email address "
               className="outline-none p-3 bg-white rounded-lg"
+              value={input}
+              onChange={handleChange}
             />
-            <div className="w-full text-center bg-[#00befe] p-3 px-4 rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff] font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
+            <button type="submit"
+            className="w-full text-center bg-[#00befe] p-3 px-4 rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3] font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
               Subscribe
-            </div>
-          </div>
+            </button>
+          </form>
         </div>
       </div>
        <p className="md:mt-2 mt-5 text-gray-500 text-sm max-[768px]:text-center ">

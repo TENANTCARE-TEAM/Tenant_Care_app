@@ -32,7 +32,7 @@ function EditProfileContent() {
     <div className="mt-4 bg-white p-6 w-full flex flex-col shadow rounded">
       {/* title */}
       <div className="flex items-center justify-between">
-        <h3 className="font-bold text-2xl">All Properties</h3>
+        <h3 className="font-bold text-2xl">Edit Profile</h3>
       </div>
       <div className="mx-auto w-full rounded-lg bg-white p-10 shadow-xl md:w-3/4 lg:w-1/2 mb-12">
         <Formik
@@ -90,7 +90,7 @@ outline-none text-[20px]"
                 className="text-red-400"
               />
             </div>
-            <button type="submit" className="bg-[#00befe] p-3 px-4 rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff] font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
+            <button type="submit" className="bg-[#00befe] p-3 px-4 rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3] font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
                 Update Profile
             </button>
           </Form>

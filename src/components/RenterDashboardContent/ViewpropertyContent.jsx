@@ -9,6 +9,7 @@ function ViewpropertyContent() {
   const params = useParams()
 
   const {data: items = [], isLoading} = useGetItemQuery();
+  const [value, setValue] = useState("Send Request")
   
   const Item = items.find((item) => item.id === Number(params.property_id));
 
@@ -17,10 +18,12 @@ function ViewpropertyContent() {
   const handleRequest = (property_id) => {
     SendRequest(property_id).unwrap().then(() => {
       toast.success("Request sent successfully")
+      setValue("Pending...")
     }).catch((error) => {
       console.log(error)
       if(error.status === 400) {
        toast.error("Request already sent for this property")
+       setValue("Pending...")
       }
     })
   }
@@ -57,15 +60,15 @@ function ViewpropertyContent() {
             {Item.description}
           </p>
           <p className="leading-[30px] font-semibold ">
-            Address: {Item.address}
+            Address:  {Item.address}
           </p>
           <p className="text-xl text-[#222] font-semibold ">
             Price : $ {Item.rent_fee}
           </p>
           <div className="w-full mt-8 flex">
             <button onClick={() => handleRequest(Item.id)}
-            className="py-[8px] px-[20px] rounded-[10px] bg-[#00befe] text-xl text-white shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]">
-              Sende Request
+            className="py-[8px] px-[20px] rounded-[10px] bg-[#00befe] text-xl text-white shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3]">
+              {value}
             </button>
           </div>
         </div>

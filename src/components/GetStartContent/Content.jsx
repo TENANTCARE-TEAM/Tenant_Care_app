@@ -42,7 +42,7 @@ const Content = () => {
             <div className="px-6 py-2">
               <Link to='/signUp'>
                 <button 
-                className='w-full bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500 shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]'>Register</button>
+                className='w-full bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500 shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3]'>Register</button>
               </Link>
               <p className="mt-2 text-sm text-gray-700 padding-right:16">
                 Already have account?
@@ -85,7 +85,7 @@ const Content = () => {
               </div>
             <div className="px-6 py-2">
               <Link to='/Owner/signUp'>
-                <button className='w-full bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500 shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]'>
+                <button className='w-full bg-[#00befe] p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500 shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3]'>
                   Register
                 </button>
               </Link>
