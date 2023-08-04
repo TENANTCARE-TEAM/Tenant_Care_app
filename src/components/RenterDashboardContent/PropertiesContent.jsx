@@ -6,7 +6,8 @@ import { ToastContainer, toast } from "react-toastify"
 import Search from '../OwnerDashboardContents/Search'
 
 function PropertiesContent() {
-  
+
+  const [value, setValue] = useState("Send Request")
   const [ search, setSearch ] = useState("");
   const [filteredItems, setFilteredItems ] = useState([]);
   
@@ -17,10 +18,12 @@ function PropertiesContent() {
   const handleRequest = (property_id) => {
     SendRequest(property_id).unwrap().then(() => {
       toast.success("Request sent successfully")
+      setValue("Pending...")
     }).catch((error) => {
       console.log(error)
       if(error.status === 400) {
        toast.error("Request already sent for this property")
+        setValue("Pending...")
       }
     })
   }
@@ -64,7 +67,7 @@ function PropertiesContent() {
               <>
               {filteredItems.map(item =>   
               <div key={item.id} className='flex flex-col gap-6  overflow-hidden w-[300px] bg-white shadow-lg border-2 hover:border-[#00befe] p-4 rounded-xl hover:scale-[0.98] transition-all'>
-                    <Link to={`/Tenant/dashboard/ViewProperty/${item.id}`}>       
+                    <Link to={`/Renter/dashboard/ViewProperty/${item.id}`}>       
                       <img src={item.image} alt="" className='w-full h-[180px] rounded-xl bg-auto bg-no-repeat bg-center cursor-pointer'/>
                     </Link> 
                     <div className='flex flex-col gap-4 md:gap-4 w-full '>
@@ -75,7 +78,9 @@ function PropertiesContent() {
                         </div>
                         <div className='flex'>
                             <button onClick={() => handleRequest(item.id)}
-                             className='cursor-pointer w-full py-2 px-3 bg-[#00befe] text-white rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]'>Send Request</button>
+                             className='cursor-pointer w-full py-2 px-3 bg-[#00befe] hover:bg-sky-500 text-white rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3]'>
+                              {value}
+                            </button>
                         </div>
                     </div>
               </div>

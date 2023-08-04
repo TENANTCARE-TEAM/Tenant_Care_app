@@ -55,7 +55,7 @@ const {data: items = [], isLoading} = useGetItemQuery()
                     <span className="text-[#222]">$ {item.rent_fee}</span>
                   </div>
                   <div className="flex">
-                    <Link to="/signIn" className="cursor-pointer w-full py-2 px-3 text-center bg-[#00befe] text-white rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]">
+                    <Link to="/signIn" className="cursor-pointer w-full py-2 px-3 text-center bg-[#00befe] text-white rounded-lg hover:bg-sky-500 shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3]">
                       Send Request
                     </Link>
                   </div>

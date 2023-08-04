@@ -34,7 +34,7 @@ function ProfileContent() {
         <div className="flex gap-4">
           <Link to='/Owner/Profile/Edit'>
             <button
-              className='bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500 shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]'>Edit Profile</button>
+              className='bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500 shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3]'>Edit Profile</button>
           </Link>
           <button onClick={handleDelete}
             className='bg-[#d81b1b] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all '>Delete</button>

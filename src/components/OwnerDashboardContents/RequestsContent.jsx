@@ -82,7 +82,7 @@ function RequestsContent() {
                             </div>
                           </div>
                           <button onClick={() => handleApprove(request.property_id, request.tenant_id)}
-                            className=" bg-[#00befe] mt-2 p-3 px-4 rounded-lg font-medium text-sm shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff] text-white cursor-pointer transition-all hover:bg-sky-500">
+                            className=" bg-[#00befe] mt-2 p-3 px-4 rounded-lg font-medium text-sm shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3] text-white cursor-pointer transition-all hover:bg-sky-500">
                             Approve
                           </button>
                         </div>

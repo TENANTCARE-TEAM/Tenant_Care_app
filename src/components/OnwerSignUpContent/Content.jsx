@@ -134,7 +134,7 @@ function Content() {
               <button
                 type="submit"
                 className="w-full mt-4 rounded-[8px] bg-[#00befe] px-12 py-3 text-white 
-            hover:bg-sky-500 text-[18px] shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff]"
+            hover:bg-sky-500 text-[18px] shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3]"
               >
                 Sign Up
               </button>

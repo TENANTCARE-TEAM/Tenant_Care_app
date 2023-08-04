@@ -52,9 +52,9 @@ function Header() {
         </Link>
 
         <Link to="/GetStarted">
-          <div className="my-3 md:y-0 ml-2 bg-[#00befe] p-3 px-4 rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#001fff] font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
+          <button className="my-3 md:y-0 ml-2 bg-[#00befe] p-3 px-4 rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3] font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500">
             GET STARTED
-          </div>
+          </button>
         </Link>
       </div>
     </header>
