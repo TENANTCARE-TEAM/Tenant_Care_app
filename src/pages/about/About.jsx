@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import Header from '../../components/header/Header'
 import Footer from '../../components/footer/Footer'
-import Middle from '../../components/aboutContent/Middle'
+import AboutUs from '../../components/aboutContent/About'
+import Teams from '../../components/aboutContent/Teams'
 
 function About() {
   useEffect(() => {
@@ -11,7 +12,8 @@ function About() {
   return (
     <div className='mt-16 bg-white'>
         <Header/>
-        <Middle/>
+        <AboutUs/>
+        <Teams/>
         <Footer/>
     </div>
   )

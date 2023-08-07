@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import key from "../../assets/images/key.png";
 
-function Middle() {
+function About() {
 
   const [ShowMore, setIsShowMore] = useState(false);
 
@@ -26,27 +26,19 @@ function Middle() {
             effortlessly oversee their entire portfolio from a single, intuitive dashboard. Stay organized and in
             control as you efficiently manage tenant information, lease agreements, rent payments, and maintenance
             requests. Our comprehensive platform empowers property managers to effectively communicate with tenants,
-            track rental performance, and generate insightful reports. TenantCare's user-friendly interface and
-            powerful features ensure a seamless and hassle-free experience, allowing property managers to focus on
-            providing exceptional care and service to their tenants. Experience the convenience and efficiency of
-            TenantCare and elevate your property management process to new heights.
-            <br />
+            track rental performance, and generate insightful reports.
             <br />  </p>
           {ShowMore && (
             <span className="text-gray-500 text-base break-words pr-6 transition ease-in-aut">
-
-              <b> The problem we are solving:</b> The problem we are solving with TenantCare is the complex and time-consuming nature of
-              property management. Traditionally, property managers have to juggle multiple tasks, such as handling tenant inquiries,
-              managing maintenance requests, and keeping track of property details. This often leads to inefficiencies, miscommunication,
-              and a lack of organization. TenantCare aims to simplify property management by providing a centralized platform where
-              property managers can easily oversee their properties, communicate with tenants, and manage work orders. By streamlining
-              these processes, TenantCare saves time, improves communication, and ultimately enhances the overall property management
-              experience.
+              TenantCare's user-friendly interface and
+            powerful features ensure a seamless and hassle-free experience, allowing property managers to focus on
+            providing exceptional care and service to their tenants. Experience the convenience and efficiency of
+            TenantCare and elevate your property management process to new heights.
             </span>
           )}
           <button className='w-[40%] bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500 shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3]'
             onClick={toggleMoreLess}>
-            See More
+            {!ShowMore ? 'See More' : 'See less'}
           </button>
         </div>
       </div>
@@ -54,4 +46,4 @@ function Middle() {
   );
 }
 
-export default Middle;
+export default About;

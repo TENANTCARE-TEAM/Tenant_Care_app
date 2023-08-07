@@ -52,7 +52,7 @@ function EditProperties() {
             update: values
         }).then(() => {
             toast.success("Property updated successfully")
-            navigate('/landlord/Properties')
+            navigate('/Owner/Properties')
         })
 
     }
