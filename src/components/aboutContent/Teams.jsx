@@ -3,13 +3,13 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedinIn, FaTwitter,  } from "re
 import { Link } from "react-router-dom";
 import Yaasiin_Ahmed from '../../assets/images/Yaasiinahmed.jpg'
 import Abdicasiis_halane from '../../assets/images/Abdicasiis-halane.png'
-import Ibraahim_ali from '../../assets/images/ibraahim-ali.png'
+// import Ibraahim_ali from '../../assets/images/ibraahim-ali.png'
 import Masud_ahmed from '../../assets/images/Masud-ahmed.jpeg'
 import Hiba_ali from '../../assets/images/hiba-ali.jfif'
 import Xabiib_ali from '../../assets/images/Xabiib-Ali.jfif'
 
 
-export default function Teams() {
+function Teams() {
   return (
     <div className='md:px-[10%] px-6 py-2 pb-12 flex flex-col gap-4'>
         <h1 className='text-center font-bold text-3xl'>Our <span className='text-[#00befe]'>Team</span></h1>
@@ -42,7 +42,7 @@ export default function Teams() {
 
             <div className='p-8 bg-white rounded-lg shadow-lg border flex flex-col items-center justify-center gap-2'>
                 <div className='w-[180px] rounded-full overflow-hidden p-[3px] border-2 border-[#00befe]'>
-                    <img src={Ibraahim_ali} alt="Yaasiin Ahmed" className='w-full h-full rounded-full'/>
+                    <img src={Yaasiin_Ahmed} alt="Yaasiin Ahmed" className='w-full h-full rounded-full'/>
                 </div>
                 <h3 className='font-bold text-2xl'>Ibraahim Ali</h3>
                 <span className='text-gray-500'>Member</span>
@@ -95,3 +95,5 @@ export default function Teams() {
     </div>
   )
 }
+
+export default Teams
