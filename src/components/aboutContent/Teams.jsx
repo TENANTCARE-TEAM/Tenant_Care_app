@@ -19,7 +19,7 @@ function Teams() {
                     <img src={Abdicasiis_halane} alt="Yaasiin Ahmed" className='w-full h-full rounded-full'/>
                 </div>
                 <h3 className='font-bold text-xl'>Abdiasiis Halane</h3>
-                <span className='text-gray-500'>Project Manager</span>
+                <span className='text-gray-500'>Team Leader</span>
                 <div className="flex gap-3 mt-4 text-[#00befe]">
                     <Link to='https://www.facebook.com/AmesaSolutions'><FaFacebook /></Link>
                     <Link to='https://twitter.com/AmesaSolutions'><FaTwitter /></Link>

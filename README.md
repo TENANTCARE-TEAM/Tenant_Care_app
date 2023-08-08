@@ -1,10 +1,11 @@
-## TENANTCARE PROJECT
-### Welcome TenantCare
-## TenantCare - Property Management Tool
+## Welcome TenantCare
+
+![TenantCare](/src/assets/images/cover.jpg)
+
+### TenantCare - Property Management Tool
 Introducing TenantCare, the ultimate property management solution designed to streamline and simplify every aspect of managing properties, tenants, and work orders. With TenantCare, property managers can effortlessly oversee their entire portfolio from a single, intuitive dashboard. Stay organized and in control as you efficiently manage tenant information, lease agreements, rent payments, and maintenance requests. Our comprehensive platform empowers property managers to effectively communicate with tenants, track rental performance, and generate insightful reports. TenantCare's user-friendly interface and powerful features ensure a seamless and hassle-free experience, allowing property managers to focus on providing exceptional care and service to their tenants. Experience the convenience and efficiency of TenantCare and elevate your property management process to new heights.
 
-## DEMO PROJECT ↓
-DEMO LINK : https://tenantcare.netlify.app/
+#### Demo Link : https://tenantcare.netlify.app
 
 ## back-end API ↓
 
