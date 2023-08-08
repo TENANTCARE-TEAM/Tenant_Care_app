@@ -3,7 +3,7 @@ import { FaFacebook, FaGithub, FaInstagram, FaLinkedinIn, FaTwitter,  } from "re
 import { Link } from "react-router-dom";
 import Yaasiin_Ahmed from '../../assets/images/Yaasiinahmed.jpg'
 import Abdicasiis_halane from '../../assets/images/Abdicasiis-halane.png'
-// import Ibraahim_ali from '../../assets/images/ibraahim-ali.png'
+import ibrahim_ali from '../../assets/images/ibrahim_ali.png'
 import Masud_ahmed from '../../assets/images/Masud-ahmed.jpeg'
 import Hiba_ali from '../../assets/images/hiba-ali.jfif'
 import Xabiib_ali from '../../assets/images/Xabiib-Ali.jfif'
@@ -42,7 +42,7 @@ function Teams() {
 
             <div className='p-8 bg-white rounded-lg shadow-lg border flex flex-col items-center justify-center gap-2'>
                 <div className='w-[180px] rounded-full overflow-hidden p-[3px] border-2 border-[#00befe]'>
-                    <img src={Yaasiin_Ahmed} alt="Yaasiin Ahmed" className='w-full h-full rounded-full'/>
+                    <img src={ibrahim_ali} alt="Yaasiin Ahmed" className='w-full h-full rounded-full'/>
                 </div>
                 <h3 className='font-bold text-2xl'>Ibraahim Ali</h3>
                 <span className='text-gray-500'>Member</span>
