@@ -15,9 +15,9 @@ function About() {
         <h1 className='text-center pt-[60px] text-5xl text-[#00BEFE] font-bold'>ABOUT US</h1>
       </div>
       <div className="md:px-[10%] px-6 py-6 pb-8 mb-12 flex flex-col md:flex-row w-full">
-        <div className="p-2 w-full md:w-[60%] ">
+        {/* <div className="p-2 w-full md:w-[60%] ">
           <img src={key} className="w-full h-full" alt="" />
-        </div>
+        </div> */}
         <div className="pl-4 mt-5 flex flex-col w-[100%]">
           <h3 className="font-bold text-2xl text-[#00befe]">About Us</h3>
           <p className="text-gray-500 text-base break-words pr-6">
@@ -36,7 +36,7 @@ function About() {
             TenantCare and elevate your property management process to new heights.
             </span>
           )}
-          <button className='w-[40%] bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500 shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3]'
+          <button className='w-[10%] bg-[#00befe] mt-4 p-3 px-4 rounded-lg font-medium text-sm text-white cursor-pointer transition-all hover:bg-sky-500 shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3]'
             onClick={toggleMoreLess}>
             {!ShowMore ? 'See More' : 'See less'}
           </button>

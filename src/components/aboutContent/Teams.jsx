@@ -22,7 +22,7 @@ function Teams() {
                 <span className='text-gray-500'>Team Leader</span>
                 <div className="flex gap-3 mt-4 text-[#00befe]">
                     <Link to='https://www.facebook.com/AmesaSolutions'><FaFacebook /></Link>
-                    <Link to='https://twitter.com/AmesaSolutions'><FaTwitter /></Link>
+                    <Link to='https://twitter.com/abdiasishasen'><FaTwitter /></Link>
                     <Link to='https://github.com/abdiasiis78'><FaGithub /></Link>
                 </div>
             </div>
