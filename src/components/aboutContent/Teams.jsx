@@ -5,7 +5,7 @@ import Yaasiin_Ahmed from '../../assets/images/Yaasiinahmed.jpg'
 import Abdicasiis_halane from '../../assets/images/Abdicasiis-halane.png'
 import ibrahim_ali from '../../assets/images/ibrahim_ali.png'
 import Masud_ahmed from '../../assets/images/Masud-ahmed.jpeg'
-import Hiba_ali from '../../assets/images/hiba-ali.jfif'
+import Hiba_ali from '../../assets/images/ss.jpg'
 import Xabiib_ali from '../../assets/images/Xabiib-Ali.jfif'
 
 
