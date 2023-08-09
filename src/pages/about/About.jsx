@@ -13,7 +13,7 @@ function About() {
     <div className='mt-16 bg-white'>
         <Header/>
         <AboutUs/>
-        <Teams/>
+        <Teams />
         <Footer/>
     </div>
   )

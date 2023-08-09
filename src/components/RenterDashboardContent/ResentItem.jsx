@@ -5,7 +5,7 @@ import { useGetItemQuery, useSendRequestsMutation } from "../../store/api/ItemsS
 import { ToastContainer, toast } from "react-toastify"
 
 function ResentItem() {
-  const [value, setValue] = useState("Send Request")
+  
   const {data: items = [], isLoading} = useGetItemQuery()
  
   const [SendRequest] = useSendRequestsMutation()
@@ -13,12 +13,12 @@ function ResentItem() {
   const handleRequest = (property_id) => {
     SendRequest(property_id).unwrap().then(() => {
       toast.success("Request sent successfully")
-      setValue("Pending...")
+      
     }).catch((error) => {
       console.log(error)
       if(error.status === 400) {
        toast.error("Request already sent for this property")
-        setValue("Pending...")
+        
       }
     })
   }
@@ -65,7 +65,7 @@ function ResentItem() {
                     <div className='flex'>
                         <button onClick={() => handleRequest(item.id)}
                         className='cursor-pointer w-full py-2 px-3 bg-[#00befe] hover:bg-sky-500 text-white rounded-lg shadow-[0px_4px_0px_0px_#03a4da] hover:shadow-[0px_4px_0px_0px_#0387b3]'>
-                          {value}
+                        Send Request
                         </button>
                     </div>
                 </div>
