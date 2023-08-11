@@ -1,10 +1,10 @@
 
 import { Routes, Route, } from 'react-router-dom'
-import {ApprovedProper, SignInOwner, About, GetStarted, Home, SignIn, SignUp, Dashboard, RentDashboard, Properties, MyProfile, LanEditProfile,Tenants, EditProfile, Requests, AddProperty, MyProperties, ViewProperty, SignUpOwner , EditProperty, Profile} from './pages'
+import {NotFound, ApprovedProper, SignInOwner, About, GetStarted, Home, SignIn, SignUp, Dashboard, RentDashboard, Properties, MyProfile, LanEditProfile,Tenants, EditProfile, Requests, AddProperty, MyProperties, ViewProperty, SignUpOwner , EditProperty, Profile} from './pages'
 import PriveRoute from './PrivateRoute'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
-import NotFound from './pages/NotFoundPage/NotFound';
+
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import house from "../../assets/images/house-2.jpg";
+
 import { useGetItemQuery, useSendRequestsMutation } from "../../store/api/ItemsSlice";
 import { useParams } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -9,7 +9,7 @@ function ViewpropertyContent() {
   const params = useParams()
 
   const {data: items = [], isLoading} = useGetItemQuery();
-  const [value, setValue] = useState("Send Request")
+ 
   
   const Item = items.find((item) => item.id === Number(params.property_id));
 
@@ -18,12 +18,12 @@ function ViewpropertyContent() {
   const handleRequest = (property_id) => {
     SendRequest(property_id).unwrap().then(() => {
       toast.success("Request sent successfully")
-      setValue("Pending...")
+  
     }).catch((error) => {
       console.log(error)
       if(error.status === 400) {
        toast.error("Request already sent for this property")
-       setValue("Pending...")
+       
       }
     })
   }
