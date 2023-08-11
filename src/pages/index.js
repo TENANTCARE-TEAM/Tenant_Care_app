@@ -1,4 +1,4 @@
-// import { fromJSON } from 'postcss'
+
 export {default as About} from './about/About'
 export {default as GetStarted} from  './getStarted/GetStarted'
 export {default as Home} from './home/Home'
@@ -20,3 +20,4 @@ export {default as MyProfile} from './OwnerDashboard/Profile'
 export {default as LanEditProfile} from './OwnerDashboard/EditProfile'
 export {default as SignInOwner} from './OwnerSignIn/SignIn'
 export {default as ApprovedProper} from './RenterDashboard/Aproved'
+export {default as NotFound} from './NotFoundPage/NotFound'
