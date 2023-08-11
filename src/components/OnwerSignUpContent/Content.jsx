@@ -1,7 +1,7 @@
 import React from "react";
 
 import { ErrorMessage, Field, Form, Formik } from "formik";
-import Business from "../../assets/images/Signing.png";
+import Business from "../../assets/images/Sign up-cuate.png";
 import * as Yup from "yup";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";

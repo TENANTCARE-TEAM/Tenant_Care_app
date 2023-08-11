@@ -34,7 +34,7 @@ const {data: items = [], isLoading} = useGetItemQuery()
            {items.length === 0 ? (
              <div className="flex flex-col w-full !h-[60vh] items-center justify-center">
              <img src={notFound} alt="" className="w-full h-60 md:w-[28rem] md:h-80" />
-             <h1 className="font-medium text-xl text-gray-400">Propertyies is Empty</h1>
+             <h1 className="font-medium text-xl text-gray-400">Properties is Empty</h1>
            </div>
            ) : (
             <>
