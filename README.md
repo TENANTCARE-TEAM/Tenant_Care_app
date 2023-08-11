@@ -7,7 +7,7 @@ Introducing TenantCare, the ultimate property management solution designed to st
 
 #### Demo Link : https://tenantcare.netlify.app
 
-## back-end API ↓
+##  usage of endpoints ↓
 
 ## Authentication
 
