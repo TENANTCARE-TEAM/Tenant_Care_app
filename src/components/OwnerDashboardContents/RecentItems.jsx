@@ -24,7 +24,7 @@ function RecentItems() {
       <div className="flex items-center justify-between">
         <h3 className="font-bold text-2xl">Recently Added</h3>
 
-        <Link to="/landlord/Properties">
+        <Link to="/Owner/Properties">
           <span className="text-[#00befe]">See all</span>
         </Link>
       </div>
