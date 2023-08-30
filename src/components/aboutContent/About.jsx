@@ -11,12 +11,13 @@ function About() {
 
   return (
     <div className="flex flex-col gap-4  w-full ">
-      <div className="md:px-[10%] px-6 py-6 pb-8 mb-12 flex flex-col md:flex-row w-full">
-        <div className="p-2 w-full md:w-[60%] ">
+      <div className="text-center bg-[#00befe] w-full h-[20rem] items-center flex justify-center"> <h1 className="text-white text-[3.5rem] font-bold">About us</h1></div>
+      <div className="md:px-[10%] px-6 items-center pb-8 flex flex-col md:flex-row w-full">
+        <div className="p-2 w-full md:w-[100%] ">
           <img src={key} className="w-full h-full" alt="" />
         </div>
-        <div className="pl-[6%] mt-[8%] flex flex-col w-[100%]">
-          <h3 className="font-bold text-2xl text-[#00befe]">About Us</h3>
+        <div className="  flex flex-col w-[100%]">
+          {/* <h3 className="font-bold text-2xl text-[#00befe]">About Us</h3> */}
           <p className="text-gray-500 text-base break-words pr-6">
             <b> Introducing TenantCare, </b>the ultimate property management solution designed to streamline and simplify
             every aspect of managing properties, tenants, and work orders. With TenantCare, property managers can
