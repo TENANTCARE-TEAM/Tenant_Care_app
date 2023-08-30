@@ -11,7 +11,7 @@ function About() {
 
   return (
     <div className="flex flex-col gap-4  w-full ">
-      <div className="text-center bg-[#00befe] w-full h-[20rem] items-center flex justify-center"> <h1 className="text-white text-[5rem] font-bold">About us</h1></div>
+      <div className="text-center bg-[#00befe] w-full h-[20rem] items-center flex justify-center"> <h1 className="text-white text-[3.5rem] font-bold">About us</h1></div>
       <div className="md:px-[10%] px-6 items-center pb-8 flex flex-col md:flex-row w-full">
         <div className="p-2 w-full md:w-[100%] ">
           <img src={key} className="w-full h-full" alt="" />
