@@ -1,3 +1,3 @@
-const BASE_URL = 'https://tenantcare-8f0d118ae3dc.herokuapp.com'
+const BASE_URL = 'https://tenantcare.onrender.com'
 
 export default BASE_URL
